@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Agustín
+@author: Agustín Lantero
 
 IMAGE SIMULATION
 
