@@ -1,3 +1,2 @@
-# GRAL
-GRALeko proiektua
-DAMIC dark matter images classification and segmentation
+# Image segmentation
+Multiclass image semgnetation
