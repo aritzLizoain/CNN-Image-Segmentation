@@ -2,7 +2,7 @@
 """
 Created on Thu Jun 11 17:44:17 2020
 
-@author: Aritz
+@author: Aritz Lizoain
 
 MASK IMAGE
 
