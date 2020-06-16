@@ -2,7 +2,7 @@
 """
 Created on Fri Jun 12 16:29:09 2020
 
-@author: Aritz
+@author: Aritz Lizoain
 
 LOAD TRAINING AND TESTING DATASET
 
