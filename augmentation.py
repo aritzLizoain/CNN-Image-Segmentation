@@ -2,7 +2,7 @@
 """
 Created on Wed Jun 10 20:33:00 2020
 
-@author: Aritz
+@author: Aritz Lizoain
 
 AUGMENTATION
 
