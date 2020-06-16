@@ -1,6 +1,8 @@
 # Image segmentation
 Multiclass image segmentation
 
+https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
+
 Son 8 archivos python:
 
 *'image_details' e 'image_simulation' son los códigos de Agustín para generar las imágenes. Las imágenes creadas las guardo en la carpeta de 'Images/Train' e 'Images/Test'. Nada nuevo.
