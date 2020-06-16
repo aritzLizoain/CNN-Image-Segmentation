@@ -1,5 +1,5 @@
 # Image segmentation
-Multiclass image semgnetation
+Multiclass image segmentation
 
 Son 8 archivos python:
 
