@@ -2,7 +2,7 @@
 """
 Created on Wed Jun 10 18:00:30 2020
 
-@author: Aritz
+@author: Aritz Lizoain
 
 TRAINING
 
