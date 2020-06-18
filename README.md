@@ -4,7 +4,7 @@
 
 **This is bold text**
 
-In the words of Abraham Lincoln:
+In the words of Abraham Lincolns:
 
 > Pardon my French
 
