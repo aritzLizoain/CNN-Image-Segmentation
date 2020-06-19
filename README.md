@@ -4,16 +4,19 @@ What is this project for?
 
 What is **image segmentation**
 >Definition
+
 Image: 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 What is **CNN**
 >Definition
+
 Image: 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 What is **UNet**
 >Definition
+
 Image: 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
@@ -28,14 +31,19 @@ You will need to install the following libraries:
 Used libraries: keras, scikit-learn, opencv, etc.
 
 How to install:
-<open anaconda prompt
-<activate environment
-<pip install 'name'
+>open anaconda prompt
+>activate environment
+>pip install 'name'
+```
+pip install 'name'
+```
+```
+pip install `name`
+```
 
 
-```
-Give examples
-```
+
+
 
 ### Installing
 
