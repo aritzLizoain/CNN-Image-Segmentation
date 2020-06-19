@@ -5,7 +5,7 @@ What is this project for?
 Multiclass image segmentation
 
 What is **image segmentation**
->Definition
+>In digital image processing and computer vision, image segmentation is the process of partitioning a digital image into multiple segments (sets of pixels, also known as image objects).
 
 Image: 
 ![alt text](https://es.mathworks.com/help//vision/ug/semanticsegmentation_transferlearning.png "Segmentation example")
