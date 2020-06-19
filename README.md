@@ -2,6 +2,8 @@
 
 What is this project for?
 
+Multiclass image segmentation
+
 What is **image segmentation**
 >Definition
 
@@ -97,8 +99,8 @@ Copyright 2020, Aritz Lizoain, All rights reserved.
 
 
 
-# Image segmentation
-Multiclass image segmentation
+
+
 
 https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
 
