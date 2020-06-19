@@ -147,6 +147,18 @@ print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/
 
 ### More things that I can do with my model...
 
+## Results so far
+
+Able to predict well
+
+Classification Report
+
+Class| Accuracy| Support
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+
 ## Things not done yet
 
 ### Testing on real DAMIC images
@@ -175,39 +187,3 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Copyright
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
-
-
-
-
-
-
-
-
-
-
-
-
-Things to use:
-
-Lists
-- George Washington
-- John Adams
-- Thomas Jefferson
-
-Enumerate
-1. James Madison
-2. James Monroe
-3. John Quincy Adams
-
-Nested
-1. First list item
-   - First nested list item
-     - Second nested list item
-     
-Classification Report
-
-Class| Accuracy| Support
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
