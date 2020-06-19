@@ -89,7 +89,7 @@ es lo más interesante. Aquí creo los labels de todas las imágenes. Primero cl
     
 ### augmentation.py
 
-only geometric. can be added. check imgaug documentation [imgaug documentation](https://imgaug.readthedocs.io/en/latest/source/examples_basics.html)
+only geometric. can be added. check [imgaug documentation](https://imgaug.readthedocs.io/en/latest/source/examples_basics.html)
 
 crea más imágenes a partir de las que le paso. Sólo aplico cambios geométricos (rotación, zoom, etc.). Aún así, como ahora puedo crear la cantidad de imágenes que quiera, no lo estoy utilizando. Pero bueno, ahí está.
 
@@ -103,19 +103,63 @@ carga el modelo ya entrenado y funciona como la última parte de 'train'. Hace l
 
 ## How to use it
 
-### How to train a model
+### Creating the data for training
+
+### Preparing the data for training
+
+You need three folders:
+
+* Image folders. Validation split will be automatic. Test images.
+
+* Savings folder
+
+* Models folder
 
 Explain
 
-### How to load and evaluate a model
+### Using the python module
 
-Explain
+You can import keras_segmentation in  your python script and use the API
+
+```python
+from keras_segmentation.models.unet import vgg_unet
+
+model = vgg_unet(n_classes=51 ,  input_height=416, input_width=608  )
+
+model.train(
+    train_images =  "dataset1/images_prepped_train/",
+    train_annotations = "dataset1/annotations_prepped_train/",
+    checkpoints_path = "/tmp/vgg_unet_1" , epochs=5
+)
+
+out = model.predict_segmentation(
+    inp="dataset1/images_prepped_test/0016E5_07965.png",
+    out_fname="/tmp/out.png"
+)
+
+import matplotlib.pyplot as plt
+plt.imshow(out)
+
+# evaluating the model 
+print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/"  , annotations_dir="dataset1/annotations_prepped_test/" ) )
+
+```
+
+### More things that I can do with my model...
+
+## Things not done yet
+
+### Testing on real DAMIC images
+
+Expected to work well
 
 ## Contributing
 
 Feel free to submit pull requests
 
 Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+few projects which are using our library. If you use our code in a publicly available project, please add the link here ( by posting an issue or creating a PR )
 
 ## Versioning
 
@@ -125,7 +169,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Acknowledgments
 
-* Agustín Lantrero for the [image_detais.py](https://correct) and [image_simulation.py](https://correct) codes
+* Agustín Lantrero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes
 * Rocío Vilar and Alicia Calderón for the help 
 
 ## Copyright
@@ -167,4 +211,3 @@ Class| Accuracy| Support
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 
-Use `git status` to list all new or modified files that haven't yet been committed.
