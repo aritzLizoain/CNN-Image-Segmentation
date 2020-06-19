@@ -50,10 +50,29 @@ pip install 'name'
 
 For all libraries that are not already installed
 
+##Explanation of each code. How they work
 
+###image_segmentation
 
+Explanations
 
+###train.py
 
+Explanations
+
+###models.py
+
+Explanations
+
+##How to use it
+
+###How to train a model
+
+Explain
+
+###How to load and evaluate a model
+
+Explain
 
 ## Contributing
 
@@ -67,22 +86,14 @@ Check where these are saved
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-## Authors
-
-Ni?
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## Copyright
-
-Copyright 2020, Aritz Lizoain, All rights reserved.
-
 ## Acknowledgments
 
 * Agustín Lantrero for the [image_detais.py](https://correct) and [image_simulation.py](https://correct) codes
 * Rocío Vilar and Alicia Calderón for the help 
+
+## Copyright
+
+Copyright 2020, Aritz Lizoain, All rights reserved.
 
 
 
