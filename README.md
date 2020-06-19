@@ -1,49 +1,36 @@
 # CNN U-Net Image Segmentation
 
-Project description. It's for image segmentation. Principal purpose for DAMIC CCDs. Dark matter.
+What is this project for?
 
-**This is bold text**
+What is **image segmentation**
+>Definition
+Image: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-Description of U-Net, CNN, etc.
+What is **CNN**
+>Definition
+Image: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-> Pardon my French
-
-Lists
-- George Washington
-- John Adams
-- Thomas Jefferson
-
-Enumerate
-1. James Madison
-2. James Monroe
-3. John Quincy Adams
-
-Nested
-1. First list item
-   - First nested list item
-     - Second nested list item
-     
-Tables
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-Use `git status` to list all new or modified files that haven't yet been committed.
-
+What is **UNet**
+>Definition
 Image: 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions explain how to get a copy of the project, run it on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Depencencies, used python libraries I guess. Python version.
+You will need to install the following libraries:
 
-What things you need to install the software and how to install them
+Used libraries: keras, scikit-learn, opencv, etc.
+
+How to install:
+<open anaconda prompt
+<activate environment
+<pip install 'name'
 
 
 ```
@@ -142,3 +129,32 @@ Son 8 archivos python:
 *'train' es el archivo principal, dónde se entrena el modelo. Utiliza las distintas funciones de los archivos que he comentado. En él se puede configurar todo; las rutas de las imágenes, dónde guardar los resultados, características del modelo (por ejemplo que optimizador usar), etc. En la parte final se evalúa el modelo y he puesto un classification report, que es bastante útil para ver cómo ha funcionado cada clase. Os paso un fichero de texto llamado 'console' mostrando un ejemplo de lo que va apareciendo en pantalla al correr este archivo en spyder. Todas las gráficas que se generan se guardan en la carpeta 'Images/Outputs'. La carpeta 'Models' es donde se guardan los modelos entrenados y los datos de precisión y pérdida en cada época del entrenamiento.
 
 *'load_model' carga el modelo ya entrenado y funciona como la última parte de 'train'. Hace las predicciones, la evaluación y el classification report. 
+
+
+
+
+Things to use:
+
+Lists
+- George Washington
+- John Adams
+- Thomas Jefferson
+
+Enumerate
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
+Nested
+1. First list item
+   - First nested list item
+     - Second nested list item
+     
+Classification Report
+
+Class| Accuracy| Support
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+Use `git status` to list all new or modified files that haven't yet been committed.
