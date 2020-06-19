@@ -2,26 +2,9 @@
 
 Use `git status` to list all new or modified files that haven't yet been committed.
 
-This site was built using [GitHub Pages](https://pages.github.com/).
-
-- George Washington
-- John Adams
-- Thomas Jefferson
-
-1. James Madison
-2. James Monroe
-3. John Quincy Adams
 
 
-1. First list item
-   - First nested list item
-     - Second nested list item
 
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
 
 Inline-style: 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
@@ -57,6 +40,28 @@ Project description. It's for image segmentation. Principal purpose for DAMIC CC
 Description of U-Net, CNN, etc.
 
 > Pardon my French
+
+Lists
+- George Washington
+- John Adams
+- Thomas Jefferson
+
+Enumerate
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
+Nested
+1. First list item
+   - First nested list item
+     - Second nested list item
+     
+     Tables
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 ## Getting Started
 
