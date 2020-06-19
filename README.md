@@ -28,75 +28,38 @@ These instructions explain how to get a copy of the project, run it on your loca
 
 You will need to install the following libraries:
 
-Used libraries: keras, scikit-learn, opencv, etc.
+Used libraries: keras, scikit-learn, opencv, etc. (version numbers are up to date: 19.06.2020)
 
-How to install:
+### Installing
 
->open anaconda prompt
+Installing, downloading, cloning the project:
 
->activate environment
+How to install libraries/modules/how are they called:
 
+```
+open anaconda prompt
+```
 
->pip install 'name'
+```
+activate environment
+```
 
 ```
 pip install 'name'
 ```
 
-```
-pip install `name`
-```
+For all libraries that are not already installed
 
 
 
 
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-## Built With
-
-* Python? Spyder?
 
 ## Contributing
 
 Feel free to submit pull requests
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://correct) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
