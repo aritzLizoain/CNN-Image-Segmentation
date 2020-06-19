@@ -8,7 +8,7 @@ What is **image segmentation**
 >Definition
 
 Image: 
-![alt text](https://user-images.githubusercontent.com/65019180/85170089-2a5ae200-b26d-11ea-81a6-eec2568ba658.png "Segmentation example")
+![alt text](https://es.mathworks.com/help//vision/ug/semanticsegmentation_transferlearning.png "Segmentation example")
 
 What is **CNN**
 >Definition
