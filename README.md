@@ -140,9 +140,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Agustín Lantrero for the [.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) and [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) codes
+* Rocío Vilar and Alicia Calderón for the help 
+
 
 
 # Image segmentation
