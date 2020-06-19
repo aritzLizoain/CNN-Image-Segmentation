@@ -1,12 +1,4 @@
-# The largest heading
-## The second largest heading
-###### The smallest heading
 
-**This is bold text**
-
-In the words of Abraham Lincolnssss:
-
-> Pardon my French
 
 Use `git status` to list all new or modified files that haven't yet been committed.
 
@@ -59,6 +51,12 @@ Inline-style:
 # CNN U-Net Image Segmentation
 
 Project description. It's for image segmentation. Principal purpose for DAMIC CCDs. Dark matter.
+
+**This is bold text**
+
+Description of U-Net, CNN, etc.
+
+> Pardon my French
 
 ## Getting Started
 
