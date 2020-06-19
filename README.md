@@ -31,12 +31,18 @@ You will need to install the following libraries:
 Used libraries: keras, scikit-learn, opencv, etc.
 
 How to install:
+
 >open anaconda prompt
+
 >activate environment
+
+
 >pip install 'name'
+
 ```
 pip install 'name'
 ```
+
 ```
 pip install `name`
 ```
