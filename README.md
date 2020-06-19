@@ -50,27 +50,27 @@ pip install 'name'
 
 For all libraries that are not already installed
 
-##Explanation of each code. How they work
+## Explanation of each code. How they work
 
-###image_segmentation
-
-Explanations
-
-###train.py
+### image_segmentation
 
 Explanations
 
-###models.py
+### train.py
 
 Explanations
 
-##How to use it
+### models.py
 
-###How to train a model
+Explanations
+
+## How to use it
+
+### How to train a model
 
 Explain
 
-###How to load and evaluate a model
+### How to load and evaluate a model
 
 Explain
 
