@@ -43,9 +43,9 @@ For all libraries that are not already installed
 
 ### image_details.py
 
--**Function**: set details of the simulated images that are created in image_simulation.py
+-**Function**: set details of the simulated images that are created in image_simulation.py.
 
--**Author**: Agustín Lantero
+-**Author**: Agustín Lantero.
 
 ### image_simulation.py
 
@@ -54,20 +54,38 @@ Images are saved to the saving path.
 
 -**Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (read [mask.py information](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
--**Requirements**: directory path must contain image_details.py and Cluster.pkl.
+-**Requirements**: working directory path must contain image_details.py and Cluster.pkl.
 
 -**Author**: Agustín Lantero.
 
 ### load_dataset.py
 
-make sure path is correct
-anything else to take into account?
-simplemente lee las imágenes y las guarda en arrays. Y luego hay una función llamada 'get_weights'. Lo que me pasa con estas imágenes es que aproximadamente 95% de los píxeles son de la categoría background, y por ejemplo los clusters son sólo un 0.1%. Esto hacía que cuando entrenaba el modelo me daba una precisión del 95%, pero lo único que hacía era decirme que todo es background. La forma de arreglar esto fue dándoles pesos a las clases, que se calculan como la inversa de la frecuencia con la que aparecen en las imágenes. Estos pesos los utilizo en la función de pérdida.
+-**Function**: takes images and saves them as numpy arrays. `get_weights`
+
+-**Caution**: make sure the path is correct. If it is not, it will not be able to load any data. 
+
+-**Requirements**:
+
+
+
+
+get_weights calculates the weights for the loss function. Each class weight is
+obtained as the inverse of its percentage over all the training samples.
+Then the weights are normalized to the number of classes
+
+
+Y luego hay una función llamada 'get_weights'. Lo que me pasa con estas imágenes es que aproximadamente 95% de los píxeles son de la categoría background, y por ejemplo los clusters son sólo un 0.1%. Esto hacía que cuando entrenaba el modelo me daba una precisión del 95%, pero lo único que hacía era decirme que todo es background. La forma de arreglar esto fue dándoles pesos a las clases, que se calculan como la inversa de la frecuencia con la que aparecen en las imágenes. Estos pesos los utilizo en la función de pérdida.
 
 ### models.py
+
+-**Function**:
+
+-**Caution**:
+
+-**Requirements**:
 
 things that can be changed (or better on how to use)
 maybe I just need to explain what it has and the options that they give. And then on how to use I can explain how to use it differently
@@ -128,11 +146,23 @@ Up sampling with UpConv=Conv2DTranspose to perform up sampling; from low to high
  
 ### mask.py
 
+-**Function**:
+
+-**Caution**:
+
+-**Requirements**:
+
 es lo más interesante. Aquí creo los labels de todas las imágenes. Primero clasifico cada píxel en una de las clases mediante thresholds que corresponden al valor de píxel. Es decir, el color. Entiendo que esto es lo que queríamos hacer con las energías, en caso de que el color esté relacionado con la energía. De hecho sería más fácil, ya que en este he tenido que mirar qué valores de pixel corresponden a cada color, y hay valores que se mezclan. Dado que por ejemplo un pixel con valor 78 es a veces parte de un cluster, y a veces de un hot pixel, los label no son 100% correctos. Pero también es interesante ver si después la predicción es capaz de corregir estos píxeles. La idea de cómo funcionan las labels está muy bien explicado en https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet. Tambien tengo dos imágenes, 'labels' y 'labels2', donde se ve cómo se clasifica cada clase. La mejor parte de esto es que ya no hago los labels como antes, que los hacía a mano con el ratón. Ahora puedo utilizar la cantidad de imágenes que quiera para entrenar.
 
 it can still be done with labelme or other labeling program
     
 ### augmentation.py
+
+-**Function**:
+
+-**Caution**:
+
+-**Requirements**:
 
 only geometric. can be added. check [imgaug documentation](https://imgaug.readthedocs.io/en/latest/source/examples_basics.html)
 
@@ -143,11 +173,23 @@ Here is an augmented image and label example:
 
 ### train.py 
 
+-**Function**:
+
+-**Caution**:
+
+-**Requirements**:
+
 es el archivo principal, dónde se entrena el modelo. Utiliza las distintas funciones de los archivos que he comentado. En él se puede configurar todo; las rutas de las imágenes, dónde guardar los resultados, características del modelo (por ejemplo que optimizador usar), etc. En la parte final se evalúa el modelo y he puesto un classification report, que es bastante útil para ver cómo ha funcionado cada clase. Os paso un fichero de texto llamado 'console' mostrando un ejemplo de lo que va apareciendo en pantalla al correr este archivo en spyder. Todas las gráficas que se generan se guardan en la carpeta 'Images/Outputs'. La carpeta 'Models' es donde se guardan los modelos entrenados y los datos de precisión y pérdida en cada época del entrenamiento.
 
 for more information about callbacks check link
 
 ### load_model.py
+
+-**Function**:
+
+-**Caution**:
+
+-**Requirements**:
 
 carga el modelo ya entrenado y funciona como la última parte de 'train'. Hace las predicciones, la evaluación y el classification report. 
 
@@ -193,6 +235,8 @@ plt.imshow(out)
 
 Example of the console display while training:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/console.gif "Training console display")
+
+-**Caution**: can be rather slow.
 
 ### evaluating the model 
 print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/"  , annotations_dir="dataset1/annotations_prepped_test/" ) )
