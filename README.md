@@ -64,21 +64,14 @@ Therefore a color change of an object in the image can cause a wrong label creat
 ### load_dataset.py
 
 -**Function**: takes images and saves them as numpy arrays. [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
-function
+function is used to avoid issues with imbalanced datasets, where images are too biased towards one class.
+In this case ~95% of the pixels are labeled as background, and only ~0.1% as clusters. 
+This way the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
+The weight of each class is obtained as the inverse of its presence percentage over all the training samples.
+Then the weights are normalized to the number of classes.
+These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29).
 
 -**Caution**: make sure the path is correct. If it is not, it will not be able to load any data. 
-
--**Requirements**:
-
-
-
-
-get_weights calculates the weights for the loss function. Each class weight is
-obtained as the inverse of its percentage over all the training samples.
-Then the weights are normalized to the number of classes
-
-
-Y luego hay una función llamada 'get_weights'. Lo que me pasa con estas imágenes es que aproximadamente 95% de los píxeles son de la categoría background, y por ejemplo los clusters son sólo un 0.1%. Esto hacía que cuando entrenaba el modelo me daba una precisión del 95%, pero lo único que hacía era decirme que todo es background. La forma de arreglar esto fue dándoles pesos a las clases, que se calculan como la inversa de la frecuencia con la que aparecen en las imágenes. Estos pesos los utilizo en la función de pérdida.
 
 ### models.py
 
