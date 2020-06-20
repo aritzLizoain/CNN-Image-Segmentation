@@ -23,9 +23,15 @@ clone project
 
 The following requirements need to be installed (version numbers are up to date: 19.06.2020):
 
-* numpy 
-* tensorflow
-* etc.
+* keras ()
+* numpy ()
+* scikit-learn ()
+* scikit-image ()
+* open CV ()
+* imgaug ()
+* matplotlib ()
+* pickle ()
+* os ()
 
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 
