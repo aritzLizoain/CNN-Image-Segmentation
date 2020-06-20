@@ -7,8 +7,7 @@ The studied images represent energy deposits on CCDs.
 
 This is a **multiclass image segmentation** project. UNet structure has been used for the model.
 
-One of the main applications of image segmentation is developing self-driving cars: 
-![alt text](https://s3-us-west-2.amazonaws.com/static.pyimagesearch.com/opencv-semantic-segmentation/opencv_semantic_segmentation_animation.gif "Segmentation example")
+image of goal
 
 ## Getting Started
 
@@ -44,19 +43,23 @@ For all libraries that are not already installed
 
 ### image_details.py
 
-los códigos de Agustín para generar las imágenes. Las imágenes creadas las guardo en la carpeta de 'Images/Train' e 'Images/Test'. Nada nuevo.
+Used to set the details of the simulated images that are created in image_simulation.py
 
-take into account that the way the code is implemented, the automatic labels will be created depending on colors of these created images.
-Meaning that if same class has different colour, the label will need to be created in another way, for example, with labelme
-For the purpose of this segmentation, colour works well.
+Author: Agustín Lantrero
 
 ### image_simulation.py
 
-Make sure that directory path contains image_details.py
+This file creates the simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
+Images are saved to the saving path.
 
-Also saving path can be changed but will be used later
+It is important to be aware of a possible issue regarding the color of the elements.
+The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (see [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) for more information).
+Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-los códigos de Agustín para generar las imágenes. Las imágenes creadas las guardo en la carpeta de 'Images/Train' e 'Images/Test'. Nada nuevo.
+**Requirements**: directory path must contain image_details.py and Cluster.pkl.
+
+Author: Agustín Lantrero.
 
 ### load_dataset.py
 
@@ -126,6 +129,8 @@ Up sampling with UpConv=Conv2DTranspose to perform up sampling; from low to high
 ### mask.py
 
 es lo más interesante. Aquí creo los labels de todas las imágenes. Primero clasifico cada píxel en una de las clases mediante thresholds que corresponden al valor de píxel. Es decir, el color. Entiendo que esto es lo que queríamos hacer con las energías, en caso de que el color esté relacionado con la energía. De hecho sería más fácil, ya que en este he tenido que mirar qué valores de pixel corresponden a cada color, y hay valores que se mezclan. Dado que por ejemplo un pixel con valor 78 es a veces parte de un cluster, y a veces de un hot pixel, los label no son 100% correctos. Pero también es interesante ver si después la predicción es capaz de corregir estos píxeles. La idea de cómo funcionan las labels está muy bien explicado en https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet. Tambien tengo dos imágenes, 'labels' y 'labels2', donde se ve cómo se clasifica cada clase. La mejor parte de esto es que ya no hago los labels como antes, que los hacía a mano con el ratón. Ahora puedo utilizar la cantidad de imágenes que quiera para entrenar.
+
+it can still be done with labelme or other labeling program
     
 ### augmentation.py
 
