@@ -13,12 +13,6 @@ image of goal
 
 These instructions explain how to get a copy of the project, run it on your local machine for development and testing purposes.
 
-### Prerequisites
-
-You will need to install the following libraries:
-
-Used libraries: keras, scikit-learn, opencv, etc. (version numbers are up to date: 19.06.2020)
-
 ### Installation
 
 Installing, downloading, cloning the project itself:
@@ -27,10 +21,12 @@ Installing, downloading, cloning the project itself:
 clone project
 ```
 
-The following requirements need to be installed:
+The following requirements need to be installed (version numbers are up to date: 19.06.2020):
 
-You can manually install the libraries from the anaconda prompt with the command ``` pip install `name` ```. Make sure the correct working environment is activated.
-```
+* numpy 
+* tensorflow
+
+You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 
 ## Explanation of each code. How they work
 
