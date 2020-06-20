@@ -147,42 +147,48 @@ print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/
 
 ### More things that I can do with my model...
 
-## Results so far
+## Results
 
-Able to predict well
+The model is able to predict correctly 3 classes: background, glowing and hot pixels. It fails to predict any cluster.
+The final accuracy is >99%.
+
+Image
 
 Classification Report
 
-Class| Accuracy| Support
+Class| Precision| Recall| F1-score| Support
 --- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+Background | 1.00 | 1.00| 1.00| 60793
+Glowing| 1.00 | 1.00| 1.00| 4352
+Hot pixel| 1.00 | 0.95| 0.97| 291
+Cluster| 0.00 | 0.00| 0.00| 100
 
+Accuracy|  | | 1.00| 65536
+Macro avg.| 0.75 | 0.74| 0.74| 65536
+Weighted avg.| 1.00 | 1.00| 1.00| 65536
 
-## Things not done yet
+## Next steps
 
-### Testing on real DAMIC images
+### Testing the trained model on real DAMIC detector images.
 
 Expected to work well
 
 ## Contributing
 
-Feel free to submit pull requests
+Feel free to submit pull requests.
 
-Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation/blob/master/CONTRIBUTING.md) for details on the code of conduct, and the process for submitting pull requests.
 
-few projects which are using our library. If you use our code in a publicly available project, please add the link here ( by posting an issue or creating a PR )
+If you use this code in a publicly available project, please post an issue or create a pull request and your project link will be added here.
 
 ## Versioning
 
-Check where these are saved
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/releases) to find previous versions of the project.
 
 ## Acknowledgments
 
-* Agustín Lantrero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes
-* Rocío Vilar and Alicia Calderón for the help 
+* Agustín Lantrero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes.
+* Rocío Vilar and Alicia Calderón for the help and support. 
 
 ## Copyright
 
