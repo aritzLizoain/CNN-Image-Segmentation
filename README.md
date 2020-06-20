@@ -43,23 +43,23 @@ For all libraries that are not already installed
 
 ### image_details.py
 
-Used to set the details of the simulated images that are created in image_simulation.py
+-**Function**: set details of the simulated images that are created in image_simulation.py
 
-Author: Agustín Lantrero
+-**Author**: Agustín Lantero
 
 ### image_simulation.py
 
-This file creates the simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
+-**Function**: create simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
 Images are saved to the saving path.
 
-It is important to be aware of a possible issue regarding the color of the elements.
+-**Caution**:It is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
 In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (see [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) for more information).
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-**Requirements**: directory path must contain image_details.py and Cluster.pkl.
+-**Requirements**: directory path must contain image_details.py and Cluster.pkl.
 
-Author: Agustín Lantrero.
+-**Author**: Agustín Lantero.
 
 ### load_dataset.py
 
@@ -242,7 +242,7 @@ Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/re
 
 ## Acknowledgments
 
-* Agustín Lantrero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes.
+* Agustín Lantero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes.
 * Rocío Vilar and Alicia Calderón for the help and support. 
 
 ## Copyright
