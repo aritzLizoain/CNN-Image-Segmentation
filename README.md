@@ -162,8 +162,9 @@ The model is able to predict correctly 3 classes: background, glowing and hot pi
 
 The final accuracy is >99%.
 
-Example result of a test image label predicted by the model:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/1%20epoch%20Test.png "Test image prediction")
+Example results of test images predicted by the model:
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/1%20epoch%20Test.png "Test image prediction 1")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_2.png "Test image prediction 2")
 
 The following classification report is obtained:
 
