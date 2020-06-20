@@ -77,11 +77,11 @@ These weights are used by the model in the [weighted_categorical_crossentropy lo
 
 ### models.py
 
-***Function**:
+* **Function**:
 
-***Caution**:
+* **Caution**:
 
-***Requirements**:
+* **Requirements**:
 
 things that can be changed (or better on how to use)
 maybe I just need to explain what it has and the options that they give. And then on how to use I can explain how to use it differently
