@@ -156,16 +156,16 @@ Image
 
 Classification Report
 
-Class| Precision| Recall| F1-score| Support
---- | --- | ---
-Background | 1.00 | 1.00| 1.00| 60793
-Glowing| 1.00 | 1.00| 1.00| 4352
-Hot pixel| 1.00 | 0.95| 0.97| 291
-Cluster| 0.00 | 0.00| 0.00| 100
+Class        | Precision| Recall| F1-score| Support
+---          | ---      | ---   | ---     | ---
+Background   | 1.00     | 1.00  | 1.00    | 60793
+Glowing      | 1.00     | 1.00  | 1.00    | 4352
+Hot pixel    | 1.00     | 0.95  | 0.97    | 291
+Cluster      | 0.00     | 0.00  | 0.00    | 100
 
-Accuracy|  | | 1.00| 65536
-Macro avg.| 0.75 | 0.74| 0.74| 65536
-Weighted avg.| 1.00 | 1.00| 1.00| 65536
+Accuracy     |          |       | 1.00    | 65536
+Macro avg.   | 0.75     | 0.74  | 0.74    | 65536
+Weighted avg.| 1.00     | 1.00  | 1.00    | 65536
 
 ## Next steps
 
