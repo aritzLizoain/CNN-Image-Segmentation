@@ -63,7 +63,8 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 ### load_dataset.py
 
--**Function**: takes images and saves them as numpy arrays. https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52
+-**Function**: takes images and saves them as numpy arrays. [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
+function
 
 -**Caution**: make sure the path is correct. If it is not, it will not be able to load any data. 
 
