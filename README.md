@@ -4,6 +4,8 @@ check from overleaf as well
 
 give links to check more about layers, optimizers, etc.
 
+also take the information that I already have
+
 The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
 
 The images represent energy deposits on CCDs.
@@ -21,11 +23,6 @@ What is **CNN**
 
 ![alt text](https://miro.medium.com/max/1000/1*zNs_mYOAgHpt3WxbYa7fnw.png "CNN example")
 
-What is **UNet**
->Definition
-
-Image: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 ## Getting Started
 
@@ -87,6 +84,13 @@ things that can be changed (or better on how to use)
 maybe I just need to explain what it has and the options that they give. And then on how to use I can explain how to use it differently
 
 contiene la arquitectura del modelo. Un UNet normal, parecido al que tenía Alicia en su código. Tengo muchas capas escritas, pero algunas están comentadas. Como os lo mando es lo que me ha dado mejor resultado hasta ahora. Y tambien defino la función de pérdida que utiliza los pesos de cada clase. Esta función de pérdida la encontré en internet. Es un 'categorical_cossentropy' con el extra de que tiene en cuenta los pesos.
+
+What is **UNet**
+>Definition
+
+Image: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
     
 ### mask.py
 
