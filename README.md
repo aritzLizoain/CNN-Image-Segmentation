@@ -91,7 +91,40 @@ What is **UNet**
 Image: 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
+CNNs https://medium.com/intuitive-deep-learning/intuitive-deep-learning-part-2-cnns-for-computer-vision-24992d050a27
     
+Convolution layer: uses parameter sharing and apply the same smaller set of parameters spatially across the image (reduces the number of parameters needed). Hyper-parameter filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when apply the neuron again. Depth defines how many different outputs do we have (cat + dog = 2). If output dimensions 254*254*64 and we want 256*256*64, padding will add a border of 0s.
+    
+Max Pool layer: takes the maximum of the numbers it looks at. Applies to each individual depth channel separately; leaves depth dimension unchanged. Defined only by filter size and stride, reducing the spatial size by taking the maximum of the numbers within its filter.
+   
+Dropout layer (not in the article but in the example): like in house price prediction, dropout from keras.layers for avoiding overfitting.
+    
+Fully-Connected (FC) layer: same as our standard neural network; every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features. Apply hidden layers as per usual.
+    
+Softmax layer (not in the article but in the example): last layer, softmax, only transforms the output of the previous layer into probability distributions, which is the final goal.
+
+INTRODUCCIÓN CNNs https://medium.com/@jcrispis56/introducci%C3%B3n-al-deep-learning-parte-2-redes-neuronales-convolucionales-f743266d22a0
+    
+Similar to item 3. Convolución, función rectificadora (ReLU), Max Pooling, conexión total, softmax y cross entropy (binary). Evita overfitting aplicando transformaciones, como rotaciones, zoom e inversiones en el eje horizontal, y rescale.
+    
+BEGINNER GUIDE CNNs https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
+    
+Classic CNN architecture: input-conv-ReLU-conv-ReLU-max pool-ReLU-conv-ReLU-pool-(flatten)fc.
+Recommended paper: Visualizing and Understanding
+Convolutional Networks.
+Training process backpropagation, loss function.
+
+CNN GUIDE https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
+
+Convolution layer (filter same depth as channels RGB) (output = channel 1 + channel 2 + channel 3 + bias(=1)) + padding, Max Pooling layer (decrease the computational power required to process the data through dimensionality reduction)(performs better than Average Pooling), flatten, fully connected (ReLU activation), softmax.
+
+CONVOLUTIONAL NEURAL NETWORKS FOR BEGINNERS 
+%https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca
+https://towardsdatascience.com/ convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca
+
+Hyperparameters etc. explained
+
+ 
 ### mask.py
 
 es lo más interesante. Aquí creo los labels de todas las imágenes. Primero clasifico cada píxel en una de las clases mediante thresholds que corresponden al valor de píxel. Es decir, el color. Entiendo que esto es lo que queríamos hacer con las energías, en caso de que el color esté relacionado con la energía. De hecho sería más fácil, ya que en este he tenido que mirar qué valores de pixel corresponden a cada color, y hay valores que se mezclan. Dado que por ejemplo un pixel con valor 78 es a veces parte de un cluster, y a veces de un hot pixel, los label no son 100% correctos. Pero también es interesante ver si después la predicción es capaz de corregir estos píxeles. La idea de cómo funcionan las labels está muy bien explicado en https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet. Tambien tengo dos imágenes, 'labels' y 'labels2', donde se ve cómo se clasifica cada clase. La mejor parte de esto es que ya no hago los labels como antes, que los hacía a mano con el ratón. Ahora puedo utilizar la cantidad de imágenes que quiera para entrenar.
