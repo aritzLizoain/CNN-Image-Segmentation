@@ -1,20 +1,23 @@
 # CNN U-Net Image Segmentation
 
-What is this project for?
+check from overleaf as well
 
-Multiclass image segmentation
+The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
 
-What is **image segmentation**
->In digital image processing and computer vision, image segmentation is the process of partitioning a digital image into multiple segments (sets of pixels, also known as image objects).
+The images represent energy deposits on CCDs.
 
-Image: 
-![alt text](https://es.mathworks.com/help//vision/ug/semanticsegmentation_transferlearning.png "Segmentation example")
+This is a **multiclass image segmentation** project.
+
+>Image segmentation clusters pixels into salient image regions, i.e., regions corresponding to individual surfaces,objects, or natural parts of objects.
+
+
+One of the main applications of image segmentation is developing self-driving cars: 
+![alt text](https://s3-us-west-2.amazonaws.com/static.pyimagesearch.com/opencv-semantic-segmentation/opencv_semantic_segmentation_animation.gif "Segmentation example")
 
 What is **CNN**
 >Definition
 
-Image: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://miro.medium.com/max/1000/1*zNs_mYOAgHpt3WxbYa7fnw.png "CNN example")
 
 What is **UNet**
 >Definition
@@ -153,13 +156,10 @@ The model is able to predict correctly 3 classes: background, glowing and hot pi
 
 The final accuracy is >99%.
 
-Example of a test image label predicted by the model:
+Example result of a test image label predicted by the model:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/1%20epoch%20Test.png "Test image prediction")
 
-
-
-
-The following classification report was obtained:
+The following classification report is obtained:
 
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
@@ -175,7 +175,7 @@ Cluster      | 0.00     | 0.00  | 0.00    | 100
 
 ### Testing the trained model on real DAMIC detector images.
 
-Expected to work well
+Real detector images will be tested.
 
 ## Contributing
 
