@@ -25,10 +25,11 @@ The following requirements need to be installed (version numbers are up to date:
 
 * numpy 
 * tensorflow
+* etc.
 
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 
-## Explanation of each code. How they work
+## Python files
 
 ### image_details.py
 
