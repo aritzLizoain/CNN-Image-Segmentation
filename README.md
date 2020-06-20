@@ -63,7 +63,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
     [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
     function is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
-    In this case ~95% of the pixels are labeled as background, and only ~0.1% as clusters. 
+    In this case >95% of the pixels are labeled as background, and only <1% as clusters. 
     This way the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
     The weight of each class is obtained as the inverse of its presence percentage over all the training samples.
     Then the weights are normalized to the number of classes.
