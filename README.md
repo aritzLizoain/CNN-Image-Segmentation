@@ -19,25 +19,18 @@ You will need to install the following libraries:
 
 Used libraries: keras, scikit-learn, opencv, etc. (version numbers are up to date: 19.06.2020)
 
-### Installing
+### Installation
 
-Installing, downloading, cloning the project:
-
-How to install libraries/modules/how are they called:
+Installing, downloading, cloning the project itself:
 
 ```
-open anaconda prompt
+clone project
 ```
 
-```
-activate environment
-```
+The following requirements need to be installed:
 
+You can manually install the libraries from the anaconda prompt with the command ``` pip install `name` ```. Make sure the correct working environment is activated.
 ```
-pip install 'name'
-```
-
-For all libraries that are not already installed
 
 ## Explanation of each code. How they work
 
