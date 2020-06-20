@@ -124,6 +124,15 @@ https://towardsdatascience.com/ convolutional-neural-networks-for-beginners-prac
 
 Hyperparameters etc. explained
 
+SEMANTIC SEGMENTATION U-NET https://towardsdatascience.com/understanding-semantic-segmentation-with-unet-6be4f42d4b47 https://github.com/hlamba28/UNET-TGS/blob/master/TGS%20UNET.ipynb
+     
+CALLBACKS  https://keras.io/callbacks/  
+     
+Up sampling with UpConv=Conv2DTranspose to perform up sampling; from low to high resolution image. Learns parameters through back propagation to convert. Needs concatenate with corresponding layer.
+
+
+
+
  
 ### mask.py
 
@@ -138,6 +147,8 @@ crea más imágenes a partir de las que le paso. Sólo aplico cambios geométric
 ### train.py 
 
 es el archivo principal, dónde se entrena el modelo. Utiliza las distintas funciones de los archivos que he comentado. En él se puede configurar todo; las rutas de las imágenes, dónde guardar los resultados, características del modelo (por ejemplo que optimizador usar), etc. En la parte final se evalúa el modelo y he puesto un classification report, que es bastante útil para ver cómo ha funcionado cada clase. Os paso un fichero de texto llamado 'console' mostrando un ejemplo de lo que va apareciendo en pantalla al correr este archivo en spyder. Todas las gráficas que se generan se guardan en la carpeta 'Images/Outputs'. La carpeta 'Models' es donde se guardan los modelos entrenados y los datos de precisión y pérdida en cada época del entrenamiento.
+
+for more information about callbacks check link
 
 ### load_model.py
 
