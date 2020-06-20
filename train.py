@@ -150,6 +150,7 @@ TESTING AND EVALUATING THE MODEL (same in load.py)
 
 from mask import output_to_label, get_max_in_mask
 import matplotlib.patches as mpatches
+from sklearn.metrics import classification_report
 
 ##############################################################################
 
@@ -226,7 +227,6 @@ test_max_masks=get_max_in_mask(test_masks)
 test_max_outputs=get_max_in_mask(test_outputs)
 test_masks_array=test_max_masks.ravel()
 test_outputs_array=test_max_outputs.ravel()
-from sklearn.metrics import classification_report
 print(classification_report(y_true = test_masks_array, y_pred = test_outputs_array, target_names=number_to_class))            
 #Recal:"how many of this class you find over the whole number of element of
 # this class"
