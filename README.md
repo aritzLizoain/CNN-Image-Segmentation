@@ -52,9 +52,9 @@ For all libraries that are not already installed
 -**Function**: create simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
 Images are saved to the saving path.
 
--**Caution**:It is important to be aware of a possible issue regarding the color of the elements.
+-**Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (see [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) for more information).
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
 -**Requirements**: directory path must contain image_details.py and Cluster.pkl.
