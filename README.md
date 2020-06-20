@@ -4,6 +4,7 @@ The **goal** of the project is to study machine learning techniques on detector 
 The studied images represent energy deposits on CCDs.
 
 >Image segmentation clusters pixels into salient image regions, i.e., regions corresponding to individual surfaces,objects, or natural parts of objects.
+
 This is a **multiclass image segmentation** project. UNet structure has been used for the model.
 
 One of the main applications of image segmentation is developing self-driving cars: 
