@@ -2,6 +2,8 @@
 
 check from overleaf as well
 
+give links to check more about layers, optimizers, etc.
+
 The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
 
 The images represent energy deposits on CCDs.
