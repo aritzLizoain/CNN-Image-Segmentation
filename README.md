@@ -122,10 +122,6 @@ SEMANTIC SEGMENTATION U-NET https://towardsdatascience.com/understanding-semanti
 CALLBACKS  https://keras.io/callbacks/  
      
 Up sampling with UpConv=Conv2DTranspose to perform up sampling; from low to high resolution image. Learns parameters through back propagation to convert. Needs concatenate with corresponding layer.
-
-
-
-
  
 ### mask.py
 
@@ -136,6 +132,9 @@ es lo más interesante. Aquí creo los labels de todas las imágenes. Primero cl
 only geometric. can be added. check [imgaug documentation](https://imgaug.readthedocs.io/en/latest/source/examples_basics.html)
 
 crea más imágenes a partir de las que le paso. Sólo aplico cambios geométricos (rotación, zoom, etc.). Aún así, como ahora puedo crear la cantidad de imágenes que quiera, no lo estoy utilizando. Pero bueno, ahí está.
+
+Here is an augmented image and label example:
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Augmentation_example.png "Augmentation example")
 
 ### train.py 
 
@@ -185,13 +184,12 @@ out = model.predict_segmentation(
 
 import matplotlib.pyplot as plt
 plt.imshow(out)
-
 ```
 
 Example of the console display while training:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/console.gif "Training console display")
 
-# evaluating the model 
+### evaluating the model 
 print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/"  , annotations_dir="dataset1/annotations_prepped_test/" ) )
 
 
