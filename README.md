@@ -150,11 +150,16 @@ print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/
 ## Results
 
 The model is able to predict correctly 3 classes: background, glowing and hot pixels. It fails to predict any cluster.
+
 The final accuracy is >99%.
 
-Image
+Example of a test image label predicted by the model:
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/1%20epoch%20Test.png "Test image prediction")
 
-Classification Report
+
+
+
+The following classification report was obtained:
 
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
