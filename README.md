@@ -88,8 +88,10 @@ contiene la arquitectura del modelo. Un UNet normal, parecido al que tenía Alic
 What is **UNet**
 >Definition
 
+Reference images
 Image: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%201.png "UNet architecture 1")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 1")
 
 CNNs https://medium.com/intuitive-deep-learning/intuitive-deep-learning-part-2-cnns-for-computer-vision-24992d050a27
     
