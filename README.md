@@ -63,7 +63,9 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 ### load_dataset.py
 
--**Function**: takes images and saves them as numpy arrays. [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
+-**Function**: takes images and saves them as numpy arrays. 
+
+[get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
 function is used to avoid issues with imbalanced datasets, where images are too biased towards one class.
 In this case ~95% of the pixels are labeled as background, and only ~0.1% as clusters. 
 This way the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
@@ -75,11 +77,11 @@ These weights are used by the model in the [weighted_categorical_crossentropy lo
 
 ### models.py
 
--**Function**:
+***Function**:
 
--**Caution**:
+***Caution**:
 
--**Requirements**:
+***Requirements**:
 
 things that can be changed (or better on how to use)
 maybe I just need to explain what it has and the options that they give. And then on how to use I can explain how to use it differently
