@@ -186,13 +186,14 @@ out = model.predict_segmentation(
 import matplotlib.pyplot as plt
 plt.imshow(out)
 
+```
+
 Example of the console display while training:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/console.gif "Training console display")
 
 # evaluating the model 
 print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/"  , annotations_dir="dataset1/annotations_prepped_test/" ) )
 
-```
 
 ### More things that I can do with my model...
 
