@@ -1,28 +1,13 @@
-# CNN U-Net Image Segmentation
-
-check from overleaf as well
-
-give links to check more about layers, optimizers, etc.
-
-also take the information that I already have
+# CNN UNet Image Segmentation
 
 The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
-
-The images represent energy deposits on CCDs.
-
-This is a **multiclass image segmentation** project.
+The studied images represent energy deposits on CCDs.
 
 >Image segmentation clusters pixels into salient image regions, i.e., regions corresponding to individual surfaces,objects, or natural parts of objects.
-
+This is a **multiclass image segmentation** project. UNet structure has been used for the model.
 
 One of the main applications of image segmentation is developing self-driving cars: 
 ![alt text](https://s3-us-west-2.amazonaws.com/static.pyimagesearch.com/opencv-semantic-segmentation/opencv_semantic_segmentation_animation.gif "Segmentation example")
-
-What is **CNN**
->Definition
-
-![alt text](https://miro.medium.com/max/1000/1*zNs_mYOAgHpt3WxbYa7fnw.png "CNN example")
-
 
 ## Getting Started
 
@@ -84,6 +69,11 @@ things that can be changed (or better on how to use)
 maybe I just need to explain what it has and the options that they give. And then on how to use I can explain how to use it differently
 
 contiene la arquitectura del modelo. Un UNet normal, parecido al que tenía Alicia en su código. Tengo muchas capas escritas, pero algunas están comentadas. Como os lo mando es lo que me ha dado mejor resultado hasta ahora. Y tambien defino la función de pérdida que utiliza los pesos de cada clase. Esta función de pérdida la encontré en internet. Es un 'categorical_cossentropy' con el extra de que tiene en cuenta los pesos.
+
+What is **CNN**
+>Definition
+
+![alt text](https://miro.medium.com/max/1000/1*zNs_mYOAgHpt3WxbYa7fnw.png "CNN example")
 
 What is **UNet**
 >Definition
