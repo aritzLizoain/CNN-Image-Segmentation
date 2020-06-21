@@ -2,12 +2,9 @@
 
 The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
 The studied images represent energy deposits on CCDs.
+The project performs CNN UNet multiclass image segmentation.
 
->Image segmentation clusters pixels into salient image regions, i.e., regions corresponding to individual surfaces,objects, or natural parts of objects.
-
-This is a **multiclass image segmentation** project. UNet structure has been used for the model.
-
-image of goal
+Example of a detector image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/DAMIC_image.png "Detector image example")
 
 ## Getting Started
 
@@ -158,7 +155,7 @@ only geometric. can be added. check [imgaug documentation](https://imgaug.readth
 crea más imágenes a partir de las que le paso. Sólo aplico cambios geométricos (rotación, zoom, etc.). Aún así, como ahora puedo crear la cantidad de imágenes que quiera, no lo estoy utilizando. Pero bueno, ahí está.
 
 Here is an augmented image and label example:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Augmentation_example.png "Augmentation example")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/Augmentation_example.png "Augmentation example")
 
 ### train.py 
 
@@ -223,7 +220,7 @@ plt.imshow(out)
 ```
 
 Example of the console display while training:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/console.gif "Training console display")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/console.gif "Training console display")
 
 -**Caution**: can be rather slow.
 
@@ -240,8 +237,8 @@ The model is able to predict correctly 3 classes: background, glowing and hot pi
 The final accuracy is >99%.
 
 Example results of test images predicted by the model:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_1.png "Test image prediction 1")
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_2.png "Test image prediction 2")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/Test_1.png "Test image prediction 1")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/Test_2.png "Test image prediction 2")
 
 The following classification report is obtained:
 
