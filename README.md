@@ -15,23 +15,19 @@ These instructions explain how to get a copy of the project, run it on your loca
 
 ### Installation
 
-Installing, downloading, cloning the project itself:
+The project can be either cloned or downloaded to your own device.
 
-```
-clone project
-```
+The following requirements need to be installed (version numbers are up to date: 21.06.2020):
 
-The following requirements need to be installed (version numbers are up to date: 19.06.2020):
-
-* keras ()
-* tensorflow (2.2)
-* numpy ()
-* scikit-learn ()
-* scikit-image ()
-* opencv-python ()
-* imgaug ()
-* matplotlib ()
-* pickle ()
+* keras (2.4.2)
+* tensorflow (2.2.0)
+* numpy (1.19.0)
+* scikit-learn (0.23.1)
+* scikit-image (0.17.2)
+* opencv-python (4.2.0.34)
+* imgaug (0.4.0)
+* matplotlib (3.2.2)
+* pillow (7.1.2)
 
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 
