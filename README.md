@@ -24,6 +24,7 @@ clone project
 The following requirements need to be installed (version numbers are up to date: 19.06.2020):
 
 * keras ()
+* tensorflow (2.2)
 * numpy ()
 * scikit-learn ()
 * scikit-image ()
