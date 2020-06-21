@@ -29,6 +29,8 @@ The following requirements need to be installed (version numbers are up to date:
 * matplotlib (3.2.2)
 * pillow (7.1.2)
 
+**Warning**: installing tensorflow is sometimes problematic. If DHLL error pops out try installing VC_redist.x64 from link.
+
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 
 ## Python files
