@@ -220,7 +220,7 @@ plt.imshow(out)
 ```
 
 Example of the console display while training:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/console.gif "Training console display")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
 
 -**Caution**: can be rather slow.
 
