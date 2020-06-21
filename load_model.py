@@ -25,14 +25,14 @@ import keras.losses
 #############################################################################
 
 model_name='name'
-MODEL_PATH='C://Users/Aritz/Desktop/Project/models/{0}.h5'.format(model_name)
+MODEL_PATH='C://Path/{0}.h5'.format(model_name)
 custom_loss = keras.losses.penalized_loss = weighted_categorical_crossentropy()
 model = load_model(MODEL_PATH, custom_objects={'wcce': custom_loss})
 print ('Model correctly loaded')
 
-TRAIN_PATH = 'C://Users/Aritz/Desktop/Project/Images/Train/' #training images dataset path
-TEST_PATH  = 'C://Users/Aritz/Desktop/Project/Images/Test/' #testing images dataset path
-TEST_PREDICTIONS_PATH = 'C://Users/Aritz/Desktop/Project/Images/Outputs/' #testing outputs path
+TRAIN_PATH = 'C://Path/' #training images dataset path
+TEST_PATH  = 'C://Path/' #testing images dataset path
+TEST_PREDICTIONS_PATH = 'C://Path/' #testing outputs path
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
 

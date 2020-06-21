@@ -4,8 +4,7 @@
 
 IMAGE SIMULATION
 
-Working directory must be where all files are located: 
-C://Users/Aritz/Desktop/Project
+Working directory must be where all files are located.
 
 This code can be run to create simulated images
 Image details can be changed in image_details.py
@@ -19,7 +18,7 @@ import numpy as np
 #############################################################################
 
 image_name=''
-SAVING_PATH='C://Users/Aritz/Desktop/Project/Images/Train/{0}'.format(image_name)
+SAVING_PATH='C://Path/{0}'.format(image_name)
 amountOfImages=1
 size=256
 #size2= if square image is not wanted

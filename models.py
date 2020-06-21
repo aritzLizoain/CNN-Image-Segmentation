@@ -4,7 +4,7 @@ Created on Wed Jun 10 18:00:30 2020
 
 @author: Aritz Lizoain
 
-ARCHITECTURES: unet
+ARCHITECTURES: UNet
 
 """
 import numpy as np 
@@ -52,31 +52,31 @@ def unet(pretrained_weights = None, input_size = (256,256,3), weights= [1.,1.,1.
              dilation_rate=(1,1), reg=0.01):
     
     inputs = Input(input_size)
-    s = Lambda(lambda x: x / 255) (inputs)
+    s = Lambda(lambda x: x / 255) (inputs) #this is the input of the first layer. Be sure to change it if layers are added/removed
     
     #CONTRACTIVE Path (ENCODER)    
     
-    # cm3 = Conv2D(2, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (s)
+    # cm3 = Conv2D(2, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (s)
     # cm3 = Dropout(dropout) (cm2)
-    # cm3 = Conv2D(2, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (cm2)
+    # cm3 = Conv2D(2, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (cm2)
     # pm3 = MaxPooling2D((2, 2)) (cm2)
     # pm3 = BatchNormalization()(pm2)
     
-    # cm2 = Conv2D(4, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (s)
+    # cm2 = Conv2D(4, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (s)
     # cm2 = Dropout(dropout) (cm2)
-    # cm2 = Conv2D(4, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (cm2)
+    # cm2 = Conv2D(4, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (cm2)
     # pm2 = MaxPooling2D((2, 2)) (cm2)
     # pm2 = BatchNormalization()(pm2)
 
-    # cm1 = Conv2D(8, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (s)
+    # cm1 = Conv2D(8, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (s)
     # cm1 = Dropout(dropout) (cm1)
-    # cm1 = Conv2D(8, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (cm1)
+    # cm1 = Conv2D(8, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (cm1)
     # pm1 = MaxPooling2D((2, 2)) (cm1)
     # pm1 = BatchNormalization()(pm1)
     
-    # c0 = Conv2D(16, (3, 3), dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (s)
+    # c0 = Conv2D(16, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (s)
     # c0 = Dropout(dropout) (c0)
-    # c0 = Conv2D(16, (3, 3), dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (c0)
+    # c0 = Conv2D(16, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (c0)
     # p0 = MaxPooling2D((2, 2)) (c0)
     # p0 = BatchNormalization()(p0)
 
@@ -143,24 +143,24 @@ def unet(pretrained_weights = None, input_size = (256,256,3), weights= [1.,1.,1.
     
     # u11 = Conv2DTranspose(8, (2, 2), strides=(2, 2), padding='same') (c10)
     # u11 = concatenate([u11, cm1], axis=3)
-    # c11 = Conv2D(8, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (u11)
+    # c11 = Conv2D(8, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (u11)
     # c11 = Dropout(dropout) (c11)
-    # c11 = Conv2D(8, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (c11)
+    # c11 = Conv2D(8, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (c11)
 
     # u12 = Conv2DTranspose(4, (2, 2), strides=(2, 2), padding='same') (c10)
     # u12 = concatenate([u12, cm2], axis=3)
-    # c12 = Conv2D(4, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (u12)
+    # c12 = Conv2D(4, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (u12)
     # c12 = Dropout(dropout) (c12)
-    # c12 = Conv2D(4, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (c12)
+    # c12 = Conv2D(4, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (c12)
 
     # u13 = Conv2DTranspose(2, (2, 2), strides=(2, 2), padding='same') (c11)
     # u13 = concatenate([u12, cm2], axis=3)
-    # c13 = Conv2D(2, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (u12)
+    # c13 = Conv2D(2, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (u12)
     # c13 = Dropout(dropout) (c12)
-    # c13 = Conv2D(2, (3, 3), activation=activation, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(0.01)) (c12)
+    # c13 = Conv2D(2, (3, 3), activation=activation, dilation_rate=dilation_rate, kernel_initializer='he_normal', padding='same', kernel_regularizer=regularizers.l2(reg)) (c12)
  
     #softmax as activaition in the last layer
-    outputs = Conv2D(4, (1, 1), activation='softmax') (c9) 
+    outputs = Conv2D(4, (1, 1), activation='softmax') (c9) #this is the output of the last layer. Be sure to change it if layers are added/removed
 
     model = Model(inputs=[inputs], outputs=[outputs])
     model.compile(optimizer=optimizer, loss=loss,\

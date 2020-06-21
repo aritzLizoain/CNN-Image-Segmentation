@@ -8,8 +8,7 @@ TRAINING
 
 This is the MAIN CODE to train the model.
 
-Working directory must be where all files are located: 
-C://Users/Aritz/Desktop/Project
+Working directory must be where all files are located.
 
 PROCESS:
     *Loads the images
@@ -42,9 +41,9 @@ from augmentation import augmentation
 """
 GENERATE THE DATA
 """
-TRAIN_PATH = 'C://Users/Aritz/Desktop/Project/Images/Train/' #training images dataset path
-TEST_PATH  = 'C://Users/Aritz/Desktop/Project/Images/Test/' #testing images dataset path
-TEST_PREDICTIONS_PATH = 'C://Users/Aritz/Desktop/Project/Images/Outputs/' #testing outputs path
+TRAIN_PATH = 'C://Path/' #training images dataset path
+TEST_PATH  = 'C://Path/' #testing images dataset path
+TEST_PREDICTIONS_PATH = 'C://Path/' #testing outputs path
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
 IMG_CHANNELS=4 #number of classes
@@ -110,7 +109,7 @@ callbacks=[EarlyStopping(patience=5,verbose=1),\
            ReduceLROnPlateau(factor=0.1, patience=2, min_delta=0.01, min_lr=0.00001,verbose=1),\
                ModelCheckpoint('models/name.h5',verbose=1, save_best_only=True,\
                                save_weights_only=False),\
-                   CSVLogger('models/name.log')] #DON'T OVERWRITE
+                   CSVLogger('models/name.log')] #BE CAREFUL & DON'T OVERWRITE EXISTING MODELS
     
 #-----------------------------------------------------------------------------
 

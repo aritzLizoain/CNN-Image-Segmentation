@@ -6,8 +6,7 @@ Created on Wed Jun 10 20:33:00 2020
 
 AUGMENTATION
 
-Working directory must be where all files are located: 
-C://Users/Aritz/Desktop/Project
+Working directory must be where all files are located.
 
 Geometric augmentation: flip, crop, pad, scale, translate and rotate.
 
@@ -55,7 +54,7 @@ def augmentation_sequence(images, labels):
 
 #----------------------------------------------------------------------------
 
-def augmentation(images, labels, TEST_PREDICTIONS_PATH = 'C://Users/Aritz/Desktop/Project/Images/Outputs/'):
+def augmentation(images, labels, TEST_PREDICTIONS_PATH = 'C://Path/'):
     images_aug, labels_aug = augmentation_sequence(images=images, labels=labels)
     labels_aug = labels_aug.astype(np.float64)
 
@@ -109,9 +108,9 @@ VISUALIZE AUGMENTATION
 
 #############################################################################
 
-# TRAIN_PATH = 'C://Users/Aritz/Desktop/Project/Images/Train/' #training images dataset path
-# TEST_PATH  = 'C://Users/Aritz/Desktop/Project/Images/Test/' #testing images dataset path
-# TEST_PREDICTIONS_PATH = 'C://Users/Aritz/Desktop/Project/Images/TS_output/' #testing outputs path
+# TRAIN_PATH = 'C://Path/' #training images dataset path
+# TEST_PATH  = 'C://Path/' #testing images dataset path
+# TEST_PREDICTIONS_PATH = 'C://Path/' #testing outputs path
 # IMG_WIDTH = 256
 # IMG_HEIGHT = 256
 

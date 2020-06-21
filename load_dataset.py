@@ -20,13 +20,14 @@ from skimage.transform import resize
 
 #############################################################################
 
-def load_images(TRAIN_PATH='C://Users/Aritz/Desktop/Project/Images/Train/',\
-                TEST_PATH='C://Users/Aritz/Desktop/Project/Images/Test/',\
-                TEST_PREDICTIONS_PATH='C://Users/Aritz/Desktop/Project/Images/TS_output/',\
+def load_images(TRAIN_PATH='C://Path/',\
+                TEST_PATH='C://Path/',\
+                TEST_PREDICTIONS_PATH='C://Path/',\
                 IMG_WIDTH = 256, IMG_HEIGHT = 256):
 
     train_ids = next(os.walk(TRAIN_PATH))[2]
     test_ids = next(os.walk(TEST_PATH))[2]
+    #'StopIteration' error raises if paths are not correct
 
     # Get and resize train images and masks
     images = np.zeros((len(train_ids), IMG_HEIGHT, IMG_WIDTH,3), dtype=np.uint8)

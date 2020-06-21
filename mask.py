@@ -44,9 +44,9 @@ import matplotlib.patches as mpatches
 
 ##############################################################################
 
-# TRAIN_PATH = 'C://Users/Aritz/Desktop/Project/Images/Train/' #training images dataset path
-# TEST_PATH  = 'C://Users/Aritz/Desktop/Project/Images/Test/' #testing images dataset path
-# TEST_PREDICTIONS_PATH = 'C://Users/Aritz/Desktop/Project/Images/TS_output/' #testing outputs path
+# TRAIN_PATH = 'C://Path/' #training images dataset path
+# TEST_PATH  = 'C://Path/' #testing images dataset path
+# TEST_PREDICTIONS_PATH = 'C://Path/' #testing outputs path
 # IMG_WIDTH = 258
 # IMG_HEIGHT = 258
 IMG_CHANNELS = 4
@@ -66,7 +66,7 @@ def get_monochrome (images):
 def get_class(value): #All pixels are checked one by one with 3 for loops inget_maks 
     
     #thresholds are pixel values of each color. Could be energies as well
-    #need to check these on Xtrain_monochrome. some pixels fail
+    #need to check these on Xtrain_monochrome. WARNING: some pixels might fail
     background_threshold = 53.01
     glowing_min_threshold = 91
     glowing_max_threshold = 101.01
