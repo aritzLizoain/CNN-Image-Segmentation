@@ -31,7 +31,6 @@ The following requirements need to be installed (version numbers are up to date:
 * imgaug ()
 * matplotlib ()
 * pickle ()
-* os ()
 
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 
