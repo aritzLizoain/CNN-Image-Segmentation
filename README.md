@@ -27,7 +27,7 @@ The following requirements need to be installed (version numbers are up to date:
 * numpy ()
 * scikit-learn ()
 * scikit-image ()
-* open CV ()
+* opencv-python ()
 * imgaug ()
 * matplotlib ()
 * pickle ()
