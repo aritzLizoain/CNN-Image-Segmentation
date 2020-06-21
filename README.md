@@ -19,19 +19,18 @@ The project can be either cloned or downloaded to your own device.
 
 The following requirements need to be installed (version numbers are up to date: 21.06.2020):
 
-* keras (2.4.2)
-* tensorflow (2.2.0)
-* numpy (1.19.0)
-* scikit-learn (0.23.1)
-* scikit-image (0.17.2)
-* opencv-python (4.2.0.34)
+* keras (2.3.1)
+* tensorflow (2.1.0)
+* numpy (1.18.1)
+* scikit-learn (0.22.1)
+* scikit-image (0.9.3)
+* opencv-python (4.0.1)
 * imgaug (0.4.0)
-* matplotlib (3.2.2)
+* matplotlib (3.2.1)
 * pillow (7.1.2)
 
-**Warning**: installing tensorflow is sometimes problematic. If DHLL error pops out try installing VC_redist.x64 from link.
-
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
+If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is another option.
 
 ## Python files
 
