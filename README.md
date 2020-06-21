@@ -4,7 +4,7 @@ The **goal** of the project is to study machine learning techniques on detector 
 The studied images represent energy deposits on CCDs.
 The project performs CNN UNet multiclass image segmentation.
 
-Example of a detector image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/DAMIC_image.png "Detector image example")
+Example of a detector image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_image.png "Detector image example")
 
 ## Getting Started
 
@@ -155,7 +155,7 @@ only geometric. can be added. check [imgaug documentation](https://imgaug.readth
 crea más imágenes a partir de las que le paso. Sólo aplico cambios geométricos (rotación, zoom, etc.). Aún así, como ahora puedo crear la cantidad de imágenes que quiera, no lo estoy utilizando. Pero bueno, ahí está.
 
 Here is an augmented image and label example:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/Augmentation_example.png "Augmentation example")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
 
 ### train.py 
 
@@ -237,8 +237,8 @@ The model is able to predict correctly 3 classes: background, glowing and hot pi
 The final accuracy is >99%.
 
 Example results of test images predicted by the model:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/Test_1.png "Test image prediction 1")
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_images/Test_2.png "Test image prediction 2")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Test_1.png "Test image prediction 1")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Test_2.png "Test image prediction 2")
 
 The following classification report is obtained:
 
