@@ -227,7 +227,7 @@ test_max_outputs=get_max_in_mask(test_outputs)
 test_masks_array=test_max_masks.ravel()
 test_outputs_array=test_max_outputs.ravel()
 print(classification_report(y_true = test_masks_array, y_pred = test_outputs_array, target_names=number_to_class))            
-#Recal:"how many of this class you find over the whole number of element of
+#Recall:"how many of this class you find over the whole number of element of
 # this class"
 #Precision:"how many are correctly classified among that class"
 #F1-score:the harmonic mean between precision & recall. Good on inbalanced sets, like this one
