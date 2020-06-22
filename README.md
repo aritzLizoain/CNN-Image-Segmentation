@@ -32,12 +32,13 @@ If a module cannot be properly installed (installing tensorflow might sometimes 
 
 ### image_details.py
 
-* **Function**: set details of the simulated images that are created in image_simulation.py.
+* **Function**: sets details of the simulated images that are created in image_simulation.py.
 
 ### image_simulation.py
 
-* **Function**: create simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
-Images are saved to the saving path.
+* **Function**: creates simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
+Images are saved to the saving path.<br/>
+There is no need to create training and validating images on different folders. The model automatically shuffles all images and creates a validation split (with the defined size) when training.
 
 * **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
@@ -62,10 +63,10 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 ### models.py
 
-* **Function**: defines the model architecture and layer features. The model has UNet architecture. 
+* **Function**: defines the model architecture and layer features. The model has UNet architecture.
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
-    is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
+    is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class. Additionally, pretrained weights can also be used.
 
 #### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
 * https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
@@ -112,8 +113,8 @@ Therefore a color change of an object in the image can cause a wrong label creat
 * **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
 In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes.
-Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
-Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution.
+Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).<br/>
+Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
     
 ### augmentation.py
 
@@ -123,7 +124,7 @@ Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/i
 The original image and label, and augmented ones, are visualized.
 
   Augmented image and label example:
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png      "Augmentation example")
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
 
 ### train.py 
 
@@ -153,69 +154,6 @@ The original image and label, and augmented ones, are visualized.
 All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
-
-
-
-
-
-
-
-
-
-## How to use it NO. put everything on files before. other things that can be done. add on the other ones.
-
-### Creating the data for training
-
-### Preparing the data for training
-
-You need three folders:
-
-* Image folders. Validation split will be automatic. Test images.
-
-* Savings folder
-
-* Models folder
-
-Explain
-
-pretrained
-
-### Using the python module
-
-setting model settings. more/less layers. hyperparameters
-
-training model
-
-You can import keras_segmentation in  your python script and use the API
-
-```python
-from keras_segmentation.models.unet import vgg_unet
-
-model = vgg_unet(n_classes=51 ,  input_height=416, input_width=608  )
-
-model.train(
-    train_images =  "dataset1/images_prepped_train/",
-    train_annotations = "dataset1/annotations_prepped_train/",
-    checkpoints_path = "/tmp/vgg_unet_1" , epochs=5
-)
-
-out = model.predict_segmentation(
-    inp="dataset1/images_prepped_test/0016E5_07965.png",
-    out_fname="/tmp/out.png"
-)
-
-import matplotlib.pyplot as plt
-plt.imshow(out)
-```
-
-
-
-
-### evaluating the model 
-print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/"  , annotations_dir="dataset1/annotations_prepped_test/" ) )
-
-
-### More things that I can do with my model...
 
 ## Results
 
