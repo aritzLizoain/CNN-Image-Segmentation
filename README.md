@@ -181,11 +181,10 @@ Cluster      | 0.00     | 0.00  | 0.00    | 100
 details about each parameter
 
 
-## Next steps
+## Future steps
 
-### Testing the trained model on real DAMIC detector images.
-
-Real detector images will be tested.
+* Improving accuracy and detecting clusters on simulated images.
+* Testing the trained model on real DAMIC detector images.
 
 ## Contributing
 
