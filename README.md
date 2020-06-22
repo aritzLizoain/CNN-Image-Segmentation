@@ -1,6 +1,6 @@
 # CNN UNet Image Segmentation
 
-The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
+The goal of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
 The studied images represent energy deposits on CCDs.
 The project performs CNN UNet multiclass image segmentation.
 The model is trained using simulated detector images and then tested with real detector images.
@@ -36,8 +36,6 @@ If a module cannot be properly installed (installing tensorflow might sometimes 
 
 * **Function**: set details of the simulated images that are created in image_simulation.py.
 
-* **Author**: Agustín Lantero.
-
 ### image_simulation.py
 
 * **Function**: create simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
@@ -50,14 +48,12 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 * **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl).
 
-* **Author**: Agustín Lantero.
-
 ### load_dataset.py
 
 * **Function**: takes images and saves them as numpy arrays. 
 
   * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
-    function is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
+    is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
     In this case >95% of the pixels are labeled as background, and only <1% as clusters. 
     This way the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
     The weight of each class is obtained as the inverse of its presence percentage over all the training samples.
@@ -97,21 +93,16 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 * **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
 
-  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.
-    
+  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.<br />    
     Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
   * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.
-  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).
-
+  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).<br />
     Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
-  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.
-
-    Input shapes = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
-
+  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.<br />
+    Input shape = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).<br />
     Example of [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
-  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
-
-    Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
+  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.<br />
+    Input shape = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
   * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and the respective presence percentages on the dataset.
   * [get_percentages](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L182) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
   * [visualize_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L197) is used to visualize the created label.
@@ -160,7 +151,7 @@ Augmented image and label example:
   Example of the console display while training:
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
 
-* **Caution**: make sure all paths are correct. If it is not, it will not be able to load any data.
+* **Caution**: make sure all paths are correct. If they are not, it will not be able to load any data.
 
     Depending on the used device, training a model can be rather slow (>10'/epoch), particularly when large datasets and number of epochs are being used.
 
@@ -256,6 +247,10 @@ Cluster      | 0.00     | 0.00  | 0.00    | 100
 **Accuracy**     |          |       | 1.00    | 65536
 **Macro avg.**   | 0.75     | 0.74  | 0.74    | 65536
 **Weighted avg.**| 1.00     | 1.00  | 1.00    | 65536
+
+
+details about each parameter
+
 
 ## Next steps
 

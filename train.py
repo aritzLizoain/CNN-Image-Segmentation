@@ -107,9 +107,9 @@ epochs = 25
 batch_size = 16
 callbacks=[EarlyStopping(patience=5,verbose=1),\
            ReduceLROnPlateau(factor=0.1, patience=2, min_delta=0.01, min_lr=0.00001,verbose=1),\
-               ModelCheckpoint('models/name.h5',verbose=1, save_best_only=True,\
+               ModelCheckpoint('Models/name.h5',verbose=1, save_best_only=True,\
                                save_weights_only=False),\
-                   CSVLogger('models/name.log')] #BE CAREFUL & DON'T OVERWRITE EXISTING MODELS
+                   CSVLogger('Models/name.log')] #BE CAREFUL & DON'T OVERWRITE EXISTING MODELS
     
 #-----------------------------------------------------------------------------
 
