@@ -60,7 +60,7 @@ test_labels = create_labels_noStat_noPrint(test_images)
 #augmentation() from augmentation.py
 #Both image and label augmentation is done at the same time
 #Augmented images and labels are added to the original datasets (but not saved in disk)
-#images, labels = augmentation(images, labels)
+images, labels = augmentation(images, labels)
 
 #create_masks() from mask.py
 #shape (ix, height, width, n_classes)
