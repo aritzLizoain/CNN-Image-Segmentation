@@ -178,8 +178,8 @@ _Support_: the number of pixels of the given class in the dataset.
 
 ## Future steps
 
-* Improving accuracy and detecting clusters on simulated images.
-* Testing the trained model on real DAMIC detector images.
+* Being able to detect clusters.
+* Testing the trained model on real detector images.
 
 ## Contributing
 
