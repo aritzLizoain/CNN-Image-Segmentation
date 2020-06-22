@@ -170,11 +170,11 @@ Cluster      | 0.00     | 0.00  | 0.00    | 100
 **Macro avg.**   | 0.75     | 0.74  | 0.74    | 65536
 **Weighted avg.**| 1.00     | 1.00  | 1.00    | 65536
 
-<u>Precision</u>: the percentage of correctly classified pixels among all pixels classified as the given class.<br/> 
-<u>Recall</u>: the percentage of correctly classified pixels among all pixels that truly are of the given class.<br/> 
-<u>F1-score</u>: the harmonic mean between precision & recall. Useful to analyze the performance on inbalanced sets.<br/>
+_Precision_: the percentage of correctly classified pixels among all pixels classified as the given class.<br/> 
+_Recall_: the percentage of correctly classified pixels among all pixels that truly are of the given class.<br/> 
+_F1-score_: the harmonic mean between precision & recall. Useful to analyze the performance on inbalanced sets.<br/>
 Best score is 1.00 and worst score is 0.00.<br/>
-<u>Support</u>: the number of pixels of the given class in the dataset.
+_Support_: the number of pixels of the given class in the dataset.
 
 ## Future steps
 
