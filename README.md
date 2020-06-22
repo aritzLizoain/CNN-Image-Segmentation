@@ -73,31 +73,18 @@ Therefore a color change of an object in the image can cause a wrong label creat
     [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     function is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
-#### More information regarding the model
-* **CNN**: asdf
-* **UNet**: asdf
-* **Layers**: asdf
-* **Hyperparameters**: asdf
+#### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
+* https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
+* https://medium.com/intuitive-deep-learning/intuitive-deep-learning-part-2-cnns-for-computer-vision-24992d050a27
+* https://medium.com/@jcrispis56/introducci%C3%B3n-al-deep-learning-parte-2-redes-neuronales-convolucionales-f743266d22a0 (Spanish)
+* https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
+* https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca
+* https://towardsdatascience.com/understanding-semantic-segmentation-with-unet-6be4f42d4b47 (UNet)
+  Unet architecture:
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%201.png "UNet architecture 1")
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 2")
 
 
-
-
-
-
-What is **CNN**
->Definition
-
-![alt text](https://miro.medium.com/max/1000/1*zNs_mYOAgHpt3WxbYa7fnw.png "CNN example")
-
-What is **UNet**
->Definition
-
-Reference images
-Image: 
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%201.png "UNet architecture 1")
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 2")
-
-CNNs https://medium.com/intuitive-deep-learning/intuitive-deep-learning-part-2-cnns-for-computer-vision-24992d050a27
     
 Convolution layer: uses parameter sharing and apply the same smaller set of parameters spatially across the image (reduces the number of parameters needed). Hyper-parameter filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when apply the neuron again. Depth defines how many different outputs do we have (cat + dog = 2). If output dimensions 254*254*64 and we want 256*256*64, padding will add a border of 0s.
     
@@ -108,31 +95,6 @@ Dropout layer (not in the article but in the example): like in house price predi
 Fully-Connected (FC) layer: same as our standard neural network; every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features. Apply hidden layers as per usual.
     
 Softmax layer (not in the article but in the example): last layer, softmax, only transforms the output of the previous layer into probability distributions, which is the final goal.
-
-INTRODUCCIÓN CNNs https://medium.com/@jcrispis56/introducci%C3%B3n-al-deep-learning-parte-2-redes-neuronales-convolucionales-f743266d22a0
-    
-Similar to item 3. Convolución, función rectificadora (ReLU), Max Pooling, conexión total, softmax y cross entropy (binary). Evita overfitting aplicando transformaciones, como rotaciones, zoom e inversiones en el eje horizontal, y rescale.
-    
-BEGINNER GUIDE CNNs https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
-    
-Classic CNN architecture: input-conv-ReLU-conv-ReLU-max pool-ReLU-conv-ReLU-pool-(flatten)fc.
-Recommended paper: Visualizing and Understanding
-Convolutional Networks.
-Training process backpropagation, loss function.
-
-CNN GUIDE https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
-
-Convolution layer (filter same depth as channels RGB) (output = channel 1 + channel 2 + channel 3 + bias(=1)) + padding, Max Pooling layer (decrease the computational power required to process the data through dimensionality reduction)(performs better than Average Pooling), flatten, fully connected (ReLU activation), softmax.
-
-CONVOLUTIONAL NEURAL NETWORKS FOR BEGINNERS 
-%https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca
-https://towardsdatascience.com/ convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca
-
-Hyperparameters etc. explained
-
-SEMANTIC SEGMENTATION U-NET https://towardsdatascience.com/understanding-semantic-segmentation-with-unet-6be4f42d4b47 https://github.com/hlamba28/UNET-TGS/blob/master/TGS%20UNET.ipynb
-     
-CALLBACKS  https://keras.io/callbacks/  
      
 Up sampling with UpConv=Conv2DTranspose to perform up sampling; from low to high resolution image. Learns parameters through back propagation to convert. Needs concatenate with corresponding layer.
  
@@ -170,6 +132,8 @@ Here is an augmented image and label example:
 -**Caution**:
 
 -**Requirements**:
+
+CALLBACKS  https://keras.io/callbacks/  
 
 es el archivo principal, dónde se entrena el modelo. Utiliza las distintas funciones de los archivos que he comentado. En él se puede configurar todo; las rutas de las imágenes, dónde guardar los resultados, características del modelo (por ejemplo que optimizador usar), etc. En la parte final se evalúa el modelo y he puesto un classification report, que es bastante útil para ver cómo ha funcionado cada clase. Os paso un fichero de texto llamado 'console' mostrando un ejemplo de lo que va apareciendo en pantalla al correr este archivo en spyder. Todas las gráficas que se generan se guardan en la carpeta 'Images/Outputs'. La carpeta 'Models' es donde se guardan los modelos entrenados y los datos de precisión y pérdida en cada época del entrenamiento.
 
