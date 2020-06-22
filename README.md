@@ -108,8 +108,8 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
     Input shapes = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
 
-    Example of [get_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and [get_max_in_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
-  * [mask_to_label] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
+    Example of [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and[get_max_in_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
+  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
 
     Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
   * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and the respective presence percentages on the dataset.
