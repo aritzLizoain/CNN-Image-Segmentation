@@ -3,8 +3,9 @@
 The **goal** of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
 The studied images represent energy deposits on CCDs.
 The project performs CNN UNet multiclass image segmentation.
+The model is trained using simulated detector images and then tested with real detector images.
 
-Example of a detector image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_image.png "Detector image example")
+Example of a real detector image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_image.png "Detector image example")
 
 ## Getting Started
 
@@ -27,7 +28,7 @@ The following requirements need to be installed (version numbers are up to date:
 * pillow (7.1.2)
 
 You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
-If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is another option.
+If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is a good option.
 
 ## Python files
 
@@ -67,16 +68,21 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 ### models.py
 
-* **Function**:
+* **Function**: defines the model architecture and layer features. The model has UNet architecture. 
 
-* **Caution**:
+    [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
+    function is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
-* **Requirements**:
+#### More iformation about the model
+* **More information regarding the model**: asdf
+* **More information regarding the model**: asdf
+* **More information regarding the model**: asdf
+* **More information regarding the model**: asdf
 
-things that can be changed (or better on how to use)
-maybe I just need to explain what it has and the options that they give. And then on how to use I can explain how to use it differently
 
-contiene la arquitectura del modelo. Un UNet normal, parecido al que tenía Alicia en su código. Tengo muchas capas escritas, pero algunas están comentadas. Como os lo mando es lo que me ha dado mejor resultado hasta ahora. Y tambien defino la función de pérdida que utiliza los pesos de cada clase. Esta función de pérdida la encontré en internet. Es un 'categorical_cossentropy' con el extra de que tiene en cuenta los pesos.
+
+
+
 
 What is **CNN**
 >Definition
@@ -196,6 +202,10 @@ You need three folders:
 Explain
 
 ### Using the python module
+
+setting model settings. more/less layers. hyperparameters
+
+training model
 
 You can import keras_segmentation in  your python script and use the API
 

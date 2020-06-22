@@ -15,7 +15,6 @@ import numpy as np
 from keras.models import *
 from keras.layers import *
 from keras.optimizers import *
-from keras.callbacks import ModelCheckpoint, LearningRateScheduler
 from keras import backend as keras
 import keras.losses
 from keras import regularizers #fixing overfitting with L2 regularization
@@ -27,6 +26,7 @@ import keras.backend as K
 #Images too biased towards the first class (background ~95%)
 
 #WEIGHTED LOSS FUNCTION CROSS ENTROPY
+#Taken from: https://stackoverflow.com/questions/61309991/how-to-use-weighted-categorical-crossentropy-loss-function
 def weighted_categorical_crossentropy(weights= [1.,1.,1.,1.]):
     #print('The used loss function is: weighted categorical crossentropy')
     def wcce(y_true, y_pred):
