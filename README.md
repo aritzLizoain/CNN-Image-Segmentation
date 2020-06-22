@@ -122,8 +122,8 @@ Therefore only geometric augmentation is applied: flip, crop, pad, scale, transl
 Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
 The original image and label, and augmented ones, are visualized.
 
-Augmented image and label example:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
+  Augmented image and label example:
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png      "Augmentation example")
 
 ### train.py 
 
