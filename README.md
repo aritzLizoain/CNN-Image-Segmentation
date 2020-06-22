@@ -45,7 +45,7 @@ Images are saved to the saving path.
 
 * **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (read [mask.py information](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (please read [mask.py information](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
 * **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl).
@@ -70,7 +70,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 * **Function**: defines the model architecture and layer features. The model has UNet architecture. 
 
-    [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
+  * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
 #### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
@@ -134,7 +134,7 @@ Labels can perfectly be created using a labeling software. However, for the purp
 
 * **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
 Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
-Check the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
+Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
 The original image and label, and augmented ones, are visualized.
 
 Augmented image and label example:
@@ -142,38 +142,31 @@ Augmented image and label example:
 
 ### train.py 
 
-* **Function**:
+* **Function**: training the model. This is the MAIN CODE. Process:
+  * Loads the images.
+  * Creates the labels for visualization.
+  * Applies augmentation on both images and labels.
+  * Creates the masks for training the model.
+  * Trains the model with the defined hyperparameters and callbacks. For more information regarding callbacks please read the [keras callbacks documentation](https://keras.io/api/callbacks/).
+  * Plots and saves the accuracy and loss over the training process.
+  * Predicts train and test image masks.
+  * Converts predicted masks into labels that can be visualized.
+  * Plots original images, labels, and predicted label comparisons.
+  * Evaluates the model on the test set.
+  * Gives a classification report that analyzes the performance of each class. For more information regarding the classification reports please read the [scikit-learn classification report documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).
+
+  All plots, accuracy and loss data throughout the training process, and trained model are saved in the defined paths. 
+
+  Example of the console display while training:
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
 
 * **Caution**: make sure all paths are correct. If it is not, it will not be able to load any data.
 
-Depending on the used device, training a model can take while (>10'/epoch), particularly when large datasets and number of epochs are being used.
+    Depending on the used device, training a model can be rather slow (>10'/epoch), particularly when large datasets and number of epochs are being used.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
 
-TRAINING
 
-This is the MAIN CODE to train the model.
-
-Working directory must be where all files are located.
-
-PROCESS:
-    *Loads the images
-    *Creates the labels (for representation) and masks (for training) from them
-    *Applies augmentation on both images and labels
-    *Trains the model with the defined hyperparameters.
-    It takes images (n_img, h, w, 3(rgb)) and masks (n_img, h, w,n_classes)
-    *Plots and saves the accuracy and loss over the training
-    *Predicts on train and test images. Predictions shape (n_img, h, w, n_classes)
-    *Converts predicted masks to labels with shape (n_img, h, w, 3(rgb))
-    *Plots and saves original images, labels, and predicted label comparisons
-    *Evaluates the model
-    *Classification report added to analyze performance of each class
-
-CALLBACKS  https://keras.io/callbacks/  
-
-es el archivo principal, dónde se entrena el modelo. Utiliza las distintas funciones de los archivos que he comentado. En él se puede configurar todo; las rutas de las imágenes, dónde guardar los resultados, características del modelo (por ejemplo que optimizador usar), etc. En la parte final se evalúa el modelo y he puesto un classification report, que es bastante útil para ver cómo ha funcionado cada clase. Os paso un fichero de texto llamado 'console' mostrando un ejemplo de lo que va apareciendo en pantalla al correr este archivo en spyder. Todas las gráficas que se generan se guardan en la carpeta 'Images/Outputs'. La carpeta 'Models' es donde se guardan los modelos entrenados y los datos de precisión y pérdida en cada época del entrenamiento.
-
-for more information about callbacks check link
 
 ### load_model.py
 
@@ -189,7 +182,7 @@ carga el modelo ya entrenado y funciona como la última parte de 'train'. Hace l
 
 
 
-## How to use it
+## How to use it NO. put everything on files before. other things that can be done. add on the other ones.
 
 ### Creating the data for training
 
@@ -233,10 +226,8 @@ import matplotlib.pyplot as plt
 plt.imshow(out)
 ```
 
-Example of the console display while training:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
 
--**Caution**: can be rather slow.
+
 
 ### evaluating the model 
 print(model.evaluate_segmentation( inp_images_dir="dataset1/images_prepped_test/"  , annotations_dir="dataset1/annotations_prepped_test/" ) )
