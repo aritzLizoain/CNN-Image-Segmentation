@@ -56,7 +56,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 * **Function**: takes images and saves them as numpy arrays. 
 
-    [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
+  * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
     function is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
     In this case >95% of the pixels are labeled as background, and only <1% as clusters. 
     This way the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
@@ -95,15 +95,71 @@ Therefore a color change of an object in the image can cause a wrong label creat
    
 ### mask.py
 
--**Function**:
+* **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
 
--**Caution**:
+  * get_monochrome (link)  description. input output. where used. extra.
 
--**Requirements**:
+after all functions
 
-es lo más interesante. Aquí creo los labels de todas las imágenes. Primero clasifico cada píxel en una de las clases mediante thresholds que corresponden al valor de píxel. Es decir, el color. Entiendo que esto es lo que queríamos hacer con las energías, en caso de que el color esté relacionado con la energía. De hecho sería más fácil, ya que en este he tenido que mirar qué valores de pixel corresponden a cada color, y hay valores que se mezclan. Dado que por ejemplo un pixel con valor 78 es a veces parte de un cluster, y a veces de un hot pixel, los label no son 100% correctos. Pero también es interesante ver si después la predicción es capaz de corregir estos píxeles. La idea de cómo funcionan las labels está muy bien explicado en https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet. Tambien tengo dos imágenes, 'labels' y 'labels2', donde se ve cómo se clasifica cada clase. La mejor parte de esto es que ya no hago los labels como antes, que los hacía a mano con el ratón. Ahora puedo utilizar la cantidad de imágenes que quiera para entrenar.
+#Converts the input image (n_img, h, w, 3(rgb)) in (n_img, h, w, 1)
+def get_monochrome (images):
+
+
+PROCESS:    
+    *(n_images, x size, y size, 3(rgb)) -------- Takes training image dataset
+    
+    *(n_images, x size, y size, 1(mean)) ------- Makes it monochrome inside get_mask
+    
+    *(n_images, x size, y size, n_classes) ----- Creates the mask with get_class in get_mask
+    Checks for threshold pixel values 
+    E.g.: [background, glowing, hot pixel, cluster] --> n_classes = 4
+    get_mask checks every pixel and for each pixel get_class determines the class
+    For example for a hot pixel, get_class gets class=2, then n_classes=[0,0,1,0]
+    
+    *(n_images, x size, y size, 1(max_mask)) --- Gets the maximum value position in mask
+    With the previous example: max_mask=2
+    
+    *(n_images, x size, y size, 3(rgb)) -------- Creates the label with mask_to_label
+    Depending on which class it is, it will color it with the corresponding multiplier
+    
+It plots a random example and shows statistics (n_classes and percentage of each class) 
+Different functions are created to convert data, for example: output_to_label()
+
+
+
+
+
+
+* **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
+The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes.
+Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
+
+
+
+
+
+
+
+Primero clasifico cada píxel en una de las clases mediante thresholds que corresponden al valor de píxel. Es decir, el color. Entiendo que esto es lo que queríamos hacer con las energías, en caso de que el color esté relacionado con la energía. De hecho sería más fácil, ya que en este he tenido que mirar qué valores de pixel corresponden a cada color, y hay valores que se mezclan. Dado que por ejemplo un pixel con valor 78 es a veces parte de un cluster, y a veces de un hot pixel, los label no son 100% correctos. Pero también es interesante ver si después la predicción es capaz de corregir estos píxeles. La idea de cómo funcionan las labels está muy bien explicado en https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet. Tambien tengo dos imágenes, 'labels' y 'labels2', donde se ve cómo se clasifica cada clase. La mejor parte de esto es que ya no hago los labels como antes, que los hacía a mano con el ratón. Ahora puedo utilizar la cantidad de imágenes que quiera para entrenar.
+
+
+
+
+Idea explained in: https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet
+
+images
 
 it can still be done with labelme or other labeling program
+
+
+
+
+
+
+
+
+
     
 ### augmentation.py
 
