@@ -83,6 +83,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
   UNet architecture:
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%201.png "UNet architecture 1")
+
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 2")
 * Layers summary:
   - Convolution layer: uses parameter sharing and apply the same smaller set of parameters spatially across the image (reduces the number of parameters needed). Hyper-parameter filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when apply the neuron again. Depth defines how many different outputs do we have (cat + dog = 2). If output dimensions 254*254*64 and we want 256*256*64, padding will add a border of 0s.
