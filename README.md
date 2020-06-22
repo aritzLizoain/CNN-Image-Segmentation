@@ -99,12 +99,14 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
   * get_monochrome (link) function converts the input image into a monochrome image.
     
-    Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1)
+    Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = number of images, h = height, w = width
+  * get_class (link) function defines the class of each pixel applying threshold values that can be defined. (caution link)
 
-after all functions
 
-#Converts the input image (n_img, h, w, 3(rgb)) in (n_img, h, w, 1)
-def get_monochrome (images):
+    
+    
+
+
 
 
 PROCESS:    
