@@ -98,7 +98,8 @@ Therefore a color change of an object in the image can cause a wrong label creat
 * **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
 
   * get_monochrome (link) function converts the input image into a monochrome image.
-    Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1)
+    
+Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1)
 
 after all functions
 
