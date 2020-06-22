@@ -113,8 +113,20 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
     Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb))
   * statistics (link) function shows the number of classes and the respective presence percentages on the dataset.
+  * get_percentages (link) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
 
-
+#Returns percentages of each class. Used to calculate the weights for the loss function
+def get_percentages(images):
+    mask=get_mask(images)
+    mask_max=get_max_in_mask(mask)
+    unique_elements, counts_elements = np.unique(ar = mask_max,
+                                              return_counts = True)
+    #print('counts_elements = {0}'.format(counts_elements))
+    class_frequency = counts_elements / np.sum(counts_elements)
+    percentages=np.zeros(len(unique_elements))
+    for i in range(len(unique_elements)):
+        percentages[i] = round(class_frequency[i]*100, 2)
+    return unique_elements, percentages
 
 
 
