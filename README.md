@@ -106,46 +106,29 @@ Therefore a color change of an object in the image can cause a wrong label creat
     Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
   * get_max_in_mask (link) takes the position of the maximum  value, i.e., the class.
 
-    Input shapes = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1)
+    Input shapes = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
 
     Example of get_mask and get_max_in_mask (links): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
   * mask_to_label (link) function takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
 
-    Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb))
+    Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
   * statistics (link) function shows the number of classes and the respective presence percentages on the dataset.
-  * get_percentages (link) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
+  * get_percentages (link) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
+  * visualize_label (link) is used to visualize the created label.
+  * create_masks (link) takes the images as input and returns the masks (created by the previous functions). These masks are what the model uses to train and evaluate the model while training.
+  * create_labels (links) takes the images as input and returns the labels (created by the previous functions) that can be visualized. 
+  * create_labels_noStat_noPrint (link) is the same as create_labels (link) but it does not print the information in the console. Done in order to avoide repeated information shown by the console.
+  * output_to_label (link) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
 
-#Returns percentages of each class. Used to calculate the weights for the loss function
-def get_percentages(images):
-    mask=get_mask(images)
-    mask_max=get_max_in_mask(mask)
-    unique_elements, counts_elements = np.unique(ar = mask_max,
-                                              return_counts = True)
-    #print('counts_elements = {0}'.format(counts_elements))
-    class_frequency = counts_elements / np.sum(counts_elements)
-    percentages=np.zeros(len(unique_elements))
-    for i in range(len(unique_elements)):
-        percentages[i] = round(class_frequency[i]*100, 2)
-    return unique_elements, percentages
+  For more information regarding the labeling process please read https://www.jeremyjordan.me/semantic-segmentation/
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels.png "labeling example 1")
 
-
-
-
-
-
-    
-It plots a random example and shows statistics (n_classes and percentage of each class) 
-Different functions are created to convert data, for example: output_to_label()
-
-
-
-
-
-
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels2.png "labeling example 2")
 * **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
 In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes.
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
+Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution.
 
 
 
@@ -153,16 +136,12 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 
 
-Primero clasifico cada píxel en una de las clases mediante thresholds que corresponden al valor de píxel. Es decir, el color. Entiendo que esto es lo que queríamos hacer con las energías, en caso de que el color esté relacionado con la energía. De hecho sería más fácil, ya que en este he tenido que mirar qué valores de pixel corresponden a cada color, y hay valores que se mezclan. Dado que por ejemplo un pixel con valor 78 es a veces parte de un cluster, y a veces de un hot pixel, los label no son 100% correctos. Pero también es interesante ver si después la predicción es capaz de corregir estos píxeles. La idea de cómo funcionan las labels está muy bien explicado en https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet. Tambien tengo dos imágenes, 'labels' y 'labels2', donde se ve cómo se clasifica cada clase. La mejor parte de esto es que ya no hago los labels como antes, que los hacía a mano con el ratón. Ahora puedo utilizar la cantidad de imágenes que quiera para entrenar.
 
 
 
 
-Idea explained in: https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet
 
-images
 
-it can still be done with labelme or other labeling program
 
 
 
