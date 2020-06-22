@@ -138,8 +138,9 @@ The original image and label, and augmented ones, are visualized.
   * Converts predicted masks into labels that can be visualized.
   * Plots original images, labels, and predicted label comparisons.
   * Evaluates the model on the test set.
-  * Gives a classification report that analyzes the performance of each class. For more information regarding the classification reports please read the [scikit-learn classification report documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).<br/><br/>
-  All plots, accuracy and loss data throughout the training process, and trained model are saved in the defined paths.<br/>Example of the console display while training:
+  * Gives a classification report that analyzes the performance of each class. For more information regarding the classification reports please read the [scikit-learn classification report documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).
+
+  All plots, accuracy and loss data throughout the training process, and trained model are saved in the defined paths.<br/>Example of   the console display while training:
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
 
 * **Caution**: make sure all paths are correct. If they are not, it will not be able to load any data.<br/>Depending on the used device, training a model can be rather slow (>10'/epoch), particularly when large datasets and number of epochs are being used.
