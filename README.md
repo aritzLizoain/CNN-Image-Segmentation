@@ -93,7 +93,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 * **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
 
-  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image. 
+  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.\ 
     Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
   * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.
   * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).
