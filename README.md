@@ -49,7 +49,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 ### load_dataset.py
 
-* **Function**: takes images and saves them as numpy arrays. 
+* **Function**: receives the images and saves them as numpy arrays with shape (n_img, h, w, 3(rgb)), where n_img = # images, h = height, w = width. 
 
   * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
     is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
