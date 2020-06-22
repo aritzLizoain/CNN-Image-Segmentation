@@ -144,7 +144,7 @@ plt.savefig(TEST_PREDICTIONS_PATH+'Accuracy')
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-TESTING AND EVALUATING THE MODEL (same in load.py)
+TESTING AND EVALUATING THE MODEL (same in load_model.py)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 from mask import output_to_label, get_max_in_mask
