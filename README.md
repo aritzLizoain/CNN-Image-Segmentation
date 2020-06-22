@@ -160,8 +160,6 @@ All figures are saved in the defined path.
 The model has been trained with 200 simulated images for 1 epoch, obtaining a final accuracy of >99% on the test set, which containes other simulated images. It is able to predict correctly 3 classes: background, glowing and hot pixels. It fails to predict any cluster. Prediction on a test image:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Test_1.png "Test image prediction 1")
 Classification report of the test set:
-The following classification report is obtained:
-
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
 Background   | 1.00     | 1.00  | 1.00    | 60793
@@ -171,10 +169,9 @@ Cluster      | 0.00     | 0.00  | 0.00    | 100
 **Accuracy**     |          |       | 1.00    | 65536
 **Macro avg.**   | 0.75     | 0.74  | 0.74    | 65536
 **Weighted avg.**| 1.00     | 1.00  | 1.00    | 65536
-
 Precision:how many are correctly classified among the class.<br/>
-Recall:"how many of this class you find over the whole number of element of this class"
-F1-score:the harmonic mean between precision & recall. Good on inbalanced sets, like this one
+Recall:"how many of this class you find over the whole number of element of this class"<br/>
+F1-score:the harmonic mean between precision & recall. Good on inbalanced sets, like this one<br/>
 Support:the number of occurence of the given class in your dataset
 
 ## Future steps
