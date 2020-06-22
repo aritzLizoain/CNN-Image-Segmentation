@@ -9,7 +9,7 @@ Example of a real detector image: ![alt text](https://github.com/aritzLizoain/Im
 
 ## Getting Started
 
-These instructions explain how to get a copy of the project, run it on your local machine for development and testing purposes.
+These instructions explain how to get a copy of the project to run it on your local machine for development and testing purposes.
 
 ### Installation
 
