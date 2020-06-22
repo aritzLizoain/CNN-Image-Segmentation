@@ -48,7 +48,7 @@ The way this model is implemented, image lables do not need to be provided. Imag
 In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (read [mask.py information](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-* **Requirements**: working directory path must contain image_details.py and Cluster.pkl.
+* **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl).
 
 * **Author**: Agustín Lantero.
 
@@ -64,7 +64,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
     Then the weights are normalized to the number of classes.
     These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29).
 
-* **Caution**: make sure the path is correct. If it is not, it will not be able to load any data. 
+* **Caution**: make sure the path is correct. If it is not, it will not be able to load any data.
 
 ### models.py
 
@@ -129,15 +129,12 @@ The way this model is implemented, image lables do not need to be provided. Imag
 In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes.
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution.
-
-
-
     
 ### augmentation.py
 
--**Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
+* **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
 Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
-Check the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/source/examples_basics.html) for more information on augmentation techniques.
+Check the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
 The original image and label, and augmented ones, are visualized.
 
 Augmented image and label example:
@@ -145,11 +142,32 @@ Augmented image and label example:
 
 ### train.py 
 
--**Function**:
+* **Function**:
 
--**Caution**:
+* **Caution**: make sure all paths are correct. If it is not, it will not be able to load any data.
 
--**Requirements**:
+Depending on the used device, training a model can take while (>10'/epoch), particularly when large datasets and number of epochs are being used.
+
+* **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
+
+TRAINING
+
+This is the MAIN CODE to train the model.
+
+Working directory must be where all files are located.
+
+PROCESS:
+    *Loads the images
+    *Creates the labels (for representation) and masks (for training) from them
+    *Applies augmentation on both images and labels
+    *Trains the model with the defined hyperparameters.
+    It takes images (n_img, h, w, 3(rgb)) and masks (n_img, h, w,n_classes)
+    *Plots and saves the accuracy and loss over the training
+    *Predicts on train and test images. Predictions shape (n_img, h, w, n_classes)
+    *Converts predicted masks to labels with shape (n_img, h, w, 3(rgb))
+    *Plots and saves original images, labels, and predicted label comparisons
+    *Evaluates the model
+    *Classification report added to analyze performance of each class
 
 CALLBACKS  https://keras.io/callbacks/  
 
