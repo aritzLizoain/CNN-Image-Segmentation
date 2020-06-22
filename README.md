@@ -86,22 +86,13 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 2")
 * Layers summary:
-  - Convolution layer: uses parameter sharing and apply the same smaller set of parameters spatially across the image (reduces the number of parameters needed). Hyper-parameter filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when apply the neuron again. Depth defines how many different outputs do we have (cat + dog = 2). If output dimensions 254*254*64 and we want 256*256*64, padding will add a border of 0s.
-  - Max Pool layer: takes the maximum of the numbers it looks at. Applies to each individual depth channel separately; leaves depth dimension unchanged. Defined only by filter size and stride, reducing the spatial size by taking the maximum of the numbers within its filter.
-  - Dropout layer (not in the article but in the example): like in house price prediction, dropout from keras.layers for avoiding overfitting.
-  - Fully-Connected (FC) layer: same as our standard neural network; every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features. Apply hidden layers as per usual.
-  - Softmax layer (not in the article but in the example): last layer, softmax, only transforms the output of the previous layer into probability distributions, which is the final goal.
-  - Up sampling with UpConv=Conv2DTranspose to perform up sampling; from low to high resolution image. Learns parameters through back propagation to convert. Needs concatenate with corresponding layer.
-
-
-
-    
-    
+  - Convolution: uses parameter sharing and applies the same smaller set of parameters spatially across the image. Filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when applying the neuron again. Depth defines how many different outputs/classes do we have. Padding adds a border of 0s.
+  - Upsampling convolution: learns parameters through back propagation to convert a low resolution image to a high resolution image. It needs to concatenate with the corresponding downsampling layer.
+  - Max Pool: takes the maximum of the numbers it looks at. Applies to each individual depth channel separately; leaves depth dimension unchanged. It is only defined by filter size and stride, reducing the spatial size by taking the maximum of the numbers within its filter.
+  - Dropout: during training, some number of layer outputs are randomly ignored or “dropped out. It is applied in order to avoid overfitting.
+  - Fully-Connected (FC): every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features.
+  - Softmax: transforms the output of the previous layer into probability distributions, which is the last layer.
    
-    
-    
-     
- 
 ### mask.py
 
 -**Function**:
