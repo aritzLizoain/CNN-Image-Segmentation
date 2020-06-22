@@ -169,6 +169,7 @@ Cluster      | 0.00     | 0.00  | 0.00    | 100
 **Accuracy**     |          |       | 1.00    | 65536
 **Macro avg.**   | 0.75     | 0.74  | 0.74    | 65536
 **Weighted avg.**| 1.00     | 1.00  | 1.00    | 65536
+
 Precision:how many are correctly classified among the class.<br/>
 Recall:"how many of this class you find over the whole number of element of this class"<br/>
 F1-score:the harmonic mean between precision & recall. Good on inbalanced sets, like this one<br/>
