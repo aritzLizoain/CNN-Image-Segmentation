@@ -71,7 +71,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
 * **Function**: defines the model architecture and layer features. The model has UNet architecture. 
 
     [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
-    function is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
+    is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
 #### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
 * https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
@@ -97,28 +97,28 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 * **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
 
-  * [get_monochrome] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) function converts the input image into a monochrome image.
+  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.
     
     Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
-  * [get_class] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) function defines the class of each pixel applying threshold values that can be defined.
-  * [get_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) function creates masks from input images. It uses [get_monochrome] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).
+  * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.
+  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).
 
     Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
-  * [get_max_in_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.
+  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.
 
     Input shapes = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
 
     Example of [get_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and [get_max_in_mask] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
-  * [mask_to_label] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) function takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
+  * [mask_to_label] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
 
     Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
-  * [statistics] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) function shows the number of classes and the respective presence percentages on the dataset.
-  * [get_percentages] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L182) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
-  * [visualize_label] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L197) is used to visualize the created label.
-  * [create_masks] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L222) takes the images as input and returns the masks (created by the previous functions). These masks are what the model uses to train and evaluate the model while training.
-  * [create_labels] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) takes the images as input and returns the labels (created by the previous functions) that can be visualized. 
-  * [create_labels_noStat_noPrint] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246 is the same as [create_labels] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Done in order to avoide repeated information shown by the console.
-  * [output_to_label] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
+  * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and the respective presence percentages on the dataset.
+  * [get_percentages](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L182) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
+  * [visualize_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L197) is used to visualize the created label.
+  * [create_masks](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L222) takes the images as input and returns the masks (created by the previous functions). These masks are what the model uses to train and evaluate the model while training.
+  * [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) takes the images as input and returns the labels (created by the previous functions) that can be visualized. 
+  * [create_labels_noStat_noPrint] (https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246 is the same as [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Done in order to avoide repeated information shown by the console.
+  * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
 
   For more information regarding the labeling process please read https://www.jeremyjordan.me/semantic-segmentation/
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels.png "labeling example 1")
