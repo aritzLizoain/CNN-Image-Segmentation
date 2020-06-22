@@ -73,11 +73,11 @@ Therefore a color change of an object in the image can cause a wrong label creat
     [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     function is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
-#### More iformation about the model
-* **More information regarding the model**: asdf
-* **More information regarding the model**: asdf
-* **More information regarding the model**: asdf
-* **More information regarding the model**: asdf
+#### More information regarding the model
+* **CNN**: asdf
+* **UNet**: asdf
+* **Layers**: asdf
+* **Hyperparameters**: asdf
 
 
 
