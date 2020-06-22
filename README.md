@@ -63,10 +63,10 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
 ### models.py
 
-* **Function**: defines the model architecture and layer features. The model has UNet architecture.
+* **Function**: defines the model architecture and layer features. The model has UNet architecture. The code is already prepared to add layers into the model. Layers can be removed too. Additionally, pretrained weights can be used.
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
-    is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class. Additionally, pretrained weights can also be used.
+    is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
 #### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
 * https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
