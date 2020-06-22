@@ -99,32 +99,28 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
   * get_monochrome (link) function converts the input image into a monochrome image.
     
-    Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = number of images, h = height, w = width
-  * get_class (link) function defines the class of each pixel applying threshold values that can be defined. (caution link)
+    Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
+  * get_class (link) function defines the class of each pixel applying threshold values that can be defined.
+  * get_mask (link) function creates masks from input images. It uses get_monochrome and get_class (links).
+
+    Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
+  * get_max_in_mask (link) takes the position of the maximum  value, i.e., the class.
+
+    Input shapes = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1)
+
+    Example of get_mask and get_max_in_mask (links): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
+  * mask_to_label (link) function takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.
+
+    Input shapes = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb))
+  * statistics (link) function shows the number of classes and the respective presence percentages on the dataset.
 
 
-    
-    
 
 
 
 
-PROCESS:    
-    *(n_images, x size, y size, 3(rgb)) -------- Takes training image dataset
-    
-    *(n_images, x size, y size, 1(mean)) ------- Makes it monochrome inside get_mask
-    
-    *(n_images, x size, y size, n_classes) ----- Creates the mask with get_class in get_mask
-    Checks for threshold pixel values 
-    E.g.: [background, glowing, hot pixel, cluster] --> n_classes = 4
-    get_mask checks every pixel and for each pixel get_class determines the class
-    For example for a hot pixel, get_class gets class=2, then n_classes=[0,0,1,0]
-    
-    *(n_images, x size, y size, 1(max_mask)) --- Gets the maximum value position in mask
-    With the previous example: max_mask=2
-    
-    *(n_images, x size, y size, 3(rgb)) -------- Creates the label with mask_to_label
-    Depending on which class it is, it will color it with the corresponding multiplier
+
+
     
 It plots a random example and shows statistics (n_classes and percentage of each class) 
 Different functions are created to convert data, for example: output_to_label()

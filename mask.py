@@ -125,7 +125,7 @@ def get_max_in_mask(mask):
 #-----------------------------------------------------------------------------
 
 """
-# BACKGROUND (class 0): brown_miltiplier = [40./255, 26./255, 13./255]
+# BACKGROUND (class 0): brown_multiplier = [40./255, 26./255, 13./255]
 # GLOWING (class 1): green_multiplier = [0.35,0.75,0.25]
 # HOT PIXELS (class 2): blue_multiplier = [0,0.5,1.]#[0,0.25,0.9]
 # CLUSTERS (class 3): red_multiplier = [1, 0.2, 0.2]
