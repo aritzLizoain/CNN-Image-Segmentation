@@ -179,7 +179,6 @@ _Support_: the number of pixels of the given class in the dataset.
 
 ## Future steps
 
-* Being able to detect clusters.
 * Testing the trained model on real detector images.
 
 ## Contributing
