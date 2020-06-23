@@ -157,8 +157,9 @@ All figures are saved in the defined path.
 
 ## Results
 
-The model has been trained with 200 simulated images during 1 epoch, obtaining a final accuracy of >99% on the test set, which containes other simulated images. It is able to predict correctly 3 classes: background, glowing and hot pixels. It fails to predict any cluster. Prediction on a test image:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Test_1.png "Test image prediction 1")
+Need to update with new results
+
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_7.png "Test image prediction 1")
 Classification report of the test set:
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
