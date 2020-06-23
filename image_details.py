@@ -81,7 +81,7 @@ class image_details(object):
               ### Cluster size
               ny_c, nx_c = clust.shape
               ### Random index 
-              ny_r, nx_r = int(np.random.uniform(0, self.ny-ny_c)), int(np.random.uniform(15, self.nx-nx_c)) #self.nx-nx_c
+              ny_r, nx_r = int(np.random.uniform(0, self.ny-ny_c)), int(np.random.uniform(162, self.nx-nx_c)) #self.nx-nx_c
               nyc_max, nxc_max = ny_c + ny_r, nx_c + nx_r
               image_clust[ny_r:nyc_max,nx_r:nxc_max] = image_clust[ny_r:nyc_max,nx_r:nxc_max] + np.round(clust)
           self.image = self.image + image_clust
@@ -93,11 +93,11 @@ class image_details(object):
           image_hotPix = np.zeros([self.ny, self.nx])
           for i in range(nHotPixels):
              ### Hot pixel initial coordinates
-             ny_h, nx_h = int(np.random.uniform(0, self.ny)), int(np.random.uniform(15, self.nx))
+             ny_h, nx_h = int(np.random.uniform(0, self.ny)), int(np.random.uniform(67, 161)) #self.nx
              rowCol = np.random.randint(2, size = 1)
              if rowCol == 0:
                 ''' Row Hot pixels  '''  
-                hotPix_len = int(np.random.uniform(nx_h,self.nx))
+                hotPix_len = int(np.random.uniform(nx_h,161)) #self.nx
                 hotPixels = np.zeros([int(hotPix_len-nx_h)]) + 25
                 image_hotPix[ny_h, nx_h:hotPix_len] = hotPixels
              else:

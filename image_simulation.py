@@ -37,17 +37,17 @@ for i in range(0, amountOfImages):
 ### Simulated the dark current noise
     image.darkCurrent
 ### Add random (and random amount) clusters to the image 
-    r=round(np.random.uniform(5,12))
+    r=round(np.random.uniform(150000,150000))
     #print("Number of clusters of sample {1} is: {0}".format(r, i))
     image.add_cluster(r)
 ### Add random (and random amount) hot pixels to the image
     #Usual number of hot pixels is: 10 in a 4000X4000 pixel image
-    r=round(np.random.uniform(2,6))
+    r=round(np.random.uniform(500,500))
     #print("Number of hot pixels is: {0}".format(r))
     image.add_hotPixels(r)
 ### Add glowing to the first part of the iamge
     #Usual width of glowing is: 200 in a 4000X4000 pixel image
-    r=round(np.random.uniform(0,14))
+    r=round(np.random.uniform(62,66))
     r2=round(np.random.uniform(10,30))
     #print("Width and intensity of glowing are: {0} & {1}".format(r, r2))
     image.add_glowing(r,10)

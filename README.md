@@ -196,7 +196,7 @@ Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/re
 ## Acknowledgments
 
 * Agustín Lantero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes.
-* Rocío Vilar and Alicia Calderón for the help and support. 
+* Rocío Vilar, Alicia Calderón and Nuria Castello-Mor for the help, advice and support. 
 
 ## Copyright
 
