@@ -165,7 +165,7 @@ Here is an example of an image used for training the model: ![alt text](https://
 * dropout = 0.18
 * loss = weighted_categorical_crossentropy(weights)
 * optimizer = 'adadelta' <br/>
-  About adadelta. For more information regarding [adadelta](https://keras.io/api/optimizers/adadelta/) and other optimizers please read the [keras optimizers documentation](https://keras.io/api/optimizers/).<br/>
+  Adadelta optimization is a stochastic gradient descent method that is based on adaptive learning rate. There is no need to manually set any default learning rate. For more information regarding [adadelta](https://keras.io/api/optimizers/adadelta/) and other optimizers please read the [keras optimizers documentation](https://keras.io/api/optimizers/).<br/>
 
 The rest of parameters have been left as default. Please note that these parameters work well for this particular dataset, but do not assure reliable results for all kind of datasets.
 
