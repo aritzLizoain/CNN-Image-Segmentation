@@ -154,7 +154,7 @@ All figures are saved in the defined path.
 
 ## Results
 
-An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labelling the images.
+An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labeling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
 
 60 images have been used ([Train images](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train)). The model has been trained for 100 epochs with the following hyperparameters: 
@@ -215,7 +215,7 @@ Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/re
 
 ## Acknowledgments
 
-* Agustín Lantero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) codes.
+* Agustín Lantero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py), [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl) files.
 * Rocío Vilar, Alicia Calderón and Nuria Castello-Mor for the help, advice and support. 
 
 ## Copyright
