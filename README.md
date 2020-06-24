@@ -157,16 +157,15 @@ All figures are saved in the defined path.
 An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labelling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
 60 images have been used. The model has been trained for 100 epochs with the following hyperparameters: 
-* split = 0.2.
-* weights = get_weights().
-* activation = 'elu'.
-* dropout = 0.18.
-* loss = weighted_categorical_crossentropy(weights).
-* optimizer = 'adadelta'.
+* split = 0.2
+* weights = get_weights()
+* activation = 'elu'
+* dropout = 0.18
+* loss = weighted_categorical_crossentropy(weights)
+* optimizer = 'adadelta'
 
-The rest of parameters have been left as default. Here are the obtained accuracy and loss graphs:
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy")
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
+The rest of parameters have been left as default.
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy") | ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
 
 Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
 
