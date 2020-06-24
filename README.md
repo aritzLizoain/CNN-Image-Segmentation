@@ -169,9 +169,9 @@ Learning curve Accuracy             |  Learning curve Loss
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy") | ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
 
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy") ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
 
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png" width="425"/> <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png" width="425"/> 
+
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png" width="400"/> <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png" width="400"/> 
 
 Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
 
