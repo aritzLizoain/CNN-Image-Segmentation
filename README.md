@@ -167,7 +167,7 @@ Here is an example of an image used for training the model: ![alt text](https://
 * optimizer = 'adadelta' <br/>
   About adadelta. For more information regarding [adadelta](https://keras.io/api/optimizers/adadelta/) and other optimizers please read the [keras optimizers documentation](https://keras.io/api/optimizers/).<br/>
 
-The rest of parameters have been left as default.
+The rest of parameters have been left as default. Please note that these parameters work well for this particular dataset, but do not assure reliable results for all kind of datasets.
 
 <pre>
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png" width="400"/>              <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png" width="388"/> 
