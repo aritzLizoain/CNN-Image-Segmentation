@@ -174,9 +174,8 @@ Prediction on test images: ![alt text](https://github.com/aritzLizoain/Image-seg
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test6.png "Test image 6 prediction")
 
 The accuracy of the model on the test set is: 99.67%.<br/>
-The loss of the model on the test set is: 0.166.
-
-Classification report of the test set:
+The loss of the model on the test set is: 0.166.<br/>
+Classification report:
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
 Background   | 1.00     | 1.00  | 1.00    | 510811
