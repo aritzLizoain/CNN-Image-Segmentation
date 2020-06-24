@@ -165,6 +165,8 @@ Here is an example of an image used for training the model: ![alt text](https://
 * optimizer = 'adadelta'
 
 The rest of parameters have been left as default.
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy") | ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
 
 Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
