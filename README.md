@@ -1,7 +1,7 @@
 # CNN Image Segmentation
 
 This is a development of a machine learning application for research on dark matter. The software performs multi-class image segmentation on simulated images from direct detection experiments.
-The simulated images represent energy deposits on CCDs. A deep learning UNet model is trained in Python with Keras. A final 99% prediction accuracy is successfully reached.
+The simulated images represent energy deposits on CCDs. A deep learning UNet model is trained in Python with Keras. Over 99% prediction accuracy is successfully reached.
 
 ## Getting Started
 

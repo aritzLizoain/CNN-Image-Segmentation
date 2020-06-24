@@ -24,7 +24,7 @@ import keras.losses
 
 #############################################################################
 
-model_name='name'
+model_name='trained_model'
 MODEL_PATH='C://Path/{0}.h5'.format(model_name)
 custom_loss = keras.losses.penalized_loss = weighted_categorical_crossentropy()
 model = load_model(MODEL_PATH, custom_objects={'wcce': custom_loss})
