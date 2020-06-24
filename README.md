@@ -162,7 +162,7 @@ Here is an example of an image used for training the model: ![alt text](https://
 * activation = 'elu'
 * dropout = 0.18
 * loss = weighted_categorical_crossentropy(weights)
-* optimizer = 'adadelta'
+* optimizer = 'adadelta' <br/>
 
 The rest of parameters have been left as default.
 
