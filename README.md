@@ -156,13 +156,15 @@ All figures are saved in the defined path.
 
 An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labelling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
-60 images have been used. The model has been trained for 100 epochs with the following hyperparameters: 
+
+60 images have been used ([Train images](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train)). The model has been trained for 100 epochs with the following hyperparameters: 
 * split = 0.2
-* weights = get_weights()
-* activation = 'elu'
+* weights = [0.514, 0.840, 0.983, 1.663] <-- given by get_weights()
+* activation = 'elu' For more information regarding activation functions please read the [keras layer activation functions documentation](https://keras.io/api/layers/activations/).
 * dropout = 0.18
 * loss = weighted_categorical_crossentropy(weights)
-* optimizer = 'adadelta' <br/>
+* optimizer = 'adadelta' About adadelta. For more information regarding [adadelta](https://keras.io/api/optimizers/adadelta/) and other optimizers please read the [keras optimizers documentation](https://keras.io/api/optimizers/).
+<br/>
 
 The rest of parameters have been left as default.
 
