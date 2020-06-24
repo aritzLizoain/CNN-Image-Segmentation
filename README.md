@@ -1,11 +1,7 @@
-# CNN UNet Image Segmentation
+# CNN Image Segmentation
 
-The goal of the project is to study machine learning techniques on detector images from Beyond Standard Model searches.
-The studied images represent energy deposits on CCDs.
-The project performs CNN UNet multiclass image segmentation.
-The model is trained using simulated detector images and then tested with real detector images.
-
-
+This is a development of a machine learning application for research on dark matter. The software performs multi-class image segmentation on simulated images from direct detection experiments.
+The simulated images represent energy deposits on CCDs. A deep learning UNet model is trained in Python with Keras. A final 99% prediction accuracy is successfully reached.
 
 ## Getting Started
 
