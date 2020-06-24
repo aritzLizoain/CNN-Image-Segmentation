@@ -5,7 +5,7 @@ The studied images represent energy deposits on CCDs.
 The project performs CNN UNet multiclass image segmentation.
 The model is trained using simulated detector images and then tested with real detector images.
 
-Example of a real detector image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_image.png "Detector image example")
+
 
 ## Getting Started
 
@@ -66,6 +66,8 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
+
+  Modified network. Original from: https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277.  
 
 #### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
 * https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
