@@ -163,11 +163,9 @@ Here is an example of an image used for training the model: ![alt text](https://
 * dropout = 0.18.
 * loss = weighted_categorical_crossentropy(weights).
 * optimizer = 'adadelta'.
-* The rest as default.
-
-Obtained accuracy during training: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy")
-
-Obtained loss during training: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
+The rest of parameters have been left as default. Here are the obtained accuracy and loss graphs:
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
 
 Prediction on training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
 
