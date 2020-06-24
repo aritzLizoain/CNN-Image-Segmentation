@@ -154,19 +154,39 @@ All figures are saved in the defined path.
 
 ## Results
 
-Need to update with new results
+An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class.
+Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
+60 images have been used. The model has been trained for 100 epochs with the following hyperparameters: 
+* split = 0.2.
+* weights = get_weights().
+* activation = 'elu'.
+* dropout = 0.18.
+* loss = weighted_categorical_crossentropy(weights).
+* optimizer = 'adadelta'.
+* The rest as default.
 
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_7.png "Test image prediction 1")
+Obtained accuracy during training: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png "Training accuracy")
+
+Obtained loss during training: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png "Training loss")
+
+Prediction on training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
+
+Prediction on test images: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test4.png "Test image 4 prediction")
+![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test6.png "Test image 6 prediction")
+
+The accuracy of the model on the test set is: 99.67%.
+The loss of the model on the test set is: 0.166.
+
 Classification report of the test set:
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
-Background   | 1.00     | 1.00  | 1.00    | 60793
-Glowing      | 1.00     | 1.00  | 1.00    | 4352
-Hot pixel    | 1.00     | 0.95  | 0.97    | 291
-Cluster      | 0.00     | 0.00  | 0.00    | 100
-**Accuracy**     |          |       | 1.00    | 65536
-**Macro avg.**   | 0.75     | 0.74  | 0.74    | 65536
-**Weighted avg.**| 1.00     | 1.00  | 1.00    | 65536
+Background   | 1.00     | 1.00  | 1.00    | 510811
+Glowing      | 0.98     | 0.93  | 0.96    | 12030
+Hot pixel    | 1.00     | 0.95  | 0.97    | 674
+Cluster      | 0.25     | 0.60  | 0.35    | 773
+**Accuracy**     |          |       | 1.00    | 524288
+**Macro avg.**   | 0.81     | 0.88  | 0.83    | 524288
+**Weighted avg.**| 1.00     | 1.00  | 1.00    | 524288
 
 _Precision_: the percentage of correctly classified pixels among all pixels classified as the given class.<br/> 
 _Recall_: the percentage of correctly classified pixels among all pixels that truly are of the given class.<br/> 
@@ -176,7 +196,7 @@ _Support_: the number of pixels of the given class in the dataset.
 
 ## Future steps
 
-* Testing the trained model on real detector images.
+* Particle identification.
 
 ## Contributing
 
