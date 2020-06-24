@@ -42,7 +42,7 @@ There is no need to create training and validating images on different folders. 
 
 * **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (please read [mask.py information](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
 * **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl).
@@ -53,17 +53,16 @@ Therefore a color change of an object in the image can cause a wrong label creat
 
   * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
     is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
-    In this case >95% of the pixels are labeled as background, and only <1% as clusters. 
-    This way the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
+    In a case where >95% of the pixels are labeled as background, and <1% as clusters, the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
     The weight of each class is obtained as the inverse of its presence percentage over all the training samples.
-    Then the weights are normalized to the number of classes.
+    The weights are then normalized to the number of classes.
     These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29).
 
 * **Caution**: make sure the path is correct. If it is not, it will not be able to load any data.
 
 ### models.py
 
-* **Function**: defines the model architecture and layer features. The model has UNet architecture. The code is already prepared to add layers into the model. Layers can be removed too. Additionally, pretrained weights can be used.
+* **Function**: defines the model architecture and layer features. The model has UNet architecture. The code is already prepared to add layers into the model. Layers can be removed too. Additionally, pretrained weights from an already trained model can be used.
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
@@ -82,7 +81,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 2")
 * Layers summary:
   - Convolution: uses parameter sharing and applies the same smaller set of parameters spatially across the image. Filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when applying the neuron again. Depth defines how many different outputs/classes do we have. Padding adds a border of 0s.
-  - Upsampling convolution: learns parameters through back propagation to convert a low resolution image to a high resolution image. It needs to concatenate with the corresponding downsampling layer.
+  - Upsampling convolution (decoder): learns parameters through back propagation to convert a low resolution image to a high resolution image. It needs to concatenate with the corresponding downsampling layer.
   - Max Pool: takes the maximum of the numbers it looks at. Applies to each individual depth channel separately; leaves depth dimension unchanged. It is only defined by filter size and stride, reducing the spatial size by taking the maximum of the numbers within its filter.
   - Dropout: during training, some number of layer outputs are randomly ignored or “dropped out. It is applied in order to avoid overfitting.
   - Fully-Connected (FC): every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features.
@@ -106,7 +105,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
   * [create_labels_noStat_noPrint](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246) is the same as [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Done in order to avoid the repeated information shown by the console.
   * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
 
-  For more information regarding the labeling process please read https://www.jeremyjordan.me/semantic-segmentation/
+  For more information regarding the labeling process please read https://www.jeremyjordan.me/semantic-segmentation/.
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels.png "labeling example 1")
 
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels2.png "labeling example 2")

@@ -67,11 +67,12 @@ def get_class(value): #All pixels are checked one by one with 3 for loops inget_
     
     #thresholds are pixel values of each color. Could be energies as well
     #need to check these on Xtrain_monochrome. WARNING: some pixels might fail
-    background_threshold = 53.01
-    glowing_min_threshold = 91
+    background_threshold = 51.01
+    glowing_min_threshold = 99.99
     glowing_max_threshold = 101.01
-    hot_pixel_threshold = 78
-    #cluster_threshold = no need   
+    hot_pixel_threshold = 124
+    cluster_min_threshold = 59
+    cluster_max_threshold = 120.1
     
     #they need to be in order
     if value < background_threshold:
@@ -80,7 +81,7 @@ def get_class(value): #All pixels are checked one by one with 3 for loops inget_
         return 1
     elif value > hot_pixel_threshold:
         return 2
-    else:
+    elif cluster_max_threshold>value>cluster_min_threshold:
         return 3
 
 #-----------------------------------------------------------------------------
