@@ -45,6 +45,8 @@ It takes images (n_img, h, w, 3(rgb)) and masks (n_img, h, w, n_classes) for tra
 Output has shape (n_img, h, w, n_classes)
 
 Comments are prepared to change number of layers
+
+Modified network. Original from: https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277
 """
 
 def unet(pretrained_weights = None, input_size = (256,256,3), weights= [1.,1.,1.,1.],\
