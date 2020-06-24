@@ -159,7 +159,7 @@ Here is an example of an image used for training the model: ![alt text](https://
 
 60 images have been used ([Train images](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train)). The model has been trained for 100 epochs with the following hyperparameters: 
 * split = 0.2
-* weights = [0.514, 0.840, 0.983, 1.663] <-- given by get_weights()
+* weights = [0.514, 0.840, 0.983, 1.663] <-- given by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
 * activation = 'elu' <br/>
   For more information regarding activation functions please read the [keras layer activation functions documentation](https://keras.io/api/layers/activations/).
 * dropout = 0.18
@@ -178,8 +178,8 @@ Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Imag
 Prediction on test images: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test4.png "Test image 4 prediction")
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test6.png "Test image 6 prediction")
 
-The accuracy of the model on the test set is: 99.67%.<br/>
-The loss of the model on the test set is: 0.166.<br/>
+The accuracy of the model on the test set is: 99.67%<br/>
+The loss of the model on the test set is: 0.166<br/>
 Classification report:
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
