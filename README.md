@@ -1,3 +1,6 @@
+Note: the README corresponds to the first release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
+Some updated files contain new functions. A major update is the dataset loading method; instead of loading PNG images, data arrays are directly loaded.
+
 # CNN Image Segmentation
 
 This is a development of a machine learning application for research on dark matter. The software performs multi-class image segmentation on simulated images from direct detection experiments.
@@ -63,7 +66,7 @@ Therefore a color change of an object in the image can cause a wrong label creat
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
-  This is a modified network. The original is from: https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277.  
+  This is a modified network. The original is from: https://arxiv.org/pdf/1505.04597.pdf.
 
 #### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
 * https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
