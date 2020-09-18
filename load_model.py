@@ -33,8 +33,8 @@ custom_loss = keras.losses.penalized_loss = weighted_categorical_crossentropy()
 model = load_model(MODEL_PATH, custom_objects={'wcce': custom_loss})
 print ('Model correctly loaded')
 
-# TRAIN_PATH = 'C://Users/Aritz.LEBERRI/Desktop/Project/Images/Train/7.All/' #training images dataset path
-# TEST_PATH  = 'C://Users/Aritz.LEBERRI/Desktop/Project/Images/Test/' #testing images dataset path
+# TRAIN_PATH = '' #training images dataset path
+# TEST_PATH  = '' #testing images dataset path
 TEST_PREDICTIONS_PATH = '' #testing outputs path
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
