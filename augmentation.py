@@ -2,11 +2,11 @@
 """
 Created on Wed Jun 10 20:33:00 2020
 
-@author: Aritz Lizoain
+@author: Aritz
 
 AUGMENTATION
 
-Working directory must be where all files are located.
+Working directory must be where all files are located
 
 Geometric augmentation: flip, crop, pad, scale, translate and rotate.
 
@@ -19,77 +19,128 @@ import imgaug.augmenters as iaa
 import matplotlib.pyplot as plt
 import random
 import matplotlib.patches as mpatches
+from mask import *
 
 ##############################################################################
-
-def augmentation_sequence(images, labels):
-    print("Applying geometric data augmentation: flip, crop, pad, scale, translate, rotate.")
+                    
+def augmentation_sequence_Color(images, labels):
     labels = labels.astype(np.uint8)
-    seq = iaa.OneOf([
-        iaa.Sequential([iaa.Fliplr(0.5), iaa.Flipud(0.2)]),
-        iaa.CropAndPad(percent=(-0.05, 0.1),
-                       pad_mode='constant',
-                       pad_cval=(0, 0)),
-        iaa.Crop(percent=(0, 0.1)),
-        iaa.Sequential([
-            iaa.Affine(
-                     # scale images to 90-110% of their size,
-                     # individually per axis
-                     scale={"x": (0.9, 1.1), "y": (0.9, 1.1)},
-                     # translate by -10 to +10 percent (per axis)
-                     translate_percent={"x": (-0.1, 0.1), "y": (-0.1, 0.1)},
-                     rotate=(-30, 30)  # rotate by -30 to +30 degrees
-                     #shear=(-16, 16),  # shear by -16 to +16 degrees
-                     # use nearest neighbour or bilinear interpolation (fast)
-                     #order=[0, 1],
-                     # if mode is constant, use a cval between 0 and 255 (0 for black)
-                     #mode='constant',
-                     #cval=(0, 0),
-                     # use any of scikit-image's warping modes
-                     # (see 2nd image from the top for examples)
-                     ),
-            iaa.Sometimes(0.3, iaa.Crop(percent=(0, 0.01)))])
-        ]) 
+    seq = iaa.Sequential([iaa.Dropout2d(p=0.70)])  #, iaa.Flipud(0.8),\
+                          #iaa.OneOf([iaa.Rotate((270, 270))]) iaa.Fliplr(0.8),
+                          #iaa.Rotate((90, 90)) only invert in order to avoid weight issues and masks
     return seq(images=images, segmentation_maps=labels)
 
 #----------------------------------------------------------------------------
 
-def augmentation(images, labels, TEST_PREDICTIONS_PATH = 'C://Path/'):
-    images_aug, labels_aug = augmentation_sequence(images=images, labels=labels)
+def augmentation_sequence_Invert(images, labels):
+    labels = labels.astype(np.uint8)
+    seq = iaa.Sequential([iaa.Invert(p=1, per_channel=0.6)])  #, iaa.Flipud(0.8),\
+                          #iaa.OneOf([iaa.Rotate((270, 270))]) iaa.Fliplr(0.8),
+                          #iaa.Rotate((90, 90)) only invert in order to avoid weight issues and masks
+    return seq(images=images, segmentation_maps=labels)
+
+#----------------------------------------------------------------------------
+
+def augmentation_Color(images, labels, TEST_PREDICTIONS_PATH = ''):
+    print("Applying data augmentation: invert, dropout, logContrast, hue, gammaContrast.")
+    images_aug, labels_aug = augmentation_sequence_Color(images=images, labels=labels)
     labels_aug = labels_aug.astype(np.float64)
 
     # Perform a sanity check on a random AUGMENTED sample
-    ix = random.randint(0, len(images_aug)-1)
+    # ix = random.randint(0, len(images_aug)-1)
     red_patch = mpatches.Patch(color=[1, 0.2, 0.2], label='Cluster')
     blue_patch = mpatches.Patch(color=[0,0.5,1.], label='Hot pixel')
     green_patch = mpatches.Patch(color=[0.35,1.,0.25], label='Glowing')
     black_patch = mpatches.Patch(color=[0./255, 0./255, 0./255], label='Background')
-    fig, ax = plt.subplots(2, 2, figsize=(10, 10))
-    ax[0,0].imshow(images[ix])
-    ax[0,0].set_title('Training image: {0}'.format(ix+1), fontsize=18);
-    ax[0,0].set_xlabel('pixels', fontsize=10)
-    ax[0,0].set_ylabel('pixels', fontsize=10)
-    ax[0,0].tick_params(axis='both', which='major', labelsize=10)
-    ax[0,1].imshow(images_aug[ix])
-    ax[0,1].set_title('Augmented image: {0}'.format(ix+1), fontsize=18);
-    ax[0,1].set_xlabel('pixels', fontsize=10)
-    ax[0,1].set_ylabel('pixels', fontsize=10)
-    ax[0,1].tick_params(axis='both', which='major', labelsize=10)
-    ax[1,0].imshow(labels[ix])
-    ax[1,0].set_title('Training label: {0}'.format(ix+1), fontsize=18);
-    ax[1,0].set_xlabel('pixels', fontsize=10)
-    ax[1,0].set_ylabel('pixels', fontsize=10)
-    ax[1,0].tick_params(axis='both', which='major', labelsize=10)
-    ax[1,1].imshow(labels_aug[ix])
-    ax[1,1].set_title('Augmented label: {0}'.format(ix+1), fontsize=18);
-    ax[1,1].set_xlabel('pixels', fontsize=10)
-    ax[1,1].set_ylabel('pixels', fontsize=10)
-    ax[1,1].tick_params(axis='both', which='major', labelsize=10)
-    plt.legend(loc='upper center', bbox_to_anchor=(-0.12, -0.15), fontsize=18,\
-               handles=[red_patch, blue_patch, green_patch, black_patch], ncol=4)
-    plt.savefig(TEST_PREDICTIONS_PATH+'Augmentation')
-    plt.show()
-        
+    # for ix in range(0,len(labels)):
+    #     fig, ax = plt.subplots(2, 2, figsize=(10, 10))
+    #     ax[0,0].imshow(rgb2gray(images[ix]), cmap="gray") #rgb2gray & , cmap="gray" if grayscale
+    #     ax[0,0].set_title('Training image: {0}'.format(ix+1), fontsize=18);
+    #     ax[0,0].set_xlabel('pixels', fontsize=10)
+    #     ax[0,0].set_ylabel('pixels', fontsize=10)
+    #     ax[0,0].tick_params(axis='both', which='major', labelsize=10)
+    #     ax[0,1].imshow(rgb2gray(images_aug[ix]), cmap="gray") #rgb2gray & , cmap="gray" if grayscale
+    #     ax[0,1].set_title('Augmented image: {0}'.format(ix+1), fontsize=18);
+    #     ax[0,1].set_xlabel('pixels', fontsize=10)
+    #     ax[0,1].set_ylabel('pixels', fontsize=10)
+    #     ax[0,1].tick_params(axis='both', which='major', labelsize=10)
+    #     ax[1,0].imshow(images_aug[ix]) #rgb2gray & , cmap="gray" if grayscale
+    #     ax[1,0].set_title('Augmented image: {0}'.format(ix+1), fontsize=18);
+    #     ax[1,0].set_xlabel('pixels', fontsize=10)
+    #     ax[1,0].set_ylabel('pixels', fontsize=10)
+    #     ax[1,0].tick_params(axis='both', which='major', labelsize=10)
+    #     # ax[1,0].imshow(labels[ix])
+    #     # ax[1,0].set_title('Training label: {0}'.format(ix+1), fontsize=18);
+    #     # ax[1,0].set_xlabel('pixels', fontsize=10)
+    #     # ax[1,0].set_ylabel('pixels', fontsize=10)
+    #     # ax[1,0].tick_params(axis='both', which='major', labelsize=10)
+    #     ax[1,1].imshow(labels_aug[ix])
+    #     ax[1,1].set_title('Augmented label: {0}'.format(ix+1), fontsize=18);
+    #     ax[1,1].set_xlabel('pixels', fontsize=10)
+    #     ax[1,1].set_ylabel('pixels', fontsize=10)
+    #     ax[1,1].tick_params(axis='both', which='major', labelsize=10)
+    #     plt.legend(loc='upper center', bbox_to_anchor=(-0.12, -0.15), fontsize=18,\
+    #                 handles=[red_patch, blue_patch, green_patch, black_patch], ncol=4)
+    #     plt.savefig(TEST_PREDICTIONS_PATH+'Augmentation')
+    #     plt.show()  
+    all_images = np.append(images , images_aug, axis=0 )
+    all_labels= np.append(labels, labels_aug, axis=0)
+    return all_images, all_labels
+
+#----------------------------------------------------------------------------
+
+def augmentation_Invert(images, labels, TEST_PREDICTIONS_PATH = ''):
+    print("Applying data augmentation: invert, dropout, logContrast, hue, gammaContrast.")
+    images_aug, labels_aug = augmentation_sequence_Invert(images=images, labels=labels)
+    labels_aug = labels_aug.astype(np.float64)
+
+        # Perform a sanity check on a random AUGMENTED sample
+    ixn = random.randint(1, len(images_aug)-1)
+    red_patch = mpatches.Patch(color=[1, 0.2, 0.2], label='Cluster')
+    blue_patch = mpatches.Patch(color=[0,0.5,1.], label='Hot pixel')
+    green_patch = mpatches.Patch(color=[0.35,1.,0.25], label='Glowing')
+    black_patch = mpatches.Patch(color=[0./255, 0./255, 0./255], label='Background')
+    for ix in range(ixn,ixn+1): #only one: ixn,ixn+1
+        fig, ax = plt.subplots(2, 2, figsize=(10, 10))
+        ax[0,0].imshow(rgb2gray(images[ix]), cmap="gray") #rgb2gray & , cmap="gray" if grayscale
+        ax[0,0].set_title('Training image: {0}'.format(ix+1), fontsize=18);
+        ax[0,0].set_xlabel('pixels', fontsize=10)
+        ax[0,0].set_ylabel('pixels', fontsize=10)
+        ax[0,0].tick_params(axis='both', which='major', labelsize=10)
+        ax[0,1].imshow(rgb2gray(images_aug[ix]), cmap="gray") #rgb2gray & , cmap="gray" if grayscale
+        ax[0,1].set_title('Augmented image: {0}'.format(ix+1), fontsize=18);
+        ax[0,1].set_xlabel('pixels', fontsize=10)
+        ax[0,1].set_ylabel('pixels', fontsize=10)
+        ax[0,1].tick_params(axis='both', which='major', labelsize=10)
+        # ax[1,0].imshow(images_aug[ix]) #rgb2gray & , cmap="gray" if grayscale
+        # ax[1,0].set_title('Augmented image: {0}'.format(ix+1), fontsize=18);
+        # ax[1,0].set_xlabel('pixels', fontsize=10)
+        # ax[1,0].set_ylabel('pixels', fontsize=10)
+        # ax[1,0].tick_params(axis='both', which='major', labelsize=10)
+        ax[1,0].imshow(labels[ix])
+        ax[1,0].set_title('Training label: {0}'.format(ix+1), fontsize=18);
+        ax[1,0].set_xlabel('pixels', fontsize=10)
+        ax[1,0].set_ylabel('pixels', fontsize=10)
+        ax[1,0].tick_params(axis='both', which='major', labelsize=10)
+        ax[1,1].imshow(labels_aug[ix])
+        ax[1,1].set_title('Augmented label: {0}'.format(ix+1), fontsize=18);
+        ax[1,1].set_xlabel('pixels', fontsize=10)
+        ax[1,1].set_ylabel('pixels', fontsize=10)
+        ax[1,1].tick_params(axis='both', which='major', labelsize=10)
+        plt.legend(loc='upper center', bbox_to_anchor=(-0.12, -0.15), fontsize=18,\
+                    handles=[red_patch, blue_patch, green_patch, black_patch], ncol=4)
+        plt.savefig(TEST_PREDICTIONS_PATH+'Augmentation')
+        plt.show()  
+    all_images = np.append(images , images_aug, axis=0 )
+    all_labels= np.append(labels, labels_aug, axis=0)
+    return all_images, all_labels
+
+#----------------------------------------------------------------------------
+
+#Same augmentation but without displaying anything on screen
+def augmentation_noPrint(images, labels, TEST_PREDICTIONS_PATH = ''):
+    images_aug, labels_aug = augmentation_sequence_Color(images=images, labels=labels)
+    labels_aug = labels_aug.astype(np.float64)
     all_images = np.append(images , images_aug, axis=0 )
     all_labels= np.append(labels, labels_aug, axis=0)
     return all_images, all_labels
@@ -108,9 +159,9 @@ VISUALIZE AUGMENTATION
 
 #############################################################################
 
-# TRAIN_PATH = 'C://Path/' #training images dataset path
-# TEST_PATH  = 'C://Path/' #testing images dataset path
-# TEST_PREDICTIONS_PATH = 'C://Path/' #testing outputs path
+# TRAIN_PATH = '' #training images dataset path
+# TEST_PATH  = '' #testing images dataset path
+# TEST_PREDICTIONS_PATH = '' #testing outputs path
 # IMG_WIDTH = 256
 # IMG_HEIGHT = 256
 
