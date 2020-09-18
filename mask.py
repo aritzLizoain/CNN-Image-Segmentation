@@ -44,9 +44,9 @@ import matplotlib.patches as mpatches
 
 ##############################################################################
 
-# TRAIN_PATH = 'C://Users/Aritz.LEBERRI/Desktop/Project/Images/Train/' #training images dataset path
-# TEST_PATH  = 'C://Users/Aritz.LEBERRI/Desktop/Project/Images/Test/' #testing images dataset path
-# TEST_PREDICTIONS_PATH = 'C://Users/Aritz.LEBERRI/Desktop/Project/Images/TS_output/' #testing outputs path
+# TRAIN_PATH = '' #training images dataset path
+# TEST_PATH  = '' #testing images dataset path
+# TEST_PREDICTIONS_PATH = '' #testing outputs path
 # IMG_WIDTH = 258
 # IMG_HEIGHT = 258
 IMG_CHANNELS = 4
