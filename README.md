@@ -1,9 +1,3 @@
-Ezabatu
-
-Note: the README corresponds to the first release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
-Some updated files contain new functions. A major update is the dataset loading method; instead of loading PNG images, data arrays are directly loaded.
-
-
 # CNN Image Segmentation
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
 
@@ -15,11 +9,7 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
 
 ## Contents
 
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
+Egitear
 
 
 
@@ -231,6 +221,11 @@ _Support_: the number of pixels of the given class in the dataset.
 ## Future steps
 
 * Particle identification.
+
+## Releases
+
+* First release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
+* Second release: soon.
 
 ## Contributing
 
