@@ -1,4 +1,4 @@
-<div style="text-align: justify">
+<p style='text-align: justify;'>
 
 # Dark Matter (DM)
 
@@ -45,4 +45,4 @@ Furthermore, the ionizing particles need to be distinguished from noise signals 
 
 The goal of this project is to implement an innovative deep learning application able to extract all the information from the detector images. An automated quality monitoring system is sought with the purpose of identifying the main defects associated to the detector. Four main categories are discriminated on each image: background, glowing, hot pixels and pixel clusters. The ML algorithm implemented on the images performs a behavior generalization seeking to uncover the signal of each category. Thus, the output shows all the practical information at a glance; an ideal segmented image is displayed making each category clearly distinguishable. As a result, pixel clusters can be differentiated, leading to further research. 
 
-</div>
+</p>
