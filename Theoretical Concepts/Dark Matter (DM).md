@@ -31,7 +31,7 @@ Different ionizing particles in a CCD include: straight track-shaped cosmic ray 
 
 ![DAMIC_CCD_image_and_signatures_of_ionizing_particles](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg)
 
-<p align="center">
+<p align="right">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg" width="400"/>
 </p>
 
