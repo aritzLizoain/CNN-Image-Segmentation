@@ -10,7 +10,7 @@ Three strategies are followed for DM detection: accelerators, direct and indirec
 
 ![Figure 1](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). ![Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).}*
+*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).}*
 
 
 ## DAMIC/DAMIC-M
