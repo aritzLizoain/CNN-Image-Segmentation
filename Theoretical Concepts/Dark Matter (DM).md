@@ -10,7 +10,29 @@ Three strategies are followed for DM detection: accelerators, direct and indirec
 
 ![DM_Detection_Methods](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DM_Detection_Methods.jpg)
 
-*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).}*
+*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).*
 
 
 ## DAMIC/DAMIC-M
+
+In this study the direct search strategy is followed. It is a huge endeavor to develop experiments able to directly investigate the particle nature of DM. These experiments aim to identify recoils produced by the scattering between the theoretical DM particles and a detector's target nuclei or electron. Specifically in this research, the silicon of the CCDs is used as a target.
+
+![DM_particle_and_detector_scattering](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DM_particle_and_detector_scattering.png)
+
+*Nuclear recoil produced by the scattering between a DM particle and a detector's Si nucleus. Digital image. Aguilar-Arevalo, A. et al. "Measurement of radioactive contamination in the CCD’s of the DAMIC experiment". (Journal of Physics, 2015). [Link](https://arxiv.org/pdf/1506.02562.pdf).*
+
+This kind of experiments are very sensitive to any radiation background, either from the construction material or cosmogenic. Moreover, the collision signals are expected to be rare and low (keV scale and below). In order to screen out the radiation background, the material is thoroughly assayed. In addition, carrying out the measurements in a subterranean location, inside a mountain or a mine, shielded from cosmic-rays induced events, is key to achieve sensitivity to DM particle detection.
+
+Previously calibrated and tested 675 μm-thick (approx. 15g each) CCDs are located inside an electroformed copper box, used for screening purposes. The 36MP CCDs have a very low radiation background (0.1/event/kg/day/keV) and a resolution better than 1e- by means of the skipper readout system. The operating temperature can range between 135-140K and a maximum of 240K. An array of 50 skipper CCDs will constitute the future DAMIC-M experiment located in the Laboratoire Souterrain de Mondane facility (France), which is still finalizing its design and is scheduled to be installed by the end of 2023. Nevertheless, the collaboration has been studying this technology approximately since 2012 and data has been taken from the DAMIC experiment located at SNOLAB (Canada). The data from DAMIC is the one that has been used in this project.
+
+CCD images contain a high-resolution two-dimensional projection on the XY plane of the charge deposits in the active volume of the device. The DAMIC data has been acquired with two different readout configurations: 1X1 and 1X100. The first one is the standard CCD readout, reading each pixel individually. On the second one instead, columns of 100 pixel rows are read individually. The image readout times are 24h and 8h, respectively for the 1X1 and 1X100 setups. Immediately after taking the image, a "blank" image is acquired, whose exposure is only a few seconds. Since the occurrence of a physical event during each readout mode is <5% and <0.1% (respectively for 1X1 and 1X100), most blank images contain only the image noise. The total exposure time presents a statistically consistent white noise distribution. 
+
+Different ionizing particles in a CCD include: straight track-shaped cosmic ray muons, large drop-shaped alpha particles, "worm"-shaped straggling electrons, and low-energy candidates, characterized by small round clusters.
+
+![DAMIC_CCD_image_and_signatures_of_ionizing_particles](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg)
+
+*Signatures of different ionizing particles in a CCD (processed image). Adapted Digital image. Aguilar-Arevalo, A. et al. "Measurement of radioactive contamination in the CCD’s of the DAMIC experiment". (Journal of Physics, 2015). [Link](https://arxiv.org/pdf/1506.02562.pdf).*
+
+Furthermore, the ionizing particles need to be distinguished from noise signals such as hot pixels (i.e. pixels which look much brighter than they should), glowing and any other issue with the pixels. The major research problem is the difficulty involved in correctly masking out the background noise; signals from ionizing particles are almost at the same energy level as the background. In order to face the challenge of discriminating the different ionizing particles from the background noise, machine learning is proposed as a solution.
+
+The goal of this project is to implement an innovative deep learning application able to extract all the information from the detector images. An automated quality monitoring system is sought with the purpose of identifying the main defects associated to the detector. Four main categories are discriminated on each image: background, glowing, hot pixels and pixel clusters. The ML algorithm implemented on the images performs a behavior generalization seeking to uncover the signal of each category. Thus, the output shows all the practical information at a glance; an ideal segmented image is displayed making each category clearly distinguishable. As a result, pixel clusters can be differentiated, leading to further research. 
