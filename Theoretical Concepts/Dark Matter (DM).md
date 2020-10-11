@@ -10,7 +10,7 @@ Three strategies are followed for DM detection: accelerators, direct and indirec
 
 ![DM_Detection_Methods](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DM_Detection_Methods.jpg)
 
-*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).*
+*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259 style=centerme).*
 
 
 ## DAMIC/DAMIC-M
@@ -29,7 +29,7 @@ CCD images contain a high-resolution two-dimensional projection on the XY plane 
 
 Different ionizing particles in a CCD include: straight track-shaped cosmic ray muons, large drop-shaped alpha particles, "worm"-shaped straggling electrons, and low-energy candidates, characterized by small round clusters.
 
-![DAMIC_CCD_image_and_signatures_of_ionizing_particles](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg)
+![DAMIC_CCD_image_and_signatures_of_ionizing_particles](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg){ width: 200px; }
 
 *Signatures of different ionizing particles in a CCD (processed image). Adapted Digital image. Aguilar-Arevalo, A. et al. "Measurement of radioactive contamination in the CCD’s of the DAMIC experiment". (Journal of Physics, 2015). [Link](https://arxiv.org/pdf/1506.02562.pdf).*
 
