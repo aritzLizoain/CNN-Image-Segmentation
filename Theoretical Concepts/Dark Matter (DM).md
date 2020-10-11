@@ -1,5 +1,3 @@
-<p style='text-align: justify;'>
-
 # Dark Matter (DM)
 
 ## Introduction
@@ -14,7 +12,7 @@ Three strategies are followed for DM detection: accelerators, direct and indirec
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DM_Detection_Methods.jpg" width="450"/>
 </p>
 
-*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259 style=centerme).*
+*Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).*
 
 
 ## DAMIC/DAMIC-M
@@ -44,5 +42,3 @@ Different ionizing particles in a CCD include: straight track-shaped cosmic ray 
 Furthermore, the ionizing particles need to be distinguished from noise signals such as hot pixels (i.e. pixels which look much brighter than they should), glowing and any other issue with the pixels. The major research problem is the difficulty involved in correctly masking out the background noise; signals from ionizing particles are almost at the same energy level as the background. In order to face the challenge of discriminating the different ionizing particles from the background noise, machine learning is proposed as a solution.
 
 The goal of this project is to implement an innovative deep learning application able to extract all the information from the detector images. An automated quality monitoring system is sought with the purpose of identifying the main defects associated to the detector. Four main categories are discriminated on each image: background, glowing, hot pixels and pixel clusters. The ML algorithm implemented on the images performs a behavior generalization seeking to uncover the signal of each category. Thus, the output shows all the practical information at a glance; an ideal segmented image is displayed making each category clearly distinguishable. As a result, pixel clusters can be differentiated, leading to further research. 
-
-</p>
