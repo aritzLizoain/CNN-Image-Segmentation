@@ -15,11 +15,8 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
 ## Contents
 
 1. Lehenengoa
-
-	1.1 Lehenengoa
-
-	1.2 Bigarrena
-
+  1.1 Lehenengoa
+  1.2 Bigarrena
 2. Bigarrena
 
 
