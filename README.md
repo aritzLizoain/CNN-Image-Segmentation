@@ -3,9 +3,9 @@ Ezabatu
 Note: the README corresponds to the first release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 Some updated files contain new functions. A major update is the dataset loading method; instead of loading PNG images, data arrays are directly loaded.
 
-<p align = "center">
+<div align="center">
 # CNN Image Segmentation
-</p>
+</div>
 
 <p align = "center">
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
@@ -24,24 +24,6 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
    1. Item 3a
    1. Item 3b
 
-## Table of Contents
-
-<img align = "right" width = "350px" src = "https://github.com/jina-ai/jina/blob/master/.github/install.png?raw=true" />
-
-<! - START doctoc generated TOC please keep comment here to allow auto update ->
-<! - DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE ->
-
-
-- [Install] (# install)
-- [Jina "Hello, world!" 👋🌍] (# jina-hello-world-)
-- [First steps] (# first-steps)
-- [Documentation] (# documentation)
-- [Contributing] (# contributing)
-- [community] (# community)
-- [timetable] (# timetable)
-- [license] (# license)
-
-<! - END doctoc generated TOC please keep comment here to allow auto update ->
 
 
 
