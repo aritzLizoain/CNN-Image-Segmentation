@@ -1,10 +1,35 @@
+Ezabatu
+
 Note: the README corresponds to the first release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 Some updated files contain new functions. A major update is the dataset loading method; instead of loading PNG images, data arrays are directly loaded.
 
 # CNN Image Segmentation
 
-This is a development of a machine learning application for research on dark matter. The software performs multi-class image segmentation on simulated images from direct detection experiments.
-The simulated images represent energy deposits on CCDs. A deep learning UNet model is trained in Python with Keras. Over 99% prediction accuracy is successfully reached.
+## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
+
+The Standard Model of particle physics, while being able to make accurate predictions, has been proved to fail to explain various phenomena, such as astronomical dark matter observations.
+In this work, a machine learning application has been implemented with the goal of studying dark matter candidates.
+Images from Charge Coupled Devices (CCDs) in different experiments located underground are used to test different deep learning algorithms.
+A U-Net model is trained with Python's open-source library Keras. The model performs multi-class image segmentation in order to detect dark matter particle signals among background noise.
+
+## Contents
+
+1. Lehenengoa
+	1.1 Lehenengoa
+	1.2 Bigarrena
+2. Bigarrena
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Getting Started
 
