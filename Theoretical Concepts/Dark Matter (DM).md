@@ -31,9 +31,9 @@ Different ionizing particles in a CCD include: straight track-shaped cosmic ray 
 
 ![DAMIC_CCD_image_and_signatures_of_ionizing_particles](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg)
 
-<pre>
+<p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg" width="400"/>
-</pre>
+</p>
 
 *Signatures of different ionizing particles in a CCD (processed image). Adapted Digital image. Aguilar-Arevalo, A. et al. "Measurement of radioactive contamination in the CCD’s of the DAMIC experiment". (Journal of Physics, 2015). [Link](https://arxiv.org/pdf/1506.02562.pdf).*
 
