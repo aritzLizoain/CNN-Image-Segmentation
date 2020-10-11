@@ -7,6 +7,8 @@ In this work, a machine learning application has been implemented with the goal 
 Images from Charge Coupled Devices (CCDs) in different experiments located underground are used to test different deep learning algorithms.
 A U-Net model is trained with Python's open-source library Keras. The model performs multi-class image segmentation in order to detect dark matter particle signals among background noise.
 
+For more information regarding dark matter please read [Theoretical Concepts: Dark Matter (DM)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Dark%20Matter%20(DM).txt)
+
 ## Contents
 
 Soon.
@@ -17,17 +19,17 @@ These instructions explain how to get a copy of the project to run it on your lo
 
 ### Installation
 
-The project can be either cloned or downloaded to your own device.<br/>The following requirements need to be installed (version numbers are up to date: 21.06.2020):
+The project can be either cloned or downloaded to your own device.<br/>The source code of the application is implemented in Python, with the requirement of the following open-source libraries (version numbers are up to date: 21.06.2020):
 
-* keras (2.3.1)
-* tensorflow (2.1.0)
-* numpy (1.18.1)
+* Keras (2.3.1)
+* TensorFlow (2.1.0)
+* Numpy (1.18.1)
 * scikit-learn (0.22.1)
 * scikit-image (0.9.3)
-* opencv-python (4.0.1)
+* OpenCV-Python (4.0.1)
 * imgaug (0.4.0)
-* matplotlib (3.2.1)
-* pillow (7.1.2)
+* Matplotlib (3.2.1)
+* Pillow (7.1.2)
 
 The libraries can manually be installed from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is a good option.
@@ -65,6 +67,8 @@ Therefore a color change of an object in the image can cause a wrong label creat
 * **Caution**: make sure the path is correct. If it is not, it will not be able to load any data.
 
 ### models.py
+
+The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layercomposing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   Inaddition, the weighted categorical crossentropy loss function is defined.
 
 * **Function**: defines the model architecture and layer features. The model has UNet architecture. The code is already prepared to add layers into the model. Layers can be removed too. Additionally, pretrained weights from an already trained model can be used.
 
@@ -159,6 +163,10 @@ The original image and label, and augmented ones, are visualized.
 All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
+
+## Implementation summary
+
+Only the last two are executed
 
 ## Results
 
