@@ -9,20 +9,7 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
 
 ## Contents
 
-Egitear
-
-
-
-
-
-
-
-
-
-
-
-
-
+Soon.
 
 ## Getting Started
 
@@ -42,7 +29,7 @@ The project can be either cloned or downloaded to your own device.<br/>The follo
 * matplotlib (3.2.1)
 * pillow (7.1.2)
 
-You can manually install the libraries from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
+The libraries can manually be installed from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is a good option.
 
 ## Python files
@@ -225,6 +212,7 @@ _Support_: the number of pixels of the given class in the dataset.
 ## Releases
 
 * First release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
+Azalpena
 * Second release: soon.
 
 ## Contributing
