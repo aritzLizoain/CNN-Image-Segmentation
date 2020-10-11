@@ -3,13 +3,10 @@ Ezabatu
 Note: the README corresponds to the first release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 Some updated files contain new functions. A major update is the dataset loading method; instead of loading PNG images, data arrays are directly loaded.
 
-<div align="center">
-# CNN Image Segmentation
-</div>
 
-<p align = "center">
+# CNN Image Segmentation
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
-</p>
+
 
 The Standard Model of particle physics, while being able to make accurate predictions, has been proved to fail to explain various phenomena, such as astronomical dark matter observations.
 In this work, a machine learning application has been implemented with the goal of studying dark matter candidates.
