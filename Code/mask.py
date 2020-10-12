@@ -2,13 +2,9 @@
 """
 Created on Thu Jun 11 17:44:17 2020
 
-@author: Aritz
-
-MASK IMAGE
+@author: Aritz Lizoain
 
 This code creates the masks and labels
-
-Idea explained in: https://www.jeremyjordan.me/semantic-segmentation/#advanced_unet
 
 PROCESS:    
     *(n_images, x size, y size, 3(rgb)) -------- Takes training image dataset

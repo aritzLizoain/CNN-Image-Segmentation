@@ -2,8 +2,6 @@
 """
 @author: Agustín Lantero Barreda (PhD Student of DAMIC-M)
 
-IMAGE SIMULATION
-
 Working directory must be where all files are located
 
 This code can be run to create simulated images

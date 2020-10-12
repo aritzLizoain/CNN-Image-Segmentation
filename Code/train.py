@@ -2,9 +2,7 @@
 """
 Created on Wed Jun 10 18:00:30 2020
 
-@author: Aritz
-
-TRAINING
+@author: Aritz Lizoain
 
 This is the MAIN CODE to train the model.
 

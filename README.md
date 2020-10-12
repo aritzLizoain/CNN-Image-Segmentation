@@ -88,7 +88,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 ### 2.4 mask.py NEEDS TO BE UPDATED
 
-* **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
+* **Function**:  
 
   * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
   * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.

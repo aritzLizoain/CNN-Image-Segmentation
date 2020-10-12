@@ -2,9 +2,7 @@
 """
 Created on Wed Jun 10 20:33:00 2020
 
-@author: Aritz
-
-AUGMENTATION
+@author: Aritz Lizoain
 
 Working directory must be where all files are located
 

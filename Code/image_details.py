@@ -2,8 +2,6 @@
 """
 @author: Agustín Lantero Barreda (PhD Student of DAMIC-M)
 
-IMAGE DETAILS
-
 Details can be changed to create images in image_simulation.py
 
 """
