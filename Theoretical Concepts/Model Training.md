@@ -8,7 +8,7 @@ The training dataset is shuffled and divided into batches. Then, these batches w
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Accuracy.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Loss.png" width="400"/> 
 </pre>
 
-*Example of a correct training of a model that reaches its optimum state at epoch 40.* <br\> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
+*Example of a correct training of a model that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
 
 However, models can occasionally be overtrained after reaching their optimum state and cause overfitting. In order to avoid this, the training process is programmed to stop if the validation loss has not improved in 20 epochs, and only the model with the lowest loss is saved.
 
@@ -16,6 +16,6 @@ However, models can occasionally be overtrained after reaching their optimum sta
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/AccuracyOverfit.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/LossOverfit.png" width="400"/> 
 </pre>
 
-*Example of an overtrained model that overfits after reaching its optimum state at epoch 25.* <br\> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
+*Example of an overtrained model that overfits after reaching its optimum state at epoch 25.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
 
 
