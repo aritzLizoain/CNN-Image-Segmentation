@@ -134,6 +134,12 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layer 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
 
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Unet.png" width="800"/>
+</p>
+
+*Implemented U-Net architecture. Adapted from Ronneberger, O. et al. "Convolutional Networks for Biomedical Image Segmentation". (2015). [Link](https://arxiv.org/pdf/1505.04597.pdf).*
+
 For more information regarding ML (CNNs, layers, image segmentation) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
 
 For more information regarding the implementation of the network (employed layers, activation functions, loss function, optimizer) please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
