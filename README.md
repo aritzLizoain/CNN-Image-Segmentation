@@ -86,7 +86,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
   * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201) is used to analyze the final output. It looks for a chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as a chosen class.
 
-### 2.4 mask.py NEEDS TO BE UPDATED
+### 2.4 mask.py
 
 * **Function**: creates the labels in an automated way, visualizes the output labels and can analyze and modify the images.
 
