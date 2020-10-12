@@ -178,12 +178,12 @@ All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-## 3. Implementation summary NEEDS TO BE UPDATED
+## 3. Implementation summary
 
 The Python application consists on the 8 files previously explained. Only the last two ([train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/train.py) and [load_model.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_model.py)) are executed.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Summary.png" width="900"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Summary.png" width="1000"/>
 </p>
 
 *Python implementation summary.*
@@ -247,9 +247,13 @@ If you use this code in a publicly available project, please post an issue or cr
 
 ## 7. Versioning NEEDS TO BE UPDATED
 
-* First release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
+* First release: [1.0 CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
+
 Azalpena
-* Second release: soon.
+
+* Second release: [2.0 CNN image segmentation](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v2.0).
+
+Soon
 
 Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/releases) to find previous versions of the project.
 
