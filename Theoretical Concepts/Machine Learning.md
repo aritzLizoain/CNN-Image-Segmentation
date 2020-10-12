@@ -1,6 +1,6 @@
 # Machine Learning
 
-``` Field of study that gives the ability to the computer to self-learn without being explicitly programmed. ``` *Arthur L. Samuel, 1959.*
+*Field of study that gives the ability to the computer to self-learn without being explicitly programmed.* Arthur L. Samuel, 1959.
 
 ## Introduction
 
