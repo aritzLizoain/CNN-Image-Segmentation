@@ -66,7 +66,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 ### 2.3 load_dataset.py
 
-* **Function**: receives the images and saves them as numpy arrays with shape (n_img, h, w, 3(rgb)), where n_img = # images, h = height, w = width. 
+* **Function**: calculates the weights for the loss function and processes FITS files (DAMIC images). Originaly created to load the datasets as PNG files into arrays (unused in version 2.0).
   
   * [load_images](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L27)(commented) is no longer used in version 2.0. It was used in version 1.0 for loading the PNG images.
 
