@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Agustín Lantero
+@author: Agustín Lantero Barreda (PhD Student of DAMIC-M)
 
 IMAGE SIMULATION
 
