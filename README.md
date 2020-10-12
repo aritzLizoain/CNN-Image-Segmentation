@@ -117,12 +117,15 @@ Therefore only geometric augmentation is applied: flip, crop, pad, scale, transl
 Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
 The original image and label, and augmented ones, are visualized.
 
-  Augmented image and label example:
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation.png" width="400"/>
+</p>
+
+*Image and label augmentation example. The applied transformations are translation and scaling.*
 
 For more information regarding data augmentation please read [Theoretical Concepts: Data Augmentation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Data%20Augmentation.md)
 
-### 2.6 models.py
+### 2.6 models.py NEEDS TO BE UPDATED
 
 The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layercomposing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   Inaddition, the weighted categorical crossentropy loss function is defined.
 
@@ -133,25 +136,10 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layerc
 
   This is a modified network. The original is from: https://arxiv.org/pdf/1505.04597.pdf.
 
-#### More information regarding CNNs, UNet, layers, hyperparameter optimization, etc.
-* https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/
-* https://medium.com/intuitive-deep-learning/intuitive-deep-learning-part-2-cnns-for-computer-vision-24992d050a27
-* https://medium.com/@jcrispis56/introducci%C3%B3n-al-deep-learning-parte-2-redes-neuronales-convolucionales-f743266d22a0 (in Spanish)
-* https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
-* https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca
-* https://towardsdatascience.com/understanding-semantic-segmentation-with-unet-6be4f42d4b47 (UNet)
+For more information regarding ML (CNNs, layers, image segmentation, etc.) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
 
-  UNet architecture:
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%201.png "UNet architecture 1")
+For more information regarding the implementation of the network please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
 
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Models/Architecture%202.png "UNet architecture 2")
-* Layers summary:
-  - Convolution: uses parameter sharing and applies the same smaller set of parameters spatially across the image. Filter size corresponds to how many input features in the width and height dimensions one neuron takes in. Stride helps overlapping regions, it defines how many pixels we want to move when applying the neuron again. Depth defines how many different outputs/classes do we have. Padding adds a border of 0s.
-  - Upsampling convolution (decoder): learns parameters through back propagation to convert a low resolution image to a high resolution image. It needs to concatenate with the corresponding downsampling layer.
-  - Max Pool: takes the maximum of the numbers it looks at. Applies to each individual depth channel separately; leaves depth dimension unchanged. It is only defined by filter size and stride, reducing the spatial size by taking the maximum of the numbers within its filter.
-  - Dropout: during training, some number of layer outputs are randomly ignored or “dropped out. It is applied in order to avoid overfitting.
-  - Fully-Connected (FC): every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features.
-  - Softmax: transforms the output of the previous layer into probability distributions, which is the last layer.
    
 ### 2.7 train.py 
 
