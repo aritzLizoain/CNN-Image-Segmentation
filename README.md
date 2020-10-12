@@ -201,7 +201,7 @@ All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-## 3. Implementation summary
+## :rocket: 3. Implementation summary
 
 The Python application consists on the 8 files previously explained. Only the last two ([train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/train.py) and [load_model.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_model.py)) are executed.
 
@@ -211,7 +211,7 @@ The Python application consists on the 8 files previously explained. Only the la
 
 *Python implementation summary.*
 
-## 4. Results NEEDS TO BE UPDATED
+## :dart: 4. Results NEEDS TO BE UPDATED
 
 An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labeling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
@@ -256,7 +256,7 @@ _F1-score_: the harmonic mean between precision & recall. Useful to analyze the 
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: the number of pixels of the given class in the dataset.
 
-## 5. Future steps NEEDS TO BE UPDATED
+## 5. :thought_balloon: :milky_way: :crystal_ball:  :calendar: :soon:	:clock1: Future steps NEEDS TO BE UPDATED
 
 * Particle identification.
 
