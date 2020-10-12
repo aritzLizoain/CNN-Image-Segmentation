@@ -15,6 +15,7 @@ Soon.
 
 :computer: 1. [Getting Started](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)
   * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+
 :snake: :page_facing_up: 2. [Python files](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)
   * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
   * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
