@@ -13,10 +13,10 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 
 Soon.
 
-:computer: 1. [Getting Started](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)<br/>
+1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)<br/>
   * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
 
-:snake: :page_facing_up: 2. [Python files](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+2. :snake: :page_facing_up: [Python files](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
   * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)
   * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy)
   * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)
@@ -26,7 +26,7 @@ Soon.
   * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
   * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#11-installation)
 
-## :computer: 1. Getting Started
+## 1. :computer: Getting Started
 
 These instructions explain how to get a copy of the project to run it on your local machine for development and testing purposes.
 
@@ -47,7 +47,7 @@ The project can be either cloned or downloaded to your own device.<br/>The sourc
 The libraries can manually be installed from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is a good option.
 
-## :snake: :page_facing_up: 2. Python files
+## 2. :snake: :page_facing_up: Python files
 
 In  this  section  the  core  of  the  project  is  dissected.   Every  employed method is explained;  from the origination of an image,  to the training of the model, every necessary step in the creation of the deep learning application is analyzed.
 
@@ -201,7 +201,7 @@ All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-## :rocket: 3. Implementation summary
+## 3. :rocket: Implementation summary
 
 The Python application consists on the 8 files previously explained. Only the last two ([train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/train.py) and [load_model.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_model.py)) are executed.
 
@@ -211,7 +211,7 @@ The Python application consists on the 8 files previously explained. Only the la
 
 *Python implementation summary.*
 
-## :dart: 4. Results NEEDS TO BE UPDATED
+## 4. :dart: Results NEEDS TO BE UPDATED
 
 An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labeling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
@@ -256,11 +256,11 @@ _F1-score_: the harmonic mean between precision & recall. Useful to analyze the 
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: the number of pixels of the given class in the dataset.
 
-## :thought_balloon: :soon: 5. Future steps NEEDS TO BE UPDATED
+## 5. :thought_balloon: :soon: Future steps NEEDS TO BE UPDATED
 
 * Particle identification.
 
-## 🤝 🤝 🤝 6. Contributing
+## 6. 🤝 Contributing
 
 Feel free to submit pull requests.
 
@@ -268,7 +268,7 @@ Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation
 
 If you use this code in a publicly available project, please post an issue or create a pull request and your project link will be added here.
 
-## :egg: :hatching_chick: :hatched_chick: 7. Versioning NEEDS TO BE UPDATED
+## 7. :egg: :hatching_chick: :hatched_chick: Versioning NEEDS TO BE UPDATED
 
 * First release: [1.0 CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 
@@ -278,7 +278,7 @@ Azalpena
 
 Soon
 
-## :family: 8. Acknowledgments
+## 8. :family: Acknowledgments
 
 I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
