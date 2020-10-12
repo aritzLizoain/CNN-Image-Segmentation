@@ -40,7 +40,7 @@ In  this  section  the  core  of  the  project  is  dissected.   Every  employed
 
 ### 2.1 image_details.py
 
-* **Function**: sets details of the simulated images that are created in image_simulation.py. The pixel intensity value of each element in the image can be defined.
+* **Function**: sets details of the simulated images that are created in [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy). The pixel intensity value of each element in the image can be defined.
 
 For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
 
