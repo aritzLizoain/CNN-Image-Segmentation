@@ -21,35 +21,36 @@ from skimage.transform import resize
 
 ##############################################################
 
-def load_images(TRAIN_PATH='', TEST_PATH='',\
-                TEST_PREDICTIONS_PATH='',IMG_WIDTH = \
-                256, IMG_HEIGHT = 256):
+# NOT USED IF THE IMAGES ARE SAVED AND LOADED AS ARRAYS
+# def load_images(TRAIN_PATH='', TEST_PATH='',\
+#                 TEST_PREDICTIONS_PATH='',IMG_WIDTH = \
+#                 256, IMG_HEIGHT = 256):
 
-    train_ids = next(os.walk(TRAIN_PATH))[2]
-    test_ids = next(os.walk(TEST_PATH))[2]
+#     train_ids = next(os.walk(TRAIN_PATH))[2]
+#     test_ids = next(os.walk(TEST_PATH))[2]
 
-    # Get and resize train images and masks
-    images = np.zeros((len(train_ids), IMG_HEIGHT, IMG_WIDTH,3)\
-                      , dtype=np.uint8)
-    test_images = np.zeros((len(test_ids), IMG_HEIGHT, IMG_WIDTH\
-                            , 3), dtype=np.uint8)
-    sys.stdout.flush()
+#     # Get and resize train images and masks
+#     images = np.zeros((len(train_ids), IMG_HEIGHT, IMG_WIDTH,3)\
+#                       , dtype=np.uint8)
+#     test_images = np.zeros((len(test_ids), IMG_HEIGHT, IMG_WIDTH\
+#                             , 3), dtype=np.uint8)
+#     sys.stdout.flush()
     
-    # # train images 
-    for n,id_ in enumerate(train_ids):
-        img = cv2.imread(TRAIN_PATH + id_)
-        img = resize(img, (IMG_HEIGHT, IMG_WIDTH), mode='constant'\
-                     , preserve_range=True)
-        images[n] = img
+#     # # train images 
+#     for n,id_ in enumerate(train_ids):
+#         img = cv2.imread(TRAIN_PATH + id_)
+#         img = resize(img, (IMG_HEIGHT, IMG_WIDTH), mode='constant'\
+#                      , preserve_range=True)
+#         images[n] = img
         
-        # # test images 
-        for n,id_ in enumerate(test_ids):
-            mask_ = cv2.imread(TEST_PATH + id_)
-            mask_ = resize(mask_, (IMG_HEIGHT, IMG_WIDTH),\
-                           preserve_range=True, mode='constant')
-            test_images[n] = mask_  
-    print('Dataset correctly loaded')
-    return images, test_images
+#         # # test images 
+#         for n,id_ in enumerate(test_ids):
+#             mask_ = cv2.imread(TEST_PATH + id_)
+#             mask_ = resize(mask_, (IMG_HEIGHT, IMG_WIDTH),\
+#                            preserve_range=True, mode='constant')
+#             test_images[n] = mask_  
+#     print('Dataset correctly loaded')
+#     return images, test_images
 
 #-------------------------------------------------------------
 

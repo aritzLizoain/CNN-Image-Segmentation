@@ -65,7 +65,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
 For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
 
-### 2.3 load_dataset.py
+### 2.3 load_dataset.py NEEDS TO BE UPDATED
 
 * **Function**: receives the images and saves them as numpy arrays with shape (n_img, h, w, 3(rgb)), where n_img = # images, h = height, w = width. 
 
@@ -78,7 +78,34 @@ For more information regarding the image simulation please read [Theoretical Con
 
 * **Caution**: make sure the path is correct. If it is not, it will not be able to load any data.
 
-### 2.4 models.py
+### 2.4 mask.py NEEDS TO BE UPDATED
+
+* **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
+
+  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
+  * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.
+  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
+  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.<br/>Input shape = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
+    Example of [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
+  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.<br/>Input shape = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
+  * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and the respective presence percentages on the dataset.
+  * [get_percentages](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L182) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
+  * [visualize_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L197) is used to visualize the created label.
+  * [create_masks](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L222) takes the images as input and returns the masks (created by the previous functions). These masks are what the model uses to train and evaluate the model while training.
+  * [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) takes the images as input and returns the labels (created by the previous functions) that can be visualized. 
+  * [create_labels_noStat_noPrint](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246) is the same as [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Done in order to avoid the repeated information shown by the console.
+  * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
+
+For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Labeling.md)
+
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels2.png "labeling example 2")
+* **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
+The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
+In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes.
+Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).<br/>
+Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
+    
+### 2.5 models.py
 
 The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layercomposing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   Inaddition, the weighted categorical crossentropy loss function is defined.
 
@@ -109,34 +136,6 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layerc
   - Fully-Connected (FC): every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features.
   - Softmax: transforms the output of the previous layer into probability distributions, which is the last layer.
    
-### 2.5 mask.py
-
-* **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
-
-  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
-  * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.
-  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
-  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.<br/>Input shape = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
-    Example of [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
-  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.<br/>Input shape = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
-  * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and the respective presence percentages on the dataset.
-  * [get_percentages](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L182) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
-  * [visualize_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L197) is used to visualize the created label.
-  * [create_masks](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L222) takes the images as input and returns the masks (created by the previous functions). These masks are what the model uses to train and evaluate the model while training.
-  * [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) takes the images as input and returns the labels (created by the previous functions) that can be visualized. 
-  * [create_labels_noStat_noPrint](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246) is the same as [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Done in order to avoid the repeated information shown by the console.
-  * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
-
-  For more information regarding the labeling process please read https://www.jeremyjordan.me/semantic-segmentation/.
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels.png "labeling example 1")
-
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/labels2.png "labeling example 2")
-* **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
-The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes.
-Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).<br/>
-Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
-    
 ### 2.6 augmentation.py
 
 * **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
@@ -249,8 +248,9 @@ Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/re
 
 ## 9. Acknowledgments
 
-* Agustín Lantero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py), [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl) files.
-* Rocío Vilar, Alicia Calderón and Nuria Castello-Mor for the help, advice and support. 
+I wish to express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
+
+References
 
 ## 10. Copyright
 
