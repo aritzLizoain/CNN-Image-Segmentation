@@ -136,9 +136,9 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layerc
 
   This is a modified network. The original is from: https://arxiv.org/pdf/1505.04597.pdf.
 
-For more information regarding ML (CNNs, layers, image segmentation, etc.) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
+For more information regarding ML (CNNs, layers, image segmentation) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
 
-For more information regarding the implementation of the network please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
+For more information regarding the implementation of the network (employed layers, activation functions, loss function, optimizer) please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
 
    
 ### 2.7 train.py 

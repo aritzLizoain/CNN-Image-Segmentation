@@ -4,22 +4,79 @@
 
 ## Introduction
 
-In order to develop a ML model, data is vital. Frequently, collecting suitable data is more troublesome than writing algorithms. Depending on the sophistication of the problem, the number of parameters and the amount of data needed varies significantly. Most commonly used datasets for computer vision can provide over 100000 images, sometimes even a million of them. However, possessing such a vast and appropriate dataset is not always possible. Occasionally, data collection is overly costly, and the lack of data limits the model.
+As data growth continues to escalate, algorithms must keep improving to be able to understand it all with higher speed and higher accuracy. Processing the high amount of data that is produced every day is becoming more challenging without the assistance of ML. ML is an AI subset which is focused on developing programs that are able to teach themselves to make accurate predictions when exposed to new data. It is found in diverse sectors, due to its wide usage in image recognition, speech recognition, medical diagnoses, trading, etc. There are three main types of ML: supervised, unsupervised and reinforcement learning.
 
-This obstacle is overcome creating images that simulate the ones taken by CCDs. The aim is to emulate the signatures of the four main categories to discriminate, so that the model will learn and subsequently be able to predict them on real detector images. To create a simulated image, first the background is defined by a fixed intensity value, or pedestal, to which an amount of noise can be added. Then the other three main categories to discriminate are added to the image: glowing, hot pixels and pixel clusters. These three differ in shape and pixel intensity (being pixel clusters the least intense, and glowing and hot pixels the most intense). The freedom of choice is the main advantage of this solution; it is possible to vary which objects (or categories) are included in a picture, the amount of them, their pixel intensities, size, position, etc. This way, a wide variety of simulated images can be used, ensuring that the model learns all kind of signals that can appear in a real CCD image.
+In supervised learning, algorithms are trained with labeled data. Thus, known input and output is being used. Each image data is tagged with its corresponding label, which is the desired output. The algorithm learns by comparing its prediction with the given label, and modifies the model accordingly. In this project classification supervised learning is applied, meaning that the output variables are categories ('background', 'glowing', 'hot pixels', and 'pixel clusters').
 
-## Image Simulation
+## Convolutional Neural Networks (CNNs)
 
-The simulated images contain four classes/categories to segment: background, glowing, hot pixels and pixel clusters. Two datasets are created: a training and a testing set. The training set is used to train the ML model, while the testing set is only used once the model was fully trained. Trying to recreate real DAMIC images at T=140K as accurate as possible, specific pixel intensities are assigned to each class in 256X256 pixel images.
+Taking the human brain as a reference, artificial NNs are based on connected nodes called neurons. A neuron receives inputs from other neurons and combines them together. The output from a neuron is obtained by a value transformation called activation function. The values used in the activation function, termed weights, are randomly initialized. The accuracy of a neuron output is determined by the loss function; the lower the loss, the higher the output accuracy. Therefore the goal is to find the right weights to minimize the loss function, thus, giving the most accurate prediction. This is done by an optimizer, that identifies which weights contribute most directly to the loss of the network, subsequently updating them in order to minimize such loss. The training process is repeated for a number of iterations, aiming to improve the weight value readjustment.
+
+CNNs are composed of an input layer, several hidden layers, and an output layer. Their employment allows the recognition of specific properties of image data, thereby becoming highly suitable for computer vision applications. Images are passed through the NN as an array of values describing pixel intensities. Each of these values is a feature that characterizes the image. The first few neuron layers learn low-level features (basic elements such as edges and colors), leading to a more complex pattern learning by the succeeding layers. This way, the network is able to differentiate one image from another. Generally, prediction accuracy is improved with a deeper network, i.e. with more layers.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Simulated_CCD_Image.png" width="400"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/cnn.png" width="400"/>
 </p>
 
-*Simulated 256X256 pixel CCD image containing glowing, hot pixels and pixel clusters. The pixel intensity values are given in ADCs.*
+*CNN feature learning process. Adapted Digital Image. Torres, J. "Convolutional Neural Networks for Beginners". (Towards Data Science, 2018). [Link](https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca).*
 
-The background intensity, also referred as pedestal, is set a value of 8800ADC (Unit of measurement for charge in count of ADC through the digital output of the A/D con-verter) with a noise of ±60ADC, meaning that the background pixel intensities take values between 8740 and 8860 ADC (all pixel intensity ranges follow a gaussian distribution). Glowing is added as a vertical column with an intensity above background of range [1400, 1500]ADC. Hot pixels are added as thin vertical and horizontal lines of different lengths with intensities above background of 2200ADC, being the class with the highest pixel intensity value. Clusters, on the other hand, are added from a file containing the intensity and position of 803 pixel clusters. The file does not contain any alpha particle, hence almost all clusters are low-energy events and their intensity value is slightly above background.
+### Convolution
 
-Both python files containing the code for creating the simulated images, as well as the file with cluster information have been provided by Agustín Lantero Barreda, PhD Student of DAMIC-M.
+CNNs are named after its most important layer, the convolution layer. While a standard NN layer applies its activation function weights to the whole image, a convolution layer applies a set of weights spatially across the image, thereby reducing the number of parameters needed. This set of activation function weights compose the filter, which is defined by several hyper-parameters: filter size, stride, and depth. Filter size sets the width and height of the filter. The number of pixels to move before applying the filter again is set by stride. If the stride is smaller than the filter size, regions of the image are overlapped. The depth defines the number of channels of the filter, which is equal to the number of input channels (e.g. for a RGB image the depth is 3, one for each color channel, while for a grayscale image the depth is 1).
 
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
+</p>
+
+*Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
+
+
+### Max Pooling
+
+Max pooling layers, like convolution layers, apply a filter across the image, which is also defined by a filter size and stride. The layer takes the maximum value within the filter, reducing the spatial size of the input. However, it does not take the maximum value across different depths, since it is applied to each depth channel individually.
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
+</p>
+
+*Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
+
+
+### Dropout
+
+Overfitting is one of the most common issues when training a ML model. It causes the model to memorize the training data, instead of learning from it, which leads to a high accuracy on the predictions while training, but a low accuracy on testing predictions. The most effective solution is adding more training data. Nonetheless, adding a dropout layer also helps avoiding the issue. Dropout layers randomly ignore a number of neuron outputs, reducing the dependency on the training set. 
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
+</p>
+
+*Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
+
+
+### Fully Connected
+
+A fully connected layer is usually added as the last layer of the CNN. Like in a standard NN layer, every neuron is connected to every neuron in the previous layer. The fully connected layer classifies the image based on the outputs of the preceding layers.
+
+## Image Segmentation
+
+An image classification problem consists in predicting the object within the image. On the other hand, image segmentation requires a higher understanding of the image; the algorithm is expected to classify each pixel in the image. Thus, the output is a labeled image in which each pixel is classified to its corresponding category. Self-driving cars development, medical images diagnosis and satellite image analysis are some of the numerous image segmentation applications.
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
+</p>
+
+*Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
+
+
+### U-Net
+
+It is a widely held belief that a successful deep network training requires thousands of labeled training data. However, the U-Net network architecture, originally developed for biomedical (cell) image processing, uses the available labeled images more efficiently. In consequence, it has become one of the most popular networks in the medical domain, where usually thousands of training samples are beyond reach. Furthermore, the U-Net architecture is able to detect small size objects within the image.
+
+The U-Net architecture contains two paths: the contraction path, called encoder, and its symmetric expanding path, the decoder. The encoder is built stacking convolutional and max pooling layers. This way the size of the image is reduced, which is called down sampling. The deeper the network, the more reduced is the image. This allows obtaining information about the objects within the image, but the spatial information is lost. Therefore the image needs to be up sampled to the original image size, i.e. restore the low resolution image to a high resolution image. For this purpose, the decoder is built stacking convolutional and transposed convolutional layers. Every step of the decoder uses skip connections by concatenating the outputs of the down sampling layers with the up sampling layer at the corresponding level. 
+The network does not contain fully connected layers, therefore is defined as a fully convolutional network.
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
+</p>
+
+*Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
 
