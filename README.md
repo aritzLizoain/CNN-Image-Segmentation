@@ -14,6 +14,7 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 Soon.
 
 :computer: 1. [Getting Started](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)
+  * 1.1 Installation
 
 ## :computer: 1. Getting Started
 
