@@ -88,7 +88,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 ### 2.4 mask.py NEEDS TO BE UPDATED
 
-* **Function**:  
+* **Function**: creates the labels in an automated way, visualizes the output labels and can analyze and modify the images.
 
   * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image. Input shape = (number of images, height, width, 3(RGB)) --> Output shape = (number of images, height, width, 1).
   * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) classifies each pixel as a certain class depending on its intensity value.
