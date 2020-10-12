@@ -36,6 +36,8 @@ If a module cannot be properly installed (installing tensorflow might sometimes 
 
 ## Python files
 
+In  this  section  the  core  of  the  project  is  dissected.   Every  employed method is explained;  from the origination of an image,  to the training of the model, every necessary step in the creation of the deep learning application is analyzed.
+
 ### image_details.py
 
 * **Function**: sets details of the simulated images that are created in image_simulation.py.

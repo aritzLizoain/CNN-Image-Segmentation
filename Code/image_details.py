@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Agustín
+@author: Agustín Lantero Barreda (PhD Student of DAMIC-M)
 
 IMAGE DETAILS
 
@@ -13,9 +13,7 @@ from matplotlib import pyplot as plt
 import pickle
 
 #############################################################################
-"""
-TRAIN
-"""
+
 class image_details(object):
       ''' Simulate a CCD Image'''
       def __init__(self, nx, ny, darkC, pedestal, noise, nSamples, texp):
@@ -25,7 +23,6 @@ class image_details(object):
           self.nSamples, self.texp = nSamples, texp
           self.day_pix = 1/(24*12e7) #pix/day
           
-      
           
       @property
       def darkCurrent(self):
