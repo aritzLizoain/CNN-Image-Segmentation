@@ -37,6 +37,12 @@ The original loss function, on the other side, is the categorical crossentropy. 
 
 The optimizer is not originally detailed, therefore the most common ones are tested: Adam, Adagrad, Adadelta and SGD. All of them are adapted stochastic gradient descent methods. These methods are the algorithms that change the weights of the activation function in order to reduce the loss given by the loss function. An optimizer is defined by its learning rate. This hyper-parameter determines the amount of weights that are updated at each training iteration. The larger the learning rate, the faster the optimizer will minimize the loss function. However, if the learning rate is too large, the optimizer might not be able to converge and minimize the loss function. In the end, the chosen optimizer is adadelta, a method which dynamically adapts its learning rate over time. The automatic learning rate setting is found to be highly convenient, and works efficiently on the simulated dataset.
 
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Optimizers.gif" width="400"/>
+</p>
+
+*Optimization algorithm animations. Digital Image. "Alec Radford's animations for optimization algorithms". (2015). [Link](http://www.denizyuret.com/2015/03/alec-radfords-animations-for.html).*
+
 ## Dropout 
 
 Finally, unlike in the original structure, dropout layers are added between every pair of convolutional layers. The intention is to avoid overfitting as much as possible.
