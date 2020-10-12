@@ -256,11 +256,11 @@ _F1-score_: the harmonic mean between precision & recall. Useful to analyze the 
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: the number of pixels of the given class in the dataset.
 
-## 5. :thought_balloon: :milky_way: :crystal_ball:  :calendar: :soon:	:clock1: Future steps NEEDS TO BE UPDATED
+## :thought_balloon: :soon: 5. Future steps NEEDS TO BE UPDATED
 
 * Particle identification.
 
-## 6. Contributing
+## :handshaking: 6. Contributing
 
 Feel free to submit pull requests.
 
@@ -268,7 +268,7 @@ Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation
 
 If you use this code in a publicly available project, please post an issue or create a pull request and your project link will be added here.
 
-## 7. Versioning NEEDS TO BE UPDATED
+## :egg: :hatching_chick: :hatched_chick: 7. Versioning NEEDS TO BE UPDATED
 
 * First release: [1.0 CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 
@@ -278,10 +278,10 @@ Azalpena
 
 Soon
 
-## 8. Acknowledgments
+## :family: 8. Acknowledgments
 
 I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
-## 9. Copyright
+## :copyright: 9. Copyright
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
