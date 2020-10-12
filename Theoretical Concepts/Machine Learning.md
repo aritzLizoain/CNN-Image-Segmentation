@@ -61,7 +61,7 @@ A fully connected layer is usually added as the last layer of the CNN. Like in a
 An image classification problem consists in predicting the object within the image. On the other hand, image segmentation requires a higher understanding of the image; the algorithm is expected to classify each pixel in the image. Thus, the output is a labeled image in which each pixel is classified to its corresponding category. Self-driving cars development, medical images diagnosis and satellite image analysis are some of the numerous image segmentation applications.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Segmentation.jpeg" width="400"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Segmentation.jpeg" width="500"/>
 </p>
 
 *Image segmentation example for autonomous vehicles. Digital Image. Karunakaran, D. "Semantic segmentation — Udaity’s self-driving car engineer nanodegree". (Medium, 2018). [Link](https://medium.com/intro-to-artificial-intelligence/semantic-segmentation-udaitys-self-driving-car-engineer-nanodegree-c01eb6eaf9d).*

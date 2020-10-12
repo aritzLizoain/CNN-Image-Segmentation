@@ -1,23 +1,44 @@
-# Image Simulation
+# Network Implementation
 
-## Introduction
-
-In order to develop a ML model, data is vital. Frequently, collecting suitable data is more troublesome than writing algorithms. Depending on the sophistication of the problem, the number of parameters and the amount of data needed varies significantly. Most commonly used datasets for computer vision can provide over 100000 images, sometimes even a million of them. However, possessing such a vast and appropriate dataset is not always possible. Occasionally, data collection is overly costly, and the lack of data limits the model.
-
-This obstacle is overcome creating images that simulate the ones taken by CCDs. The aim is to emulate the signatures of the four main categories to discriminate, so that the model will learn and subsequently be able to predict them on real detector images. To create a simulated image, first the background is defined by a fixed intensity value, or pedestal, to which an amount of noise can be added. Then the other three main categories to discriminate are added to the image: glowing, hot pixels and pixel clusters. These three differ in shape and pixel intensity (being pixel clusters the least intense, and glowing and hot pixels the most intense). The freedom of choice is the main advantage of this solution; it is possible to vary which objects (or categories) are included in a picture, the amount of them, their pixel intensities, size, position, etc. This way, a wide variety of simulated images can be used, ensuring that the model learns all kind of signals that can appear in a real CCD image.
-
-## Image Simulation
-
-The simulated images contain four classes/categories to segment: background, glowing, hot pixels and pixel clusters. Two datasets are created: a training and a testing set. The training set is used to train the ML model, while the testing set is only used once the model was fully trained. Trying to recreate real DAMIC images at T=140K as accurate as possible, specific pixel intensities are assigned to each class in 256X256 pixel images.
+Due to its capacity to work efficiently with a reduced amount of images and to detect small size objects, a U-Net structure is implemented. The structure is constituted by two main parts: the encoder and the decoder.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Simulated_CCD_Image.png" width="400"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Unet.png" width="800"/>
 </p>
 
-*Simulated 256X256 pixel CCD image containing glowing, hot pixels and pixel clusters. The pixel intensity values are given in ADCs.*
+*Implemented U-Net architecture. Adapted from Ronneberger, O. et al. "Convolutional Networks for Biomedical Image Segmentation". (2015). [Link](https://arxiv.org/pdf/1505.04597.pdf).*
 
-The background intensity, also referred as pedestal, is set a value of 8800ADC (Unit of measurement for charge in count of ADC through the digital output of the A/D con-verter) with a noise of ±60ADC, meaning that the background pixel intensities take values between 8740 and 8860 ADC (all pixel intensity ranges follow a gaussian distribution). Glowing is added as a vertical column with an intensity above background of range [1400, 1500]ADC. Hot pixels are added as thin vertical and horizontal lines of different lengths with intensities above background of 2200ADC, being the class with the highest pixel intensity value. Clusters, on the other hand, are added from a file containing the intensity and position of 803 pixel clusters. The file does not contain any alpha particle, hence almost all clusters are low-energy events and their intensity value is slightly above background.
+The encoder, following a typical CNN architecture, consists of the repeated application of two 3X3 convolutional layers along with a 2X2 max pooling layer. The decoder, on the other side, consists of an iteration of a 2X2 transposed convolution, a concatenation with the down sampling layer at the corresponding level, and two 3X3 convolutional layers. The last layer is a 1X1 convolutional layer with a softmax activation function, which returns a four-dimensional vector with the output of the previous layer transformed into a probability distribution ranged between 0 and 1.
 
-Both python files containing the code for creating the simulated images, as well as the file with cluster information have been provided by Agustín Lantero Barreda, PhD Student of DAMIC-M.
+The total number of convolutional layers in this project is 19, in contrast to the 23 in the original architecture. The model is not able to properly train with the initial structure, due to the excessive depth; the images are overly down sampled and the model struggles to learn such small details. For this reason, one level of layers is removed from the structure, leading to a proper model training. 
+
+## Activation Function
+
+The implemented network also differentiates in the activation function (except for the last convolutional layer); the ELU (Exponential Linear Unit) is applied, instead of the ReLU (Rectified Linear Unit) function, in order to deal with the ‘dying ReLU (Rectified Linear Unit) problem’.
+ReLU outputs zero for all negative inputs, meaning that if the network leads to negative inputs into a ReLU, the neuron is not contributing to the network’s learning, and its information is lost
+
+<pre>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Relu.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Elu.png" width="400"/> 
+</pre>
+
+*LEFT: ReLU activation function. Digital Image. Ms. Karnam Shubha "Activation Functions". (360digitmg, 2020). [Link](https://360digitmg.com/activation-functions-neural-networks#relu).* <br/> *RIGHT: ELU activation function. Digital Image. Ms. Karnam Shubha "Activation Functions". (360digitmg, 2020). [Link](https://360digitmg.com/activation-functions-neural-networks#relu).*
+
+## Loss Function
+
+The original loss function, on the other side, is the categorical crossentropy. This function is used on multi-class classification applications, where the last activation function outputs a probability distribution vector. However, its employment does not allow obtaining meaningful predictions. This loss function gives the same importance to all classes, no matter how frequent they are in the dataset. Since the simulated set contained background pixels in its majority, this class has a significantly greater impact on the loss function. For this reason, in order to work with the imbalanced dataset, a weighted version of the loss function is implemented. With the weighted categorical crossentropy, the least frequent classes is given the highest weight, or importance, thereby balancing the impact of all classes on the loss function.
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Crossentropy.png" width="500"/>
+</p>
+
+*Categorical CrossEntropy. Digital Image. "How to use binary & categorical crossentropy with Keras?". (Machinecurve, 2019). [Link](https://www.machinecurve.com/index.php/2019/10/22/how-to-use-binary-categorical-crossentropy-with-keras/).*
+
+## Optimizer
+
+The optimizer is not originally detailed, therefore the most common ones are tested: Adam, Adagrad, Adadelta and SGD. All of them are adapted stochastic gradient descent methods. These methods are the algorithms that change the weights of the activation function in order to reduce the loss given by the loss function. An optimizer is defined by its learning rate. This hyper-parameter determines the amount of weights that are updated at each training iteration. The larger the learning rate, the faster the optimizer will minimize the loss function. However, if the learning rate is too large, the optimizer might not be able to converge and minimize the loss function. In the end, the chosen optimizer is adadelta, a method which dynamically adapts its learning rate over time. The automatic learning rate setting is found to be highly convenient, and works efficiently on the simulated dataset.
+
+## Dropout 
+
+Finally, unlike in the original structure, dropout layers are added between every pair of convolutional layers. The intention is to avoid overfitting as much as possible.
 
 

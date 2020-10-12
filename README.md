@@ -127,14 +127,12 @@ For more information regarding data augmentation please read [Theoretical Concep
 
 ### 2.6 models.py NEEDS TO BE UPDATED
 
-The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layercomposing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   Inaddition, the weighted categorical crossentropy loss function is defined.
+The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layer composing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   In addition, the weighted categorical crossentropy loss function is defined.
 
 * **Function**: defines the model architecture and layer features. The model has UNet architecture. The code is already prepared to add layers into the model. Layers can be removed too. Additionally, pretrained weights from an already trained model can be used.
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
     is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
-
-  This is a modified network. The original is from: https://arxiv.org/pdf/1505.04597.pdf.
 
 For more information regarding ML (CNNs, layers, image segmentation) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
 
