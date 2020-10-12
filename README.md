@@ -42,7 +42,7 @@ In  this  section  the  core  of  the  project  is  dissected.   Every  employed
 
 * **Function**: sets details of the simulated images that are created in image_simulation.py. The pixel intensity value of each element in the image can be defined.
 
-For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
+For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
 
 ### 2.2 image_simulation.py
 
@@ -60,17 +60,17 @@ The way this model is implemented, image lables do not need to be provided. Imag
 In order to do this, image pixel intensity values are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
 Therefore elements with overlapping pixel intensity values will not be correctly labeled.
 
-* **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl).
+* **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/Cluster.pkl).
 
-For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
+For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
 
 ### 2.3 load_dataset.py
 
 * **Function**: receives the images and saves them as numpy arrays with shape (n_img, h, w, 3(rgb)), where n_img = # images, h = height, w = width. 
   
-  * [load_images](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)(commented) is no longer used in version 2.0. It was used in version 1.0 for loading the PNG images.
+  * [load_images](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L27)(commented) is no longer used in version 2.0. It was used in version 1.0 for loading the PNG images.
 
-  * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
+  * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L59)
     is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
     In a case where >95% of the pixels are labeled as background, and <1% as clusters, the model can give a 95% accuracy prediction, but all pixels might be predicted as background, giving a meaningless output.
     Please read [Theoretical Concepts: Network Implementation (Loss Function)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md#loss-function) for more information.
@@ -78,13 +78,13 @@ For more information regarding the image simulation please read [Theoretical Con
     The weights are then normalized to the number of classes.
     These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29).
 
-  * [process_fits](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52) is used to process the DAMIC images, which are given in FITS (Flexible Image Transport System) file format.
+  * [process_fits](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L73) is used to process the DAMIC images, which are given in FITS (Flexible Image Transport System) file format.
     These files are read and saved as arrays that contain the collected charge by each CCD pixel. Since 256X256 pixel images are used for training the model, the DAMIC image is divided into sections of the same size, so they can be individually passed trhough the trained model, obtaining their respective predicted labels.
     The possibility to normalize, cut and resize the image is given.
 
-  * [images_small2big](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52) is used to reconstruct the predictions of all sections into a full segmentation map.
+  * [images_small2big](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L183) is used to reconstruct the predictions of all sections into a full segmentation map.
 
-  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52) is used to analyze the final output. It looks for the chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as the chosen class.
+  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201) is used to analyze the final output. It looks for the chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as the chosen class.
 
 ### 2.4 mask.py NEEDS TO BE UPDATED
 
