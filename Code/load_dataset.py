@@ -2,14 +2,13 @@
 """
 Created on Fri Jun 12 16:29:09 2020
 
-@author: Aritz
+@author: Aritz Lizoain
 
-LOAD TRAINING AND TESTING DATASET
-
-get_weights calculates the weights for the loss function. Each
-class weight is obtained as the inverse of its percentage over
-all the samples (training and testing).Then the weights are
-normalized to the number of classes.
+- load_images (unused)
+- get_weights: calculates the weights for the loss function
+- process_fits: loads FITS files and creates small sections
+- images_small2big: reconstructs small sections
+- check_one_object: looks for the chosen category section by section 
 
 """
 

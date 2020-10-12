@@ -57,7 +57,7 @@ Testing and training images can be created. There is no need to create a validat
 *Simulated 256X256 pixel CCD image containing glowing, hot pixels and pixel clusters. The pixel intensity values are given in ADCs.*
 * **Caution**: it is important to be aware of the importance of the predefined pixel intensity values.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel intensity values are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
+In order to do this, image pixel intensity values are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy-needs-to-be-updated) for more information).
 Therefore elements with overlapping pixel intensity values will not be correctly labeled.
 
 * **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/Cluster.pkl).
