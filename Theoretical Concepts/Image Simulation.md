@@ -1,4 +1,4 @@
-# Machine Learning (ML): Image Simulation
+# Image Simulation
 
 ## Introduction
 
