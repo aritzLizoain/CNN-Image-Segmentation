@@ -251,17 +251,13 @@ If you use this code in a publicly available project, please post an issue or cr
 
 Azalpena
 
-* Second release: [2.0 CNN image segmentation](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v2.0).
+* Second release: [2.0 CNN Image Segmentation](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v2.0).
 
 Soon
-
-Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/releases) to find previous versions of the project.
 
 ## 8. Acknowledgments
 
 I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
-
-References
 
 ## 9. Copyright
 
