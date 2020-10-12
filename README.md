@@ -160,8 +160,9 @@ For more information regarding the implementation of the network (employed layer
   * Evaluates the model on the test set.
   * Gives a classification report that analyzes the performance of each class. For more information regarding the classification reports please read the [scikit-learn classification report documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).
 
-  All figures, accuracy and loss data throughout the training process, and trained model are saved in the defined paths.<br/>Example of   the console display while training:
+  All figures, accuracy and loss data throughout the training process, and trained model are saved in the defined paths.
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
+  *Example of   the console display while training*
 
 * **Caution**: make sure all paths are correct. If they are not, it will not be able to load any data.<br/>Depending on the used device, training a model can be rather slow (>10'/epoch), particularly when large datasets and number of epochs are being used.
 
@@ -169,14 +170,14 @@ For more information regarding the implementation of the network (employed layer
 
 For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
 
-### 2.8 load_model.py
+### 2.8 load_model.py NEEDS TO BE UPDATED
 
 * **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
 All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-## 3. Implementation summary
+## 3. Implementation summary NEEDS TO BE UPDATED
 
 Only the last two are executed
 
@@ -190,7 +191,7 @@ The Python application consisted on 8 files, each of them with a particular impl
 \label{fig:python}
 \end{figure}
 
-## 4. Results
+## 4. Results NEEDS TO BE UPDATED
 
 An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labeling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
@@ -235,17 +236,11 @@ _F1-score_: the harmonic mean between precision & recall. Useful to analyze the 
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: the number of pixels of the given class in the dataset.
 
-## 5. Future steps
+## 5. Future steps NEEDS TO BE UPDATED
 
 * Particle identification.
 
-## 6. Releases
-
-* First release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
-Azalpena
-* Second release: soon.
-
-## 7. Contributing
+## 6. Contributing
 
 Feel free to submit pull requests.
 
@@ -253,16 +248,20 @@ Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation
 
 If you use this code in a publicly available project, please post an issue or create a pull request and your project link will be added here.
 
-## 8. Versioning
+## 7. Versioning NEEDS TO BE UPDATED
+
+* First release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
+Azalpena
+* Second release: soon.
 
 Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/releases) to find previous versions of the project.
 
-## 9. Acknowledgments
+## 8. Acknowledgments
 
-I wish to express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
+I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
 References
 
-## 10. Copyright
+## 9. Copyright
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
