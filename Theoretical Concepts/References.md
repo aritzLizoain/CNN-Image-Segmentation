@@ -1,6 +1,6 @@
 # References
 
-[1] Bergström, L. \emph{Dark Matter Evidence, Particle Physics Candidates and Detection Methods}. 479–496 (Annalen der Physik, 2012). \url{https://arxiv.org/pdf/1205.4882.pdf}.
+[1] Bergström, L. "Dark Matter Evidence, Particle Physics Candidates and Detection Methods". 479–496 (Annalen der Physik, 2012). https://arxiv.org/pdf/1205.4882.pdf.
 
 [2] Feng, J. \emph{Dark Matter Candidates from Particle Physics and Methods of Detection}. 495-545 (Annual Review of Astronomy and Astrophysics, 2010). \url{https://arxiv.org/pdf/1003.0904.pdf}.
  
