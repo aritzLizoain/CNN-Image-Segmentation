@@ -15,15 +15,7 @@ Soon.
 
 :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-getting-started)
 
-:computer: 1. [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-getting-started)
-
-1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-getting-started)
-
-## 1. :computer: Getting Started
-
 ## :computer: 1. Getting Started
-
-## 1. Getting Started
 
 These instructions explain how to get a copy of the project to run it on your local machine for development and testing purposes.
 
