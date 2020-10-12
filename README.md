@@ -96,7 +96,7 @@ For more information regarding the image simulation please read [Theoretical Con
   * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="500"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
 </p>
 
 *Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
@@ -109,7 +109,20 @@ Labels can perfectly be created using a labeling software. However, for the purp
 
 For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Labeling.md)
    
-### 2.5 models.py
+
+### 2.5 augmentation.py NEEDS TO BE UPDATED
+
+* **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
+Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
+Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
+The original image and label, and augmented ones, are visualized.
+
+  Augmented image and label example:
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
+
+For more information regarding data augmentation please read [Theoretical Concepts: Data Augmentation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Data%20Augmentation.md)
+
+### 2.6 models.py
 
 The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layercomposing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   Inaddition, the weighted categorical crossentropy loss function is defined.
 
@@ -140,16 +153,6 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layerc
   - Fully-Connected (FC): every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features.
   - Softmax: transforms the output of the previous layer into probability distributions, which is the last layer.
    
-### 2.6 augmentation.py
-
-* **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
-Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
-Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
-The original image and label, and augmented ones, are visualized.
-
-  Augmented image and label example:
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
-
 ### 2.7 train.py 
 
 * **Function**: training the model. This is the MAIN CODE. Process:

@@ -13,7 +13,7 @@ The datasets are three-dimensional arrays of shape (number of images, height, wi
 To get started, a blank four-dimensional array is created. Then, going through all the images, each pixel is classified. Knowing the threshold values of the four categories, the pixel intensity value determines its class label. Based on this classification, the corresponding depth channel takes value 1 while the other three remain at value 0. Going through all the images, the segmentation maps are obtained.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="500"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>
 </p>
 
 *Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
