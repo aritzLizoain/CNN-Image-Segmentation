@@ -49,7 +49,7 @@ Overfitting is one of the most common issues when training a ML model. It causes
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Overfitting.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Dropout.gif" width="400"/> 
 </pre>
 
-* LEFT: Overfitting representation. Adapted Digital Image. Despois, J. "Memorizing is not learning!". (Hackernoon, 2018). [Link](https://hackernoon.com/memorizing-is-not-learning-6-tricks-to-prevent-overfitting-in-machine-learning-820b091dc42). <br/> RIGHT: Dropout layer example. Digital Image. "https://mlblr.com/includes/mlai/index.html". (MLBLR). [Link](https://mlblr.com/includes/mlai/index.html).*
+* LEFT: Overfitting representation. Adapted Digital Image. Despois, J. "Memorizing is not learning!". (Hackernoon, 2018). [Link](https://hackernoon.com/memorizing-is-not-learning-6-tricks-to-prevent-overfitting-in-machine-learning-820b091dc42).* <br/> *RIGHT: Dropout layer example. Digital Image. "https://mlblr.com/includes/mlai/index.html". (MLBLR). [Link](https://mlblr.com/includes/mlai/index.html).*
 
 
 ### Fully Connected
