@@ -9,7 +9,7 @@ LOAD TRAINING AND TESTING DATASET
 get_weights calculates the weights for the loss function. Each
 class weight is obtained as the inverse of its percentage over
 all the samples (training and testing).Then the weights are
-normalized to the number of classes
+normalized to the number of classes.
 
 """
 
