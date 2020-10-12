@@ -260,7 +260,7 @@ _Support_: the number of pixels of the given class in the dataset.
 
 * Particle identification.
 
-## :handshaking: 6. Contributing
+## 🤝 🤝 🤝 6. Contributing
 
 Feel free to submit pull requests.
 
