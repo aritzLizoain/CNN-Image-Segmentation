@@ -84,25 +84,30 @@ For more information regarding the image simulation please read [Theoretical Con
 
   * [images_small2big](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L183) is used to reconstruct the predictions of all sections into a full segmentation map.
 
-  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201) is used to analyze the final output. It looks for the chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as the chosen class.
+  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201) is used to analyze the final output. It looks for a chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as a chosen class.
 
 ### 2.4 mask.py NEEDS TO BE UPDATED
 
 * **Function**:  
 
-  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image.<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, 1), where n_img = # images, h = height, w = width.
-  * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) defines the class of each pixel applying threshold values that can be defined.
-  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates masks from input images. It uses [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) and [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66).<br/>Input shape = (n_img, h, w, 3(rgb)) --> Output shape = (n_img, h, w, n_classes), where n_classes = # classes.
-  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class.<br/>Input shape = (n_img, h, w, n_classes) --> Output shape = (n_img, h, w, 1).
-    Example of [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) and [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118): a pixel is class = 2. Then n_classes = [0,0,1,0] and get_max_in_mask will return the value 2.
-  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) takes the mask and creates a label that can be visualized. It applies a defined color multiplier to each class.<br/>Input shape = (n_img, h, w, 1) --> Output shape = (n_img, h, w, 3(rgb)).
-  * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and the respective presence percentages on the dataset.
+  * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L59) converts the input image into a monochrome image. Input shape = (number of images, height, width, 3(RGB)) --> Output shape = (number of images, height, width, 1).
+  * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L66) classifies each pixel as a certain class depending on its intensity value.
+  * [get_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L89) creates labels from input images. Input shape = (number of images, height, width, 3(RGB)) --> Output shape = (number of images, height, width, number of classes), where number of classes = 4 in this project.
+  * [get_max_in_mask](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L118) takes the position of the maximum  value, i.e., the class. Input shape = (number of images, height, width, number of classes) --> Output shape = (number of images, height, width, 1).
+  * [mask_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) creates the segmentatin map that can be visualized. It applies a color multiplier to each class. Input shape = (number of images, height, width, 1) --> Output shape = (number of images, height, width, 3(RGB)).
+  * [mask_to_label_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L136) creates the segmentatin map to visualize a chosen class. It is used by [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201). It applies a color multiplier to that one class. Input shape = (number of images, height, width, 1) --> Output shape = (number of images, height, width, 3(RGB)).
+  * [statistics](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L168) shows the number of classes and their frequency on the dataset.
   * [get_percentages](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L182) simply returns the percentages of each class. This is used to calculate the weights for the loss function by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52).
   * [visualize_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L197) is used to visualize the created label.
-  * [create_masks](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L222) takes the images as input and returns the masks (created by the previous functions). These masks are what the model uses to train and evaluate the model while training.
-  * [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) takes the images as input and returns the labels (created by the previous functions) that can be visualized. 
-  * [create_labels_noStat_noPrint](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246) is the same as [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Done in order to avoid the repeated information shown by the console.
-  * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the masks predicted by the model and converts them into labels that can be visualized. IMPORTANT: the model does not work with the labels that are visualized and does not predict the labels that are visualized .The model works and predicts masks with shape (n_img, h, w, n_classes).
+  * [create_masks](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L222) takes the images as input and returns the labels. These labels are used by the model to train and evaluate the model while training.
+  * [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) takes the images as input and returns the segmentation maps that can be visualized. 
+  * [create_labels_noStat_noPrint](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L246) is the same as [create_labels](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L230) but it does not print the information in the console. Created in order to avoid the repeated information shown by the console.
+  * [output_to_label](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the model outputs and converts them into labels that can be visualized. 
+  * [output_to_label_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) takes the model outputs and converts them into labels where a chosen class is visualized. 
+  * [rgb2random](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) randomly changes the RGB colors of the images (unused).
+  * [rgb2gray](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) converts the images to grayscale (unused).
+  * [contrast](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) augments the contrast of the image (unused). 
+  * [percentage_result](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py#L258) gives the percentage of each class in an output label.
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Image_label_representation.png" width="600"/>

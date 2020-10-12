@@ -316,6 +316,8 @@ def output_to_label_one_object(prediction, object_number):
 
 #In order to avoid the model from learning colors (instead of shapes), rgb images are given as input and these are randomly colored
 #The result is an image with shape (n_img, h, w, 3(rgb)) but with different rgb values
+#NOT USED
+
 def rgb2random(rgb):
     import copy
     new_image = copy.deepcopy(rgb) # so it does not overwrite rgb, but copy it
@@ -335,7 +337,8 @@ def rgb2random(rgb):
 
 #In order to avoid the model from learning colors (instead of shapes), grayscale images are given as input and these are randomly colored
 #The result is an image with shape (n_img, h, w, 1)
-#Doesn't really change to gray, but to some kind of colors.
+#NOT USED
+
 def rgb2gray(rgb):
     import copy
     from skimage.color import rgb2gray
