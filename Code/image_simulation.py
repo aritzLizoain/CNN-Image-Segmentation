@@ -16,9 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #############################################################################
-"""
-TRAIN
-"""
+
 image_name=''
 SAVING_PATH='/{0}'.format(image_name)
 amountOfImages=200

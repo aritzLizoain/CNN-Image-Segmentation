@@ -21,7 +21,9 @@ from skimage.transform import resize
 
 ##############################################################
 
-# NOT USED IF THE IMAGES ARE SAVED AND LOADED AS ARRAYS
+# NOT USED IN VERSION 2.0.
+# THE IMAGES ARE NOW SAVED AND LOADED AS ARRAYS, NOT AS PNG FILES
+
 # def load_images(TRAIN_PATH='', TEST_PATH='',\
 #                 TEST_PREDICTIONS_PATH='',IMG_WIDTH = \
 #                 256, IMG_HEIGHT = 256):

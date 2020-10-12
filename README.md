@@ -48,7 +48,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 * **Function**: creates simulated images. Parameters such as number of images, elements, noise, glowing, etc. can be defined.
 Images are saved to the saving path; arrays containing the predefined pixel intensity values are saved.<br/>
-Testing and training images can be created. There is no need to create training and validating images on different folders. The model automatically shuffles all images and creates a validation split (with the defined size) when training.
+Testing and training images can be created. There is no need to create a validation dataset. The model automatically shuffles all images and creates a validation split in the training process.
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Simulated_CCD_Image.png" width="400"/>
@@ -64,18 +64,27 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
 For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
 
-### 2.3 load_dataset.py NEEDS TO BE UPDATED
+### 2.3 load_dataset.py
 
 * **Function**: receives the images and saves them as numpy arrays with shape (n_img, h, w, 3(rgb)), where n_img = # images, h = height, w = width. 
+  
+  * [load_images](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)(commented) is no longer used in version 2.0. It was used in version 1.0 for loading the PNG images.
 
   * [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
     is used to avoid issues with imbalanced datasets, where images are too biased towards one class. 
-    In a case where >95% of the pixels are labeled as background, and <1% as clusters, the model can give a 95% accuracy prediction, but the predicted label will be all black, predicted as background.
-    The weight of each class is obtained as the inverse of its presence percentage over all the training samples.
+    In a case where >95% of the pixels are labeled as background, and <1% as clusters, the model can give a 95% accuracy prediction, but all pixels might be predicted as background, giving a meaningless output.
+    Please read [Theoretical Concepts: Network Implementation (Loss Function)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md#loss-function) for more information.
+    The weight of each class is obtained as the inverse of its frequency in the training samples.
     The weights are then normalized to the number of classes.
     These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29).
 
-* **Caution**: make sure the path is correct. If it is not, it will not be able to load any data.
+  * [process_fits](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52) is used to process the DAMIC images, which are given in FITS (Flexible Image Transport System) file format.
+    These files are read and saved as arrays that contain the collected charge by each CCD pixel. Since 256X256 pixel images are used for training the model, the DAMIC image is divided into sections of the same size, so they can be individually passed trhough the trained model, obtaining their respective predicted labels.
+    The possibility to normalize, cut and resize the image is given.
+
+  * [images_small2big](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52) is used to reconstruct the predictions of all sections into a full segmentation map.
+
+  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52) is used to analyze the final output. It looks for the chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as the chosen class.
 
 ### 2.4 mask.py NEEDS TO BE UPDATED
 
@@ -115,7 +124,7 @@ For more information regarding the labeling process please read [Theoretical Con
 * **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
 Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
 Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
-The original image and label, and augmented ones, are visualized.
+The original image and label, and augmented ones, are visualized. It's optional.
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation.png" width="400"/>
