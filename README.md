@@ -13,9 +13,15 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 
 Soon.
 
-:computer: Getting Started
+:computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-getting-started)
 
-https://github.com/aritzLizoain/Image-segmentation#1-getting-started
+:computer: 1. [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-getting-started)
+
+1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-getting-started)
+
+## 1. :computer: Getting Started
+
+## :computer: 1. Getting Started
 
 ## 1. Getting Started
 
