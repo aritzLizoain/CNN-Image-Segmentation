@@ -110,7 +110,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 *Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
 
-* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in the simulated images. The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.
+* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy). The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.
 
       Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
 
