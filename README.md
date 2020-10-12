@@ -14,7 +14,7 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 Soon.
 
 1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)<br/>
-   * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
 
 2. :snake: :page_facing_up: [Python files](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
     * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)
