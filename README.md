@@ -162,6 +162,7 @@ For more information regarding the implementation of the network (employed layer
 
   All figures, accuracy and loss data throughout the training process, and trained model are saved in the defined paths.
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
+  
   *Example of   the console display while training*
 
 * **Caution**: make sure all paths are correct. If they are not, it will not be able to load any data.<br/>Depending on the used device, training a model can be rather slow (>10'/epoch), particularly when large datasets and number of epochs are being used.
@@ -179,17 +180,13 @@ All figures are saved in the defined path.
 
 ## 3. Implementation summary NEEDS TO BE UPDATED
 
-Only the last two are executed
+The Python application consists on the 8 files previously explained. Only the last two ([train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/train.py) and [load_model.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_model.py)) are executed.
 
-The Python application consisted on 8 files, each of them with a particular implementation purpose. A summary is shown in \ref{fig:python}. See Appendix for technical specifications of the implementation.
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Summary.png" width="600"/>
+</p>
 
-%Explicar bien en la presentación
-\begin{figure}%[H]
-\centering
-\rotatebox{90}{\includegraphics[scale=0.512]{diagram.png}}
-\caption[Python implementation summary]{Python implementation summary.}
-\label{fig:python}
-\end{figure}
+*Python implementation summary.*
 
 ## 4. Results NEEDS TO BE UPDATED
 
