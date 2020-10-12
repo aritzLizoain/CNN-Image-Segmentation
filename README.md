@@ -17,14 +17,30 @@ Soon.
   * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
 
 2. :snake: :page_facing_up: [Python files](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
-    * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)
-    * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy)
-    * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)
-    * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)
-    * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)
-    * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)
-    * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
-    * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)
+  * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy)
+  * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)
+  * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)
+  * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)
+  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)
+  * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+
+3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+5. :thought_balloon: :soon: [Future steps](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+6. 🤝 [Contributing](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+7. :egg: :hatching_chick: :hatched_chick: [Versioning](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+8. :family: [Acknowledgements](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+9. :copyright: [Copyright](https://github.com/aritzLizoain/Image-segmentation#snake-page_facing_up-2-python-files)
+
+ 
 
 ## 1. :computer: Getting Started
 
@@ -278,7 +294,7 @@ Azalpena
 
 Soon
 
-## 8. :family: Acknowledgments
+## 8. :family: Acknowledgements
 
 I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
