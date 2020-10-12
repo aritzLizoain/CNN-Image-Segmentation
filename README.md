@@ -13,6 +13,10 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 
 Soon.
 
+:computer: Getting Started
+
+https://github.com/aritzLizoain/Image-segmentation#1-getting-started
+
 ## 1. Getting Started
 
 These instructions explain how to get a copy of the project to run it on your local machine for development and testing purposes.
