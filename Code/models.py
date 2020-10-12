@@ -4,9 +4,9 @@ Created on Wed Jun 10 18:00:30 2020
 
 @author: Aritz Lizoain
 
-ARCHITECTURES: unet
+ARCHITECTURE: U-Net
 
-Original by: https://arxiv.org/pdf/1505.04597.pdf
+Original: https://arxiv.org/pdf/1505.04597.pdf
 
 """
 import numpy as np 

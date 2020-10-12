@@ -120,7 +120,7 @@ For more information regarding the image simulation please read [Theoretical Con
 For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Labeling.md)
    
 
-### 2.5 augmentation.py NEEDS TO BE UPDATED
+### 2.5 augmentation.py
 
 * **Function**: applies data augmentation techniques to both images and corresponding labels. Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques. This is an optional step; it is applied when only a few training samples are available, or when the desired property is not present in the dataset.
 
@@ -139,10 +139,10 @@ For more information regarding data augmentation please read [Theoretical Concep
 
 The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layer composing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   In addition, the weighted categorical crossentropy loss function is defined.
 
-* **Function**: defines the model architecture and layer features. The model has UNet architecture. The code is already prepared to add layers into the model. Layers can be removed too. Additionally, pretrained weights from an already trained model can be used.
+* **Function**: defines the model architecture and layer features. The model has U-Net architecture. The code is already prepared to add or remove layers in the model. Additionally, pretrained weights from an already trained model can be used.
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29)
-    is used to calculate the categorical crossentropy loss of the model with the addition of taking into account the weight of each class.
+    is used to calculate the categorical crossentropy loss of the model with the modification of taking into account the weight of each class.
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Unet.png" width="800"/>
