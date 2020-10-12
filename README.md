@@ -14,7 +14,16 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 Soon.
 
 :computer: 1. [Getting Started](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)
-  * 1.1 Installation
+  * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+:snake: :page_facing_up: 2. [Python files](https://github.com/aritzLizoain/Image-segmentation#computer-1-getting-started)
+  * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#11-installation)
+  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#11-installation)
 
 ## :computer: 1. Getting Started
 
@@ -37,7 +46,7 @@ The project can be either cloned or downloaded to your own device.<br/>The sourc
 The libraries can manually be installed from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is a good option.
 
-## 2. Python files
+## :snake: :page_facing_up: 2. Python files
 
 In  this  section  the  core  of  the  project  is  dissected.   Every  employed method is explained;  from the origination of an image,  to the training of the model, every necessary step in the creation of the deep learning application is analyzed.
 
