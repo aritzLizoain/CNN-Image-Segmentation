@@ -40,20 +40,24 @@ In  this  section  the  core  of  the  project  is  dissected.   Every  employed
 
 ### image_details.py
 
-* **Function**: sets details of the simulated images that are created in image_simulation.py.
+* **Function**: sets details of the simulated images that are created in image_simulation.py. The pixel intensity value of each element in the image can be defined.
+
+For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
 
 ### image_simulation.py
 
-* **Function**: creates simulated images. Parameters such as number of elements, noise, glowing, images, etc. can be defined.
-Images are saved to the saving path.<br/>
-There is no need to create training and validating images on different folders. The model automatically shuffles all images and creates a validation split (with the defined size) when training.
+* **Function**: creates simulated images. Parameters such as number of images, elements, noise, glowing, etc. can be defined.
+Images are saved to the saving path; arrays containing the predefined pixel intensity values are saved.<br/>
+Testing and training images can be created. There is no need to create training and validating images on different folders. The model automatically shuffles all images and creates a validation split (with the defined size) when training.
 
-* **Caution**: it is important to be aware of a possible issue regarding the color of the elements.
+* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
-In order to do this, image pixel values, i.e., colors, are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
-Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
+In order to do this, image pixel intensity values are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#maskpy) for more information).
+Therefore elements with overlapping pixel intensity values will not be correctly labeled.
 
 * **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl).
+
+For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
 
 ### load_dataset.py
 
