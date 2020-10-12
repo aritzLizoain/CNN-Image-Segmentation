@@ -6,8 +6,6 @@ Created on Wed Jun 10 20:33:00 2020
 
 Working directory must be where all files are located
 
-Geometric augmentation: flip, crop, pad, scale, translate and rotate.
-
 This code can be run to check both training and augmented labels (uncomment last section)
 
 """
@@ -30,17 +28,8 @@ def augmentation_sequence_Color(images, labels):
 
 #----------------------------------------------------------------------------
 
-def augmentation_sequence_Invert(images, labels):
-    labels = labels.astype(np.uint8)
-    seq = iaa.Sequential([iaa.Invert(p=1, per_channel=0.6)])  #, iaa.Flipud(0.8),\
-                          #iaa.OneOf([iaa.Rotate((270, 270))]) iaa.Fliplr(0.8),
-                          #iaa.Rotate((90, 90)) only invert in order to avoid weight issues and masks
-    return seq(images=images, segmentation_maps=labels)
-
-#----------------------------------------------------------------------------
-
 def augmentation_Color(images, labels, TEST_PREDICTIONS_PATH = ''):
-    print("Applying data augmentation: invert, dropout, logContrast, hue, gammaContrast.")
+    print("Applying data augmentation: dropout, rotation, flip.")
     images_aug, labels_aug = augmentation_sequence_Color(images=images, labels=labels)
     labels_aug = labels_aug.astype(np.float64)
 
@@ -84,6 +73,15 @@ def augmentation_Color(images, labels, TEST_PREDICTIONS_PATH = ''):
     all_images = np.append(images , images_aug, axis=0 )
     all_labels= np.append(labels, labels_aug, axis=0)
     return all_images, all_labels
+
+#----------------------------------------------------------------------------
+
+def augmentation_sequence_Invert(images, labels):
+    labels = labels.astype(np.uint8)
+    seq = iaa.Sequential([iaa.Invert(p=1, per_channel=0.6)])  #, iaa.Flipud(0.8),\
+                          #iaa.OneOf([iaa.Rotate((270, 270))]) iaa.Fliplr(0.8),
+                          #iaa.Rotate((90, 90)) only invert in order to avoid weight issues and masks
+    return seq(images=images, segmentation_maps=labels)
 
 #----------------------------------------------------------------------------
 

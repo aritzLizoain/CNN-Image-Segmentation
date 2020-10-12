@@ -122,10 +122,10 @@ For more information regarding the labeling process please read [Theoretical Con
 
 ### 2.5 augmentation.py NEEDS TO BE UPDATED
 
-* **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
-Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
-Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques.
-The original image and label, and augmented ones, are visualized. It's optional.
+* **Function**: applies data augmentation techniques to both images and corresponding labels. Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques. This is an optional step; it is applied when only a few training samples are available, or when the desired property is not present in the dataset.
+
+  * [augmentation_sequence_Color](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/mask.py#L355) and [augmentation_Color](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/mask.py#L355) apply color dropout, rotation, flipping.
+  * [augmentation_sequence_Invert](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/mask.py#L355) and [augmentation_Invert](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/mask.py#L355) apply color channel inversion, dropout, logContrast, hue, gammaContrast.
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation.png" width="400"/>
