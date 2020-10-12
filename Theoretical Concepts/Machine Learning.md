@@ -15,7 +15,7 @@ Taking the human brain as a reference, artificial NNs are based on connected nod
 CNNs are composed of an input layer, several hidden layers, and an output layer. Their employment allows the recognition of specific properties of image data, thereby becoming highly suitable for computer vision applications. Images are passed through the NN as an array of values describing pixel intensities. Each of these values is a feature that characterizes the image. The first few neuron layers learn low-level features (basic elements such as edges and colors), leading to a more complex pattern learning by the succeeding layers. This way, the network is able to differentiate one image from another. Generally, prediction accuracy is improved with a deeper network, i.e. with more layers.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Cnn.png" width="500"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/ConvNN.png" width="500"/>
 </p>
 
 *CNN feature learning process. Adapted Digital Image. Torres, J. "Convolutional Neural Networks for Beginners". (Towards Data Science, 2018). [Link](https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca).*
@@ -49,7 +49,7 @@ Overfitting is one of the most common issues when training a ML model. It causes
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Overfitting.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Dropout.gif" width="400"/> 
 </pre>
 
-* LEFT: Overfitting representation. Adapted Digital Image. Despois, J. "Memorizing is not learning!". (Hackernoon, 2018). [Link](https://hackernoon.com/memorizing-is-not-learning-6-tricks-to-prevent-overfitting-in-machine-learning-820b091dc42). <\br> RIGHT: Dropout layer example. Digital Image. "https://mlblr.com/includes/mlai/index.html". (MLBLR). [Link](https://mlblr.com/includes/mlai/index.html).*
+* LEFT: Overfitting representation. Adapted Digital Image. Despois, J. "Memorizing is not learning!". (Hackernoon, 2018). [Link](https://hackernoon.com/memorizing-is-not-learning-6-tricks-to-prevent-overfitting-in-machine-learning-820b091dc42). <br/> RIGHT: Dropout layer example. Digital Image. "https://mlblr.com/includes/mlai/index.html". (MLBLR). [Link](https://mlblr.com/includes/mlai/index.html).*
 
 
 ### Fully Connected
