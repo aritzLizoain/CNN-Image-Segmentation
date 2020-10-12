@@ -145,7 +145,7 @@ For more information regarding ML (CNNs, layers, image segmentation) please read
 For more information regarding the implementation of the network (employed layers, activation functions, loss function, optimizer) please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
 
    
-### 2.7 train.py 
+### 2.7 train.py NEEDS TO BE UPDATED
 
 * **Function**: training the model. This is the MAIN CODE. Process:
   * Loads the images.
@@ -167,6 +167,8 @@ For more information regarding the implementation of the network (employed layer
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
 
+For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
+
 ### 2.8 load_model.py
 
 * **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
@@ -177,6 +179,16 @@ All figures are saved in the defined path.
 ## 3. Implementation summary
 
 Only the last two are executed
+
+The Python application consisted on 8 files, each of them with a particular implementation purpose. A summary is shown in \ref{fig:python}. See Appendix for technical specifications of the implementation.
+
+%Explicar bien en la presentación
+\begin{figure}%[H]
+\centering
+\rotatebox{90}{\includegraphics[scale=0.512]{diagram.png}}
+\caption[Python implementation summary]{Python implementation summary.}
+\label{fig:python}
+\end{figure}
 
 ## 4. Results
 

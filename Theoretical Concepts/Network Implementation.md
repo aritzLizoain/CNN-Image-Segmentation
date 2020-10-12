@@ -48,3 +48,4 @@ The optimizer is not originally detailed, therefore the most common ones are tes
 Finally, unlike in the original structure, dropout layers are added between every pair of convolutional layers. The intention is to avoid overfitting as much as possible.
 
 
+There exists no rule on which layers, activation function, loss function or optimizer work better, therefore various models have to be tested. Not only all parameters have to be tested, but even different combinations of them, in order to find out which ones work most efficiently on the given set. Considering that a 100 epoch training takes more than 5h (~3-4 minutes per epoch), the structure and parameter optimization of the model end up being especially time-consuming.
