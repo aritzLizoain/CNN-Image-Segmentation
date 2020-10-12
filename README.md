@@ -13,11 +13,11 @@ For more information regarding dark matter please read [Theoretical Concepts: Da
 
 Soon.
 
-## Getting Started
+## 1. Getting Started
 
 These instructions explain how to get a copy of the project to run it on your local machine for development and testing purposes.
 
-### Installation
+### 1.1 Installation
 
 The project can be either cloned or downloaded to your own device.<br/>The source code of the application is implemented in Python, with the requirement of the following open-source libraries (version numbers are up to date: 21.06.2020):
 
@@ -34,17 +34,17 @@ The project can be either cloned or downloaded to your own device.<br/>The sourc
 The libraries can manually be installed from the anaconda prompt with the command ``` pip install 'library_name' ```. Make sure the correct working environment is activated.
 If a module cannot be properly installed (installing tensorflow might sometimes be troublesome), doing it through the anaconda navigator is a good option.
 
-## Python files
+## 2. Python files
 
 In  this  section  the  core  of  the  project  is  dissected.   Every  employed method is explained;  from the origination of an image,  to the training of the model, every necessary step in the creation of the deep learning application is analyzed.
 
-### image_details.py
+### 2.1 image_details.py
 
 * **Function**: sets details of the simulated images that are created in image_simulation.py. The pixel intensity value of each element in the image can be defined.
 
 For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
 
-### image_simulation.py
+### 2.2 image_simulation.py
 
 * **Function**: creates simulated images. Parameters such as number of images, elements, noise, glowing, etc. can be defined.
 Images are saved to the saving path; arrays containing the predefined pixel intensity values are saved.<br/>
@@ -65,7 +65,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
 For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning%20(ML)/Image%20Simulation.md)
 
-### load_dataset.py
+### 2.3 load_dataset.py
 
 * **Function**: receives the images and saves them as numpy arrays with shape (n_img, h, w, 3(rgb)), where n_img = # images, h = height, w = width. 
 
@@ -78,7 +78,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 * **Caution**: make sure the path is correct. If it is not, it will not be able to load any data.
 
-### models.py
+### 2.4 models.py
 
 The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layercomposing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   Inaddition, the weighted categorical crossentropy loss function is defined.
 
@@ -109,7 +109,7 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layerc
   - Fully-Connected (FC): every neuron in the next layer takes as input every neuron in the previous layer's output. Usually used at the end of the CNNs. We can flatten the neurons into a one-dimensional array of features.
   - Softmax: transforms the output of the previous layer into probability distributions, which is the last layer.
    
-### mask.py
+### 2.5 mask.py
 
 * **Function**: it works with the images, creating masks, creating labels from masks and getting image statistics. 
 
@@ -137,7 +137,7 @@ In order to do this, image pixel values, i.e., colors, are taken as reference to
 Therefore a color change of an object in the image can cause a wrong label creation if this has not been correctly specified in [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).<br/>
 Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
     
-### augmentation.py
+### 2.6 augmentation.py
 
 * **Function**: applies data augmentation techniques to both images and corresponding labels. Due to the type of images working with, non-geometric augmentation can lead to wrong labeling.
 Therefore only geometric augmentation is applied: flip, crop, pad, scale, translate and rotate.
@@ -147,7 +147,7 @@ The original image and label, and augmented ones, are visualized.
   Augmented image and label example:
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Augmentation_example.png "Augmentation example")
 
-### train.py 
+### 2.7 train.py 
 
 * **Function**: training the model. This is the MAIN CODE. Process:
   * Loads the images.
@@ -169,18 +169,18 @@ The original image and label, and augmented ones, are visualized.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
 
-### load_model.py
+### 2.8 load_model.py
 
 * **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
 All figures are saved in the defined path.
 
 * **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
-## Implementation summary
+## 3. Implementation summary
 
 Only the last two are executed
 
-## Results
+## 4. Results
 
 An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labeling the images.
 Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
@@ -225,17 +225,17 @@ _F1-score_: the harmonic mean between precision & recall. Useful to analyze the 
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: the number of pixels of the given class in the dataset.
 
-## Future steps
+## 5. Future steps
 
 * Particle identification.
 
-## Releases
+## 6. Releases
 
 * First release: [CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 Azalpena
 * Second release: soon.
 
-## Contributing
+## 7. Contributing
 
 Feel free to submit pull requests.
 
@@ -243,15 +243,15 @@ Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation
 
 If you use this code in a publicly available project, please post an issue or create a pull request and your project link will be added here.
 
-## Versioning
+## 8. Versioning
 
 Please check on [releases](https://github.com/aritzLizoain/Image-segmentation/releases) to find previous versions of the project.
 
-## Acknowledgments
+## 9. Acknowledgments
 
 * Agustín Lantero for the [image_detais.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_details.py), [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/image_simulation.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Cluster.pkl) files.
 * Rocío Vilar, Alicia Calderón and Nuria Castello-Mor for the help, advice and support. 
 
-## Copyright
+## 10. Copyright
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
