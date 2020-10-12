@@ -183,7 +183,7 @@ All figures are saved in the defined path.
 The Python application consists on the 8 files previously explained. Only the last two ([train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/train.py) and [load_model.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_model.py)) are executed.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Summary.png" width="600"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Summary.png" width="900"/>
 </p>
 
 *Python implementation summary.*
