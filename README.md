@@ -76,7 +76,7 @@ For more information regarding the image simulation please read [Theoretical Con
     Please read [Theoretical Concepts: Network Implementation (Loss Function)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md#loss-function) for more information.
     The weight of each class is obtained as the inverse of its frequency in the training samples.
     The weights are then normalized to the number of classes.
-    These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/2bd248e3c63bdad6823edbf883343b6f84f4536e/models.py#L29).
+    These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/models.py#L31).
 
   * [process_fits](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L73) is used to process the DAMIC images, which are given in FITS (Flexible Image Transport System) file format.
     These files are read and saved as arrays that contain the collected charge by each CCD pixel. Since 256X256 pixel images are used for training the model, the DAMIC image is divided into sections of the same size, so they can be individually passed trhough the trained model, obtaining their respective predicted labels.
@@ -110,7 +110,8 @@ For more information regarding the image simulation please read [Theoretical Con
 
 *Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
 
-* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in the simulated images. The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes (please read (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy-needs-to-be-updated) for more information). Therefore elements with overlapping pixel intensity values will not be correctly labeled.
+* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in the simulated images. The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.
+
 Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
 
 For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Labeling.md)
