@@ -15,7 +15,7 @@ Taking the human brain as a reference, artificial NNs are based on connected nod
 CNNs are composed of an input layer, several hidden layers, and an output layer. Their employment allows the recognition of specific properties of image data, thereby becoming highly suitable for computer vision applications. Images are passed through the NN as an array of values describing pixel intensities. Each of these values is a feature that characterizes the image. The first few neuron layers learn low-level features (basic elements such as edges and colors), leading to a more complex pattern learning by the succeeding layers. This way, the network is able to differentiate one image from another. Generally, prediction accuracy is improved with a deeper network, i.e. with more layers.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/ConvNN.png" width="500"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/ConvNN.png" width="500"/>
 </p>
 
 *CNN feature learning process. Adapted Digital Image. Torres, J. "Convolutional Neural Networks for Beginners". (Towards Data Science, 2018). [Link](https://towardsdatascience.com/convolutional-neural-networks-for-beginners-practical-guide-with-python-and-keras-dc688ea90dca).*
@@ -25,7 +25,7 @@ CNNs are composed of an input layer, several hidden layers, and an output layer.
 CNNs are named after its most important layer, the convolution layer. While a standard NN layer applies its activation function weights to the whole image, a convolution layer applies a set of weights spatially across the image, thereby reducing the number of parameters needed. This set of activation function weights compose the filter, which is defined by several hyper-parameters: filter size, stride, and depth. Filter size sets the width and height of the filter. The number of pixels to move before applying the filter again is set by stride. If the stride is smaller than the filter size, regions of the image are overlapped. The depth defines the number of channels of the filter, which is equal to the number of input channels (e.g. for a RGB image the depth is 3, one for each color channel, while for a grayscale image the depth is 1).
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Convolution.gif" width="450"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Convolution.gif" width="450"/>
 </p>
 
 *Convolutional layer example. Saha, S. "A Comprehensive Guide to Convolutional Neural Networks — the ELI5 way." Digital Image. (Towards Data Science, 2018). [Link](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53).*
@@ -35,7 +35,7 @@ CNNs are named after its most important layer, the convolution layer. While a st
 Max pooling layers, like convolution layers, apply a filter across the image, which is also defined by a filter size and stride. The layer takes the maximum value within the filter, reducing the spatial size of the input. However, it does not take the maximum value across different depths, since it is applied to each depth channel individually.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Maxpool.gif" width="450"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Maxpool.gif" width="450"/>
 </p>
 
 *Max Pooling layer example. "coursera-deeplearning-ai-c4-week1." Digital Image. (Vernlium, 2018). [Link](https://vernlium.github.io/2018/10/15/coursera-deeplearning-ai-c4-week1/).*
@@ -46,7 +46,7 @@ Max pooling layers, like convolution layers, apply a filter across the image, wh
 Overfitting is one of the most common issues when training a ML model. It causes the model to memorize the training data, instead of learning from it, which leads to a high accuracy on the predictions while training, but a low accuracy on testing predictions. The most effective solution is adding more training data. Nonetheless, adding a dropout layer also helps avoiding the issue. Dropout layers randomly ignore a number of neuron outputs, reducing the dependency on the training set. 
 
 <pre>
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Overfitting.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Dropout.gif" width="400"/> 
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Overfitting.png" width="400"/>           <img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Dropout.gif" width="400"/> 
 </pre>
 
 *LEFT: Overfitting representation. Adapted Digital Image. Despois, J. "Memorizing is not learning!". (Hackernoon, 2018). [Link](https://hackernoon.com/memorizing-is-not-learning-6-tricks-to-prevent-overfitting-in-machine-learning-820b091dc42).* <br/> *RIGHT: Dropout layer example. Digital Image. "ML & AI". (MLBLR). [Link](https://mlblr.com/includes/mlai/index.html).*
@@ -61,7 +61,7 @@ A fully connected layer is usually added as the last layer of the CNN. Like in a
 An image classification problem consists in predicting the object within the image. On the other hand, image segmentation requires a higher understanding of the image; the algorithm is expected to classify each pixel in the image. Thus, the output is a labeled image in which each pixel is classified to its corresponding category. Self-driving cars development, medical images diagnosis and satellite image analysis are some of the numerous image segmentation applications.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Segmentation.jpeg" width="500"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Segmentation.jpeg" width="500"/>
 </p>
 
 *Image segmentation example for autonomous vehicles. Digital Image. Karunakaran, D. "Semantic segmentation — Udaity’s self-driving car engineer nanodegree". (Medium, 2018). [Link](https://medium.com/intro-to-artificial-intelligence/semantic-segmentation-udaitys-self-driving-car-engineer-nanodegree-c01eb6eaf9d).*
@@ -75,7 +75,7 @@ The U-Net architecture contains two paths: the contraction path, called encoder,
 The network does not contain fully connected layers, therefore is defined as a fully convolutional network.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Unet.png" width="800"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Unet.png" width="800"/>
 </p>
 
 *Implemented U-Net architecture. Adapted from Ronneberger, O. et al. "Convolutional Networks for Biomedical Image Segmentation". (2015). [Link](https://arxiv.org/pdf/1505.04597.pdf).*

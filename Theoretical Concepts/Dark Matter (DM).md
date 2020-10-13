@@ -9,7 +9,7 @@ The Planck mission's final data release (2018) showed that the dark energy densi
 Three strategies are followed for DM detection: accelerators, direct and indirect detection:
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DM_Detection_Methods.jpg" width="450"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/DM_Detection_Methods.jpg" width="450"/>
 </p>
 
 *Sketch of different types of search strategies for DM detection. Digital Image. Virdee, T. S. "Beyond the standard model of particle physics". (Royal Society, 2016). [Link](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0259).*
@@ -20,7 +20,7 @@ Three strategies are followed for DM detection: accelerators, direct and indirec
 In this study the direct search strategy is followed. It is a huge endeavor to develop experiments able to directly investigate the particle nature of DM. These experiments aim to identify recoils produced by the scattering between the theoretical DM particles and a detector's target nuclei or electron. Specifically in this research, the silicon of the CCDs is used as a target.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DM_particle_and_detector_scattering.png" width="500"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/DM_particle_and_detector_scattering.png" width="500"/>
 </p>
 
 *Nuclear recoil produced by the scattering between a DM particle and a detector's Si nucleus. Digital image. Aguilar-Arevalo, A. et al. "Measurement of radioactive contamination in the CCD’s of the DAMIC experiment". (Journal of Physics, 2015). [Link](https://arxiv.org/pdf/1506.02562.pdf).*
@@ -34,7 +34,7 @@ CCD images contain a high-resolution two-dimensional projection on the XY plane 
 Different ionizing particles in a CCD include: straight track-shaped cosmic ray muons, large drop-shaped alpha particles, "worm"-shaped straggling electrons, and low-energy candidates, characterized by small round clusters.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg" width="400"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/DAMIC_CCD_image_and_signatures_of_ionizing_particles.jpeg" width="400"/>
 </p>
 
 *Signatures of different ionizing particles in a CCD (processed image). Adapted Digital image. Aguilar-Arevalo, A. et al. "Measurement of radioactive contamination in the CCD’s of the DAMIC experiment". (Journal of Physics, 2015). [Link](https://arxiv.org/pdf/1506.02562.pdf).*

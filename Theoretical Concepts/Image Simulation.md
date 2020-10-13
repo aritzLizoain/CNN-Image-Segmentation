@@ -11,7 +11,7 @@ This obstacle is overcome creating images that simulate the ones taken by CCDs. 
 The simulated images contain four classes/categories to segment: background, glowing, hot pixels and pixel clusters. Two datasets are created: a training and a testing set. The training set is used to train the ML model, while the testing set is only used once the model was fully trained. Trying to recreate real DAMIC images at T=140K as accurate as possible, specific pixel intensities are assigned to each class in 256X256 pixel images.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Simulated_CCD_Image.png" width="400"/>
+<img src="https://github.com/aritzLizoain/CNN-Image-segmentation/blob/master/Images/Example_Images/Simulated_CCD_Image.png" width="400"/>
 </p>
 
 *Simulated 256X256 pixel CCD image containing glowing, hot pixels and pixel clusters. The pixel intensity values are given in ADCs.*
