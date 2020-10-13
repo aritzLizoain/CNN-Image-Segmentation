@@ -27,14 +27,6 @@
 [![Package Control total downloads](https://img.shields.io/packagecontrol/dt/SwitchDictionary.svg)](https://packagecontrol.io/packages/SwitchDictionary)
 
 
-
-
-
-
-downloads
-profile views
-
-
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpg" width="1300"/>
 </p>
