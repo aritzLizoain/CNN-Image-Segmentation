@@ -235,7 +235,7 @@ An imbalanced dataset entails further problems. A good solution to this issue is
 Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  always  start  from  the first pixel.  This way, the model does not learn that all predictions should have a glowing column, nor where should it be. Here is an example of an image used for training the model: 
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Train/Training_image_example.png" width="400"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Train/Training_image_example.png" width="300"/>
 </p>
 
 *Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
@@ -259,20 +259,19 @@ The loss and accuracy of the training and evaluation set verify that the model d
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Accuracy.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Loss.png" width="400"/> 
 </pre>
 
-*Training process of the model, that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
+*Training process of the model, that reaches its optimum state at epoch 40.* <br/> *LEFT: Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
 
-The  model  performs  correctly  on  the  test  dataset,  segmenting  every object within the images.  
+The  model  performs  correctly  on  the  test  dataset,  segmenting the objects within the images.  
 
-Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Output/Test_output_example.png" width="400"/>
+</p>
 
-Prediction on test images: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test4.png "Test image 4 prediction")
-![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test6.png "Test image 6 prediction")
+*<br/> LEFT: *Test image to be passed through the trained model.* <br/> *MIDDLE: Correct label of the test image.* <br/> *RIGHT: Predicted label by the model.*
 
-The classification report showedhow efficiently each class performed (see Table 1).
-
-The accuracy of the model on the test set is: 99.2%<br/>
-The loss of the model on the test set is: 0.166<br/>
-Classification report:
+The accuracy of the model on the test set is: 99.21%<br/>
+The loss of the model on the test set is: 0.304<br/>
+The classification report showes how efficiently each class performed:
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
 Background   | 1.00     | 0.99  | 1.00    | 2535931
