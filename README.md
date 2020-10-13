@@ -286,10 +286,10 @@ _Support_: number of pixels of the given class in the dataset.
 The model also gives a seemingly correct prediction of a real image. Due to the small size of the objects, these cannot be seen when the whole image was displayed. If the 256×256 sections are individually observed instead, the segmented clusters can be analyzed.
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Real_output.png" width="400"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Real_output.png" width="700"/>
 </p>
 
-<br/> *LEFT: Real image 256X256 section to be passed through the trained model.*<br/> *RIGHT: Predicted label by the model.*
+<br/> *LEFT: Real image 256X256 section to be passed through the trained model. The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with segmented clusters.*
  
 ## 5. :thought_balloon: :soon: Future steps NEEDS TO BE UPDATED
 
