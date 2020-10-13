@@ -13,7 +13,9 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
 
 <table border="0">
  <tr>
-    <td> 1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-computer-getting-started) 
+    <td> 
+
+1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-computer-getting-started) 
   * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
 
 2. :snake: :page_facing_up: [Python files](https://github.com/aritzLizoain/Image-segmentation#2-snake-page_facing_up-python-files) 
@@ -25,7 +27,9 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
   * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)
   * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#27-trainpy)
   * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)</td>
-    <td> 3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary) 
+    
+<td> 
+3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary) 
 
 4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results) 
 
