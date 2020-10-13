@@ -231,8 +231,21 @@ The Python application consists on the 8 files previously explained. Only the la
 
 ## 4. :dart: Results NEEDS TO BE UPDATED
 
-An imbalanced dataset entails further problems. A good solution to this issue has been creating balanced images, with approximately the same percentage of presence of each class. The classes have not been mixed in order to avoid confusion to the model when labeling the images.
-Here is an example of an image used for training the model: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/training_example.png "Training image example")
+An imbalanced dataset entails further problems. A good solution to this issue is creating balanced images, with approximately the same percentage of presence of each class. The classes are not mixed in order to avoid confusion to the model when labeling the images.
+Here is an example of an image used for training the model: 
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Traing/Training_image_example.png" width="400"/>
+</p>
+
+*Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
+
+
+
+only 60%of  the  images  contained  glowing,  and  it  did  not  always  start  from  thefirst pixel.  This way, the model did not learn that all predictions shouldhave a glowing column, nor where should it be.
+
+
+For this project 200 training and 42 test images were created. As previously explained, each image contained glowing on the left side, and hot pixels and clusters randomly placed on the right (see \ref{fig:3}). From the training set 42 samples were taken for validation. The network was set with an 18$\%$ dropout. Small variations of this value (10-25$\%$ is the common dropout range) did not significantly alter the final result. Taking the original U-Net model as a reference, a batch size of 1 sample was set. The training was defined for 100 epochs. 
 
 60 images have been used ([Train images](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train)). The model has been trained for 100 epochs with the following hyperparameters: 
 * split = 0.2
@@ -246,14 +259,21 @@ Here is an example of an image used for training the model: ![alt text](https://
 
 The rest of parameters have been left as default. Please note that these parameters work well for this particular dataset, but do not assure reliable results for all kind of datasets.
 
+The loss (see Figure 19Left) and accuracy (see Figure 19Right) of the training and evaluationset verified that the model did not suffer from overfitting.
+
 <pre>
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/accuracy_100epochs.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/loss_100epochs.png" width="388"/> 
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Accuracy.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Loss.png" width="400"/> 
 </pre>
+
+* CHANGE CAPTION Example of a correct training of a model that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
+
 
 Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
 
 Prediction on test images: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test4.png "Test image 4 prediction")
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test6.png "Test image 6 prediction")
+
+The  model  performed  correctly  on  the  test  dataset,  segmenting  everyobject and reaching a 99.2% accuracy.  The classification report showedhow efficiently each class performed (see Table 1).
 
 The accuracy of the model on the test set is: 99.67%<br/>
 The loss of the model on the test set is: 0.166<br/>
@@ -274,6 +294,10 @@ _F1-score_: the harmonic mean between precision & recall. Useful to analyze the 
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: the number of pixels of the given class in the dataset.
 
+The model also gave a seemingly correct prediction of a DAMIC image(T=140K). Due to the small size of the objects, these could not be seenwhen the whole image was displayed.  If the 256×256 sections were indi-vidually observed instead, the segmented clusters could be analyzed (seeFigure 20).
+
+FIGURE SECTION
+
 ## 5. :thought_balloon: :soon: Future steps NEEDS TO BE UPDATED
 
 * Particle identification.
@@ -286,15 +310,15 @@ Please read [CONTRIBUTING.md](https://github.com/aritzLizoain/Image-segmentation
 
 If you use this code in a publicly available project, please post an issue or create a pull request and your project link will be added here.
 
-## 7. :egg: :hatching_chick: :hatched_chick: Versioning NEEDS TO BE UPDATED
+## 7. :egg: :hatching_chick: :hatched_chick: Versioning
 
 * First release: [1.0 CNN on simulated images](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v1.0).
 
-Azalpena
+Only for simulated images. Not for real images.
 
 * Second release: [2.0 CNN Image Segmentation](https://github.com/aritzLizoain/Image-segmentation/releases/tag/v2.0).
 
-Soon
+For both simulated and real images.
 
 ## 8. :family: Acknowledgements
 
