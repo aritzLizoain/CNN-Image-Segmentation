@@ -5,7 +5,7 @@
 ![GitHub User's stars](https://img.shields.io/github/stars/aritzLizoain?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/aritzLizoain/CNN-Image-Segmentation?style=social)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aritzLizoain/CNN-Image-Segmentation)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/keras)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tensorflow)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
 [![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
