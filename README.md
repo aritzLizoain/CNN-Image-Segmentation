@@ -240,32 +240,28 @@ Here is an example of an image used for training the model:
 
 *Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
 
+Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  always  start  from  the first pixel.  This way, the model does not learn that all predictions should have a glowing column, nor where should it be.
 
+For this project 200 [training](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train) and 42 [test](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Test) images are created. 
 
-only 60%of  the  images  contained  glowing,  and  it  did  not  always  start  from  thefirst pixel.  This way, the model did not learn that all predictions shouldhave a glowing column, nor where should it be.
-
-
-For this project 200 training and 42 test images were created. As previously explained, each image contained glowing on the left side, and hot pixels and clusters randomly placed on the right (see \ref{fig:3}). From the training set 42 samples were taken for validation. The network was set with an 18$\%$ dropout. Small variations of this value (10-25$\%$ is the common dropout range) did not significantly alter the final result. Taking the original U-Net model as a reference, a batch size of 1 sample was set. The training was defined for 100 epochs. 
-
-60 images have been used ([Train images](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train)). The model has been trained for 100 epochs with the following hyperparameters: 
-* split = 0.2
-* weights = [0.514, 0.840, 0.983, 1.663] <-- given by [get_weights](https://github.com/aritzLizoain/Image-segmentation/blob/0fc6f36abc9fcc63aee3c5129989fff54891147e/load_dataset.py#L52)
-* activation = 'elu' <br/>
-  For more information regarding activation functions please read the [keras layer activation functions documentation](https://keras.io/api/layers/activations/).
+The model IS been trained with the following hyperparameters: 
+* epochs = 100
+* batch_size = 1
+* split = 0.21
 * dropout = 0.18
+* activation = 'elu' 
 * loss = weighted_categorical_crossentropy(weights)
-* optimizer = 'adadelta' <br/>
-  Adadelta optimization is a stochastic gradient descent method that is based on adaptive learning rate. There is no need to manually set any default learning rate. For more information regarding [adadelta](https://keras.io/api/optimizers/adadelta/) and other optimizers please read the [keras optimizers documentation](https://keras.io/api/optimizers/).<br/>
+* optimizer = 'adadelta' 
 
-The rest of parameters have been left as default. Please note that these parameters work well for this particular dataset, but do not assure reliable results for all kind of datasets.
+Please note that these parameters work well for this particular dataset, but do not assure reliable results for other of datasets.
 
-The loss (see Figure 19Left) and accuracy (see Figure 19Right) of the training and evaluationset verified that the model did not suffer from overfitting.
+The loss and accuracy of the training and evaluation set verify that the model does not suffer from overfitting.
 
 <pre>
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Accuracy.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Loss.png" width="400"/> 
 </pre>
 
-* CHANGE CAPTION Example of a correct training of a model that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
+* Training process of the model, that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
 
 
 Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
