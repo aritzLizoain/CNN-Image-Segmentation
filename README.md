@@ -183,22 +183,20 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 :information_source: For more information regarding the implementation of the network (employed layers, activation functions, loss function, optimizer) please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
 
    
-### 2.7 train.py NEEDS TO BE UPDATED
+### 2.7 train.py
 
 :chart_with_upwards_trend: **Function**: trains a model with the defined parameters. Process:
-  * Loads the images.
-  * Creates the labels for visualization.
-  * Applies augmentation on both images and labels.
-  * Creates the masks for training the model.
+  * Loads the datasets.
+  * Creates the labels.
+  * (Optional) Applies augmentation on both images and labels.
   * Trains the model with the defined hyperparameters and callbacks. For more information regarding callbacks please read the [keras callbacks documentation](https://keras.io/api/callbacks/).
   * Plots and saves the accuracy and loss over the training process.
-  * Predicts train and test image masks.
-  * Converts predicted masks into labels that can be visualized.
-  * Plots original images, labels, and predicted label comparisons.
+  * Gives the predicted outputs of training and testing images.
   * Evaluates the model on the test set.
   * Gives a classification report that analyzes the performance of each class. For more information regarding the classification reports please read the [scikit-learn classification report documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).
 
-  All figures, accuracy and loss data throughout the training process, and trained model are saved in the defined paths.
+  The trained model and all the figures are saved in the defined paths.
+
   ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
   
   *Example of   the console display while training*
