@@ -299,7 +299,7 @@ The model also gives a seemingly correct prediction of a real image. Due to the 
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Real_output.png" width="700"/>
 </p>
 
-<br/> *LEFT: Real image (T=140K) 256X256 section to be passed through the trained model. The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with segmented clusters.*
+<br/> *LEFT: Real image 256X256 section to be passed through the trained model. The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with segmented clusters.*
  
 ## 5. :thought_balloon: :soon: Future steps
 
