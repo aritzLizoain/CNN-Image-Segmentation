@@ -262,7 +262,7 @@ The loss and accuracy of the training and evaluation set verify that the model d
 The  model  performs  correctly  on  the  test  dataset,  segmenting the objects within the images.  
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_output_example.png" width="999"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Test_output_example.png" width="1200"/>
 </p>
 
 <br/> *LEFT: Test image to be passed through the trained model.* <br/> *MIDDLE: Correct label of the test image.* <br/> *RIGHT: Predicted label by the model.*
