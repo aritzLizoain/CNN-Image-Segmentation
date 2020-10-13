@@ -232,7 +232,7 @@ The Python application consists on the 8 files previously explained. Only the la
 ## 4. :dart: Results NEEDS TO BE UPDATED
 
 An imbalanced dataset entails further problems. A good solution to this issue is creating balanced images, with approximately the same percentage of presence of each class. The classes are not mixed in order to avoid confusion to the model when labeling the images.
-Here is an example of an image used for training the model: 
+Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  always  start  from  the first pixel.  This way, the model does not learn that all predictions should have a glowing column, nor where should it be. Here is an example of an image used for training the model: 
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Traing/Training_image_example.png" width="400"/>
@@ -240,11 +240,9 @@ Here is an example of an image used for training the model:
 
 *Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
 
-Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  always  start  from  the first pixel.  This way, the model does not learn that all predictions should have a glowing column, nor where should it be.
 
-For this project 200 [training](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train) and 42 [test](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Test) images are created. 
 
-The model IS been trained with the following hyperparameters: 
+For this project 200 [training](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train) and 42 [test](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Test) images are created. The model is trained with the following hyperparameters: 
 * epochs = 100
 * batch_size = 1
 * split = 0.21
