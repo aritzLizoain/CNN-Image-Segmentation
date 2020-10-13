@@ -219,7 +219,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
   The trained model and all the figures are saved in the defined paths.
 
-  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/console.gif "Training console display")
+  ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Console.gif "Training console display")
   
   *Example of   the console display while training*
 
