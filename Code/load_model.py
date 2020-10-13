@@ -5,8 +5,7 @@ Created on Wed Jun 10 18:00:30 2020
 @author: Aritz Lizoain
 
 This code can be run to load a model, predict labels and evaluate results
-It also saves all predictions
-In processes FITS files and analyzes them by sections
+It processes FITS files and analyzes them by sections
 
 """
 
