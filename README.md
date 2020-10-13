@@ -46,17 +46,17 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
  </tr>
 </table>
 
-|1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-computer-getting-started) | 3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary) |
-|  * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)| 4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results) |   
-|2. :snake: :page_facing_up: [Python files](https://github.com/aritzLizoain/Image-segmentation#2-snake-page_facing_up-python-files) | 5. :thought_balloon: :soon: [Future steps](https://github.com/aritzLizoain/Image-segmentation#5-thought_balloon-soon-future-steps) |      
-|  * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)| 6. 🤝 [Contributing](https://github.com/aritzLizoain/Image-segmentation#6--contributing) | 
-|  * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy)| 7. :egg: :hatching_chick: :hatched_chick: [Versioning](https://github.com/aritzLizoain/Image-segmentation#7-egg-hatching_chick-hatched_chick-versioning) | 
-|  * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)| 8. :family: [Acknowledgements](https://github.com/aritzLizoain/Image-segmentation#8-family-acknowledgements) |
-|  * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)| 9. :copyright: [Copyright](https://github.com/aritzLizoain/Image-segmentation#9-copyright-copyright) |
-|  * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)| |
-|  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)| |
-|  * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#27-trainpy)| |
-|  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)| |
+|1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-computer-getting-started)                     | 3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary)                                 |
+|  * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)                                         | 4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results)                                                                   |   
+|2. :snake: :page_facing_up: [Python files](https://github.com/aritzLizoain/Image-segmentation#2-snake-page_facing_up-python-files) | 5. :thought_balloon: :soon: [Future steps](https://github.com/aritzLizoain/Image-segmentation#5-thought_balloon-soon-future-steps)                       |      
+|  * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)                                  | 6. 🤝 [Contributing](https://github.com/aritzLizoain/Image-segmentation#6--contributing)                                                                 | 
+|  * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy)                            | 7. :egg: :hatching_chick: :hatched_chick: [Versioning](https://github.com/aritzLizoain/Image-segmentation#7-egg-hatching_chick-hatched_chick-versioning) | 
+|  * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)                                    | 8. :family: [Acknowledgements](https://github.com/aritzLizoain/Image-segmentation#8-family-acknowledgements)                                             |
+|  * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)                                                    | 9. :copyright: [Copyright](https://github.com/aritzLizoain/Image-segmentation#9-copyright-copyright)                                                     |
+|  * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)                                    |                                                                                                                                                          |
+|  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)                                                |                                                                                                                                                          |
+|  * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#27-trainpy)                                                  |                                                                                                                                                          |
+|  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)                                           |                                                                                                                                                          |
 
 1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-computer-getting-started) 
   * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)
