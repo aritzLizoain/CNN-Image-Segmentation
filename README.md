@@ -2,8 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
 [![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 
-[![PyPI pyversions](https://img.shields.io/github/pypi/pyversions/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/pypi/pyversions)
-
+![Lines of code](https://img.shields.io/tokei/lines/github/aritzLizoain/CNN-Image-Segmentation)
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
@@ -21,7 +20,13 @@
 [![Package Control total downloads](https://img.shields.io/packagecontrol/dt/SwitchDictionary.svg)](https://packagecontrol.io/packages/SwitchDictionary)
 
 
-
+issues
+starts
+python
+release
+downloads
+size
+profile views
 
 
 <p align="center">
