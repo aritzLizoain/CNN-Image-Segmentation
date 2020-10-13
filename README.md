@@ -1,15 +1,13 @@
 # CNN Image Segmentation
 
-
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tensorflow)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/aritzLizoain/CNN-Image-Segmentation)
+![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
+![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
+[![](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub User's stars](https://img.shields.io/github/stars/aritzLizoain?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/aritzLizoain/CNN-Image-Segmentation?style=social)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/aritzLizoain/CNN-Image-Segmentation)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tensorflow)
-![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
-![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
-[![](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation) 
-
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpg" width="1300"/>
