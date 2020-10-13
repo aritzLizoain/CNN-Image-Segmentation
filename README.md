@@ -255,7 +255,7 @@ Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  a
 
 *Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
 
-For this project 200 [training](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train) and 42 [test](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Test) images are created. The model is trained with the following hyperparameters: 
+For this project 180 [training](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Datasets/training_data.npy) and 42 [test](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Datasets/test_data.npy) images are created. The model is trained with the following hyperparameters: 
 * epochs = 100
 * batch_size = 1
 * split = 0.21
