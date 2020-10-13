@@ -267,7 +267,7 @@ The  model  performs  correctly  on  the  test  dataset,  segmenting the objects
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Output/Test_output_example.png" width="400"/>
 </p>
 
-*<br/> LEFT: *Test image to be passed through the trained model.* <br/> *MIDDLE: Correct label of the test image.* <br/> *RIGHT: Predicted label by the model.*
+<br/> LEFT: *Test image to be passed through the trained model.* <br/> *MIDDLE: Correct label of the test image.* <br/> *RIGHT: Predicted label by the model.*
 
 The accuracy of the model on the test set is: 99.21%<br/>
 The loss of the model on the test set is: 0.304<br/>
