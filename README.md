@@ -11,6 +11,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
 [![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 [![Lines of code](https://tokei.rs/b1/github/XAMPPRocky/tokei?category=lines)](https://github.com/XAMPPRocky/tokei)
+[![Lines of code](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation)
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
