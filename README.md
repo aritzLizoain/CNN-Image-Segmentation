@@ -250,7 +250,7 @@ An imbalanced dataset entails further problems. A good solution to this issue is
 Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  always  start  from  the first pixel.  This way, the model does not learn that all predictions should have a glowing column, nor where should it be. Here is an example of an image used for training the model: 
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Train/Training_image_example.png" width="300"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Training_image_example.png" width="300"/>
 </p>
 
 *Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
