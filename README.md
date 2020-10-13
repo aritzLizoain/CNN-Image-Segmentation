@@ -3,7 +3,13 @@
 [![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/aritzLizoain/CNN-Image-Segmentation)
-
+![GitHub repo size](https://img.shields.io/github/repo-size/aritzLizoain/CNN-Image-Segmentation)
+![GitHub User's stars](https://img.shields.io/github/stars/aritzLizoain?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/aritzLizoain/CNN-Image-Segmentation?style=social)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/aritzLizoain/CNN-Image-Segmentation)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/keras)
+![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
+![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
@@ -21,12 +27,11 @@
 [![Package Control total downloads](https://img.shields.io/packagecontrol/dt/SwitchDictionary.svg)](https://packagecontrol.io/packages/SwitchDictionary)
 
 
-issues
-starts
-python
-release
+
+
+
+
 downloads
-size
 profile views
 
 
