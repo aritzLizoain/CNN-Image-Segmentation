@@ -304,4 +304,4 @@ I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
 
-<a href="#top">Back to top</a>
+:top: <a href="#top">Back to top</a>
