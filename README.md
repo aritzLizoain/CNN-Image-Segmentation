@@ -225,7 +225,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
 :warning: **Caution**: Depending on the used device, training a model can be rather slow, particularly when large datasets and number of epochs are being used. If the model name is not changed, the model will be overwritten.
 
-:cop: **Requirements**: working directory path must contain [models.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/augmentation.py)(if used).
+:cop: **Requirements**: working directory path must contain [models.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Code/models.py), [mask.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Code/mask.py) and [augmentation.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Code/augmentation.py)(if used).
 
 :information_source: For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
 
@@ -239,7 +239,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
   * Reconstructs all sections into a prediction label.
   * Looks for a chosen category (i.e. 'Clusters') section by section.
 
-:cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/mask.py).
+:cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Code/load_dataset.py), [models.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Code/models.py) and [mask.py](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/Code/mask.py).
 
 ## 3. :rocket: Implementation summary
 
