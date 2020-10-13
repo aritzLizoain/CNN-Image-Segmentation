@@ -114,7 +114,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
   * [images_small2big](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L183) is used to reconstruct the predictions of all sections into a full segmentation map.
 
-  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201) is used to analyze the final output. It looks for a chosen category section by section. It returns a modified predicted label; it only shows background and the pixels classified as a chosen class.
+  * [check_one_object](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L201) is used to analyze the final output. It looks for a chosen category (i.e. 'Clusters') section by section. It returns a modified predicted label; it only shows background and the pixels classified as a chosen class.
 
 ### 2.4 mask.py
 
@@ -303,3 +303,5 @@ I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co
 ## 9. :copyright: Copyright
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
+
+<a href="#top">Back to top</a>
