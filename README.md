@@ -24,17 +24,17 @@ Soon.
   * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)
   * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)
   * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#27-trainpy)
-  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy-needs-to-be-updated)
+  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)
 
 3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary) 
 
-4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results-needs-to-be-updated) 
+4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results) 
 
-5. :thought_balloon: :soon: [Future steps](https://github.com/aritzLizoain/Image-segmentation#5-thought_balloon-soon-future-steps-needs-to-be-updated)  
+5. :thought_balloon: :soon: [Future steps](https://github.com/aritzLizoain/Image-segmentation#5-thought_balloon-soon-future-steps)  
 
 6. 🤝 [Contributing](https://github.com/aritzLizoain/Image-segmentation#6--contributing)  
 
-7. :egg: :hatching_chick: :hatched_chick: [Versioning](https://github.com/aritzLizoain/Image-segmentation#7-egg-hatching_chick-hatched_chick-versioning-needs-to-be-updated)  
+7. :egg: :hatching_chick: :hatched_chick: [Versioning](https://github.com/aritzLizoain/Image-segmentation#7-egg-hatching_chick-hatched_chick-versioning)  
 
 8. :family: [Acknowledgements](https://github.com/aritzLizoain/Image-segmentation#8-family-acknowledgements)
 
@@ -229,7 +229,7 @@ The Python application consists on the 8 files previously explained. Only the la
 
 *Python implementation summary.*
 
-## 4. :dart: Results NEEDS TO BE UPDATED
+## 4. :dart: Results
 
 An imbalanced dataset entails further problems. A good solution to this issue is creating balanced images, with approximately the same percentage of presence of each class. The classes are not mixed in order to avoid confusion to the model when labeling the images.
 Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  always  start  from  the first pixel.  This way, the model does not learn that all predictions should have a glowing column, nor where should it be. Here is an example of an image used for training the model: 
@@ -291,7 +291,7 @@ The model also gives a seemingly correct prediction of a real image. Due to the 
 
 <br/> *LEFT: Real image 256X256 section to be passed through the trained model. The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with segmented clusters.*
  
-## 5. :thought_balloon: :soon: Future steps NEEDS TO BE UPDATED
+## 5. :thought_balloon: :soon: Future steps
 
 * Particle identification.
 
