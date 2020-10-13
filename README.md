@@ -303,7 +303,14 @@ The model also gives a seemingly correct prediction of a real image. Due to the 
  
 ## 5. :thought_balloon: :soon: Future steps
 
-* Particle identification.
+The  application’s  shortcomings  are  revealed  when  a  morecomplex image is passed through the model, obtaining a prediction thatis  not  entirely  correct.
+
+BAD FIGURE
+
+* In  order  to  deal  with  this  issue, defining **geometrical restrictions** is a possible solution.  For instance, imposing a hot pixel prediction to have its expected shape,  which is avertical or horizontal line. Likewise a maximum cluster size can be defined. 
+* Additionally, glowing predictions are likely to improve if different, **more realistic** shapes are generated in the simulated **dataset**.
+* The results might suggest that a model is limited to the range of intensities to which it is trained. However, applying different **normalization techniques**, such as linear scaling or clipping, to the DAMIC images is a seemingly good approach to solve this limitation.
+* Moreover,  in  future  work  more  classification  categories  can  be  added, allowing **particle identification** by measuring their energy,  and possible DM signals could be discerned.
 
 ## 6. 🤝 Contributing
 
