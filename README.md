@@ -1,6 +1,4 @@
 # CNN Image Segmentation
-[![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
-[![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub repo size](https://img.shields.io/github/repo-size/aritzLizoain/CNN-Image-Segmentation)
@@ -10,6 +8,8 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/keras)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
+[![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
+[![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
