@@ -11,7 +11,7 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
 
 ## Contents
 
-<p align="center"></p>
+<p align="top"></p>
 <table border="0">
  <tr>
     <td> 
