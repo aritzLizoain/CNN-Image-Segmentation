@@ -13,7 +13,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/aritzLizoain/CNN-Image-Segmentation?style=social)
 
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
-
+ 
 The Standard Model of particle physics, while being able to make accurate predictions, has been proved to fail to explain various phenomena, such as astronomical dark matter observations.
 In this work, a machine learning application has been implemented with the goal of studying dark matter candidates.
 Images from Charge Coupled Devices (CCDs) in different experiments DAMIC/DAMIC-M  located underground are used to test different deep learning algorithms.
