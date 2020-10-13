@@ -29,7 +29,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 from mask import *
-from load_dataset import load_images
+from load_dataset import load_images #(unused in version 2.0)
 from augmentation import *
 
 ##############################################################################

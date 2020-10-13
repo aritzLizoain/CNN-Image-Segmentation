@@ -48,7 +48,7 @@ These instructions explain how to get a copy of the project to run it on your lo
 
 ### 1.1 Installation
 
-The project can be either cloned or downloaded to your own device.<br/>The source code of the application is implemented in Python, with the requirement of the following open-source libraries (version numbers are up to date: 21.06.2020):
+The project can be either cloned or downloaded to your own device. The source code of the application is implemented in Python, with the requirement of the following open-source libraries (version numbers are up to date: 21.06.2020):
 
 * Keras (2.3.1)
 * TensorFlow (2.1.0)
@@ -109,7 +109,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
     These weights are used by the model in the [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/models.py#L31).
 
   * [process_fits](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L73) is used to process the DAMIC images, which are given in FITS (Flexible Image Transport System) file format.
-    These files are read and saved as arrays that contain the collected charge by each CCD pixel. Since 256X256 pixel images are used for training the model, the DAMIC image is divided into sections of the same size, so they can be individually passed trhough the trained model, obtaining their respective predicted labels.
+    These files are read and saved as arrays that contain the collected charge by each CCD pixel. Since 256X256 pixel images are used for training the model, the DAMIC image is divided into sections of the same size, so they can be individually passed through the trained model, obtaining their respective predicted labels.
     The possibility to normalize, cut and resize the image is given.
 
   * [images_small2big](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L183) is used to reconstruct the predictions of all sections into a full segmentation map.
@@ -203,14 +203,19 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
 :warning: **Caution**: Depending on the used device, training a model can be rather slow, particularly when large datasets and number of epochs are being used. If the model name is not changed, the model will be overwritten.
 
-:cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
+:cop: **Requirements**: working directory path must contain [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py)(if used).
 
 :information_source: For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
 
 ### 2.8 load_model.py NEEDS TO BE UPDATED
 
-:chart_with_upwards_trend: **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
-All figures are saved in the defined path.
+:chart_with_upwards_trend: **Function**: loads an already trained model and makes predictions on the FITS file (the DAMIC CCD image). Process:
+  * Loads the trained model.
+  * Loads and processes the FITS file.
+  * Creates small sections from the DAMIC image.
+  * Passes each section individually through the model.
+  * Reconstructs all sections into a prediction label.
+  * Looks for a chosen category (i.e. 'Clusters') section by section.
 
 :cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
