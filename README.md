@@ -8,7 +8,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tensorflow)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
-[![](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation)
+[![](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation) 
 
 
 <p align="center">
