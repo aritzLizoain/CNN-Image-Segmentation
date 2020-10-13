@@ -24,7 +24,7 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
   * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)
   * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)
   * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)
-  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)</td>
+  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy) </td>
 
     <td> 
 
