@@ -338,9 +338,9 @@ If you use this code in a publicly available project, please post an issue or cr
 
 ## 7. :egg: :hatching_chick: :hatched_chick: Versioning
 
-* First release: [1.0 CNN on simulated images](https://github.com/aritzLizoain/CNN-Image-Segmentation/releases/tag/v1.0). Only for simulated images. Not for real images.
+* First release: [**v1.0** CNN on simulated images](https://github.com/aritzLizoain/CNN-Image-Segmentation/releases/tag/v1.0). Only for simulated images. Not for real images.
 
-* Second release: [2.0 CNN Image Segmentation](https://github.com/aritzLizoain/CNN-Image-Segmentation/releases/tag/v2.0). For both simulated and real images.
+* Second release: [**v2.0** CNN Image Segmentation](https://github.com/aritzLizoain/CNN-Image-Segmentation/releases/tag/v2.0). For both simulated and real images.
 
 ## 8. :family: Acknowledgements
 
