@@ -24,12 +24,12 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
   * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)
   * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)
   * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)
-  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)
+  * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)</td>
 
     <td> 
 
   * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#27-trainpy)
-  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)</td>
+  * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)
 
 3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary) 
 
