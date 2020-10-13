@@ -88,20 +88,20 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
   * 2.1 [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy)
   * 2.2 [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy)
   * 2.3 [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation#23-load_datasetpy)
+  * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)
 
 <td>
 
-  * 2.4 [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy)
   * 2.5 [augmentation.py](https://github.com/aritzLizoain/Image-segmentation#25-augmentationpy)
   * 2.6 [models.py](https://github.com/aritzLizoain/Image-segmentation#26-modelspy)
   * 2.7 [train.py](https://github.com/aritzLizoain/Image-segmentation#27-trainpy)
   * 2.8 [load_model](https://github.com/aritzLizoain/Image-segmentation#28-load_modelpy)
 
-3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary) <td>
+3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary)
+
+4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results) <td>
 
 <td>
-
-4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results)
 
 5. :thought_balloon: :soon: [Future steps](https://github.com/aritzLizoain/Image-segmentation#5-thought_balloon-soon-future-steps)  
 
