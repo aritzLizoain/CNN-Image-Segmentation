@@ -7,7 +7,7 @@ In this work, a machine learning application has been implemented with the goal 
 Images from Charge Coupled Devices (CCDs) in different experiments DAMIC/DAMIC-M  located underground are used to test different deep learning algorithms.
 A U-Net model is trained with Python's open-source library Keras. The model performs multi-class image segmentation in order to detect dark matter particle signals among background noise.
 
-For more information regarding dark matter please read [Theoretical Concepts: Dark Matter (DM)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Dark%20Matter%20(DM).md)
+:information_source: For more information regarding dark matter please read [Theoretical Concepts: Dark Matter (DM)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Dark%20Matter%20(DM).md)
 
 ## Contents
 
@@ -71,7 +71,7 @@ In  this  section  the  core  of  the  project  is  dissected.   Every  employed
 
 :chart_with_upwards_trend: **Function**: sets details of the simulated images that are created in [image_simulation.py](https://github.com/aritzLizoain/Image-segmentation#22-image_simulationpy). The pixel intensity value of each element in the image can be defined.
 
-For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
+:information_source: For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
 
 ### 2.2 image_simulation.py
 
@@ -92,7 +92,7 @@ Therefore elements with overlapping pixel intensity values will not be correctly
 
 :cop: **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/Cluster.pkl).
 
-For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
+:information_source: For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
 
 ### 2.3 load_dataset.py
 
@@ -147,7 +147,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 :warning: **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy). The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.<br/><br/>Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
 
-For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Labeling.md)
+:information_source: For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Labeling.md)
    
 
 ### 2.5 augmentation.py
@@ -163,11 +163,9 @@ For more information regarding the labeling process please read [Theoretical Con
 
 *Image and label augmentation example. The applied transformations are translation and scaling.*
 
-For more information regarding data augmentation please read [Theoretical Concepts: Data Augmentation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Data%20Augmentation.md)
+:information_source: For more information regarding data augmentation please read [Theoretical Concepts: Data Augmentation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Data%20Augmentation.md)
 
 ### 2.6 models.py
-
-The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layer composing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   In addition, the weighted categorical crossentropy loss function is defined.
 
 :chart_with_upwards_trend: **Function**: defines the model architecture and layer features. The model has U-Net architecture. The code is already prepared to add or remove layers in the model. Additionally, pretrained weights from an already trained model can be used.
 
@@ -180,9 +178,9 @@ The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layer 
 
 *Implemented U-Net architecture. Adapted from Ronneberger, O. et al. "Convolutional Networks for Biomedical Image Segmentation". (2015). [Link](https://arxiv.org/pdf/1505.04597.pdf).*
 
-For more information regarding ML (CNNs, layers, image segmentation) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
+:information_source: For more information regarding ML (CNNs, layers, image segmentation) please read [Theoretical Concepts: Machine Learning](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Machine%20Learning.md)
 
-For more information regarding the implementation of the network (employed layers, activation functions, loss function, optimizer) please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
+:information_source: For more information regarding the implementation of the network (employed layers, activation functions, loss function, optimizer) please read [Theoretical Concepts: Network Implementation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Network%20Implementation.md)
 
    
 ### 2.7 train.py NEEDS TO BE UPDATED
@@ -209,7 +207,7 @@ For more information regarding the implementation of the network (employed layer
 
 :cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
 
-For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
+:information_source: For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
 
 ### 2.8 load_model.py NEEDS TO BE UPDATED
 
