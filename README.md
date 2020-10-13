@@ -1,11 +1,7 @@
 # CNN Image Segmentation
 
 <p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpg" width="600"/>
-</p>
-
-<p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning2.jpg" width="600"/>
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpg" width="900"/>
 </p>
 
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
