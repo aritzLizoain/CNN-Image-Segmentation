@@ -84,6 +84,7 @@ Testing and training images can be created. There is no need to create a validat
 </p>
 
 *Simulated 256X256 pixel CCD image containing glowing, hot pixels and pixel clusters. The pixel intensity values are given in ADCs.*
+
 :warning: **Caution**: it is important to be aware of the importance of the predefined pixel intensity values.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
 In order to do this, image pixel intensity values are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy) for more information).
@@ -95,7 +96,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 ### 2.3 load_dataset.py
 
-* :chart_with_upwards_trend: **Function**: calculates the weights for the loss function and processes FITS files (DAMIC images). Originaly created to load the datasets as PNG files into arrays (unused in version 2.0).
+:chart_with_upwards_trend: **Function**: calculates the weights for the loss function and processes FITS files (DAMIC images). Originaly created to load the datasets as PNG files into arrays (unused in version 2.0).
   
   * [load_images](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/load_dataset.py#L27)(commented) is no longer used in version 2.0. It was used in version 1.0 for loading the PNG images.
 
@@ -117,7 +118,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 ### 2.4 mask.py
 
-* :chart_with_upwards_trend: **Function**: creates the labels in an automated way, visualizes the output labels and can analyze and modify the images.
+:chart_with_upwards_trend: **Function**: creates the labels in an automated way, visualizes the output labels and can analyze and modify the images.
 
   * [get_monochrome](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/mask.py#L52) converts the input image into a monochrome image. Input shape = (number of images, height, width, 3(RGB)) --> Output shape = (number of images, height, width, 1).
   * [get_class](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/mask.py#L62) classifies each pixel as a certain class depending on its intensity value.
@@ -144,14 +145,14 @@ For more information regarding the image simulation please read [Theoretical Con
 
 *Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
 
-* :warning: **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy). The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.<br/><br/>Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
+:warning: **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy). The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.<br/><br/>Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
 
 For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Labeling.md)
    
 
 ### 2.5 augmentation.py
 
-* :chart_with_upwards_trend: **Function**: applies data augmentation techniques to both images and corresponding labels. Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques. This is an optional step; it is applied when only a few training samples are available, or when the desired property is not present in the dataset.
+:chart_with_upwards_trend: **Function**: applies data augmentation techniques to both images and corresponding labels. Please read the [imgaug documentation](https://imgaug.readthedocs.io/en/latest/index.html) for more information on augmentation techniques. This is an optional step; it is applied when only a few training samples are available, or when the desired property is not present in the dataset.
 
   * [augmentation_sequence_Color](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/augmentation.py#L20) and [augmentation_Color](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/augmentation.py#L29) apply color dropout, rotation, flipping.
   * [augmentation_sequence_Invert](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/augmentation.py#L77) and [augmentation_Invert](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/augmentation.py#L86) apply color channel inversion, dropout, logContrast, hue, gammaContrast.
@@ -168,7 +169,7 @@ For more information regarding data augmentation please read [Theoretical Concep
 
 The  U-Net  structure  is  implemented  in  the  model.py  file.   Every  layer composing  the  CNN  and  each  hyper-parameter  is  specified  in  it.   In addition, the weighted categorical crossentropy loss function is defined.
 
-* :chart_with_upwards_trend: **Function**: defines the model architecture and layer features. The model has U-Net architecture. The code is already prepared to add or remove layers in the model. Additionally, pretrained weights from an already trained model can be used.
+:chart_with_upwards_trend: **Function**: defines the model architecture and layer features. The model has U-Net architecture. The code is already prepared to add or remove layers in the model. Additionally, pretrained weights from an already trained model can be used.
 
   * [weighted_categorical_crossentropy loss function](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/models.py#L26)
     is used to calculate the categorical crossentropy loss of the model with the modification of taking into account the weight of each class.
@@ -186,7 +187,7 @@ For more information regarding the implementation of the network (employed layer
    
 ### 2.7 train.py NEEDS TO BE UPDATED
 
-* :chart_with_upwards_trend: **Function**: trains a model with the defined parameters. Process:
+:chart_with_upwards_trend: **Function**: trains a model with the defined parameters. Process:
   * Loads the images.
   * Creates the labels for visualization.
   * Applies augmentation on both images and labels.
@@ -204,18 +205,18 @@ For more information regarding the implementation of the network (employed layer
   
   *Example of   the console display while training*
 
-* :warning: **Caution**: Depending on the used device, training a model can be rather slow, particularly when large datasets and number of epochs are being used. If the model name is not changed, the model will be overwritten.
+:warning: **Caution**: Depending on the used device, training a model can be rather slow, particularly when large datasets and number of epochs are being used. If the model name is not changed, the model will be overwritten.
 
-* :cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
+:cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
 
 For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
 
 ### 2.8 load_model.py NEEDS TO BE UPDATED
 
-* :chart_with_upwards_trend: **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
+:chart_with_upwards_trend: **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
 All figures are saved in the defined path.
 
-* :cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
+:cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
 ## 3. :rocket: Implementation summary
 
