@@ -1,4 +1,13 @@
 # CNN Image Segmentation
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpeg" width="600"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning2.jpeg" width="600"/>
+</p>
+
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
 
 
@@ -332,7 +341,7 @@ If you use this code in a publicly available project, please post an issue or cr
 
 ## 8. :family: Acknowledgements
 
-I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
+I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I also thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
 ## 9. :copyright: Copyright
 
