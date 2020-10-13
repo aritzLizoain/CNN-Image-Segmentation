@@ -265,7 +265,7 @@ The  model  performs  correctly  on  the  test  dataset,  segmenting the objects
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Output/Test_output_example.png" width="400"/>
 </p>
 
-<br/> LEFT: *Test image to be passed through the trained model.* <br/> *MIDDLE: Correct label of the test image.* <br/> *RIGHT: Predicted label by the model.*
+<br/> *LEFT: Test image to be passed through the trained model.* <br/> *MIDDLE: Correct label of the test image.* <br/> *RIGHT: Predicted label by the model.*
 
 The accuracy of the model on the test set is: 99.21%<br/>
 The loss of the model on the test set is: 0.304<br/>
@@ -283,15 +283,14 @@ _F1-score_: harmonic mean between precision and recall.<br/>
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: number of pixels of the given class in the dataset.
 
-The model also gives a seemingly correct prediction of a DAMIC image. Due to the small size of the objects, these cannot be seen when the whole image was displayed. If the 256×256 sections are individually observed instead, the segmented clusters can be analyzed.
+The model also gives a seemingly correct prediction of a real image. Due to the small size of the objects, these cannot be seen when the whole image was displayed. If the 256×256 sections are individually observed instead, the segmented clusters can be analyzed.
 
 <p align="center">
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Real_output.png" width="400"/>
 </p>
 
-*Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
-
-
+<br/> *LEFT: Real image 256X256 section to be passed through the trained model.*<br/> *RIGHT: Predicted label by the model.*
+ 
 ## 5. :thought_balloon: :soon: Future steps NEEDS TO BE UPDATED
 
 * Particle identification.
