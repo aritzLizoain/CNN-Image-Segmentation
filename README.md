@@ -259,34 +259,32 @@ The loss and accuracy of the training and evaluation set verify that the model d
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Accuracy.png" width="400"/>           <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/Loss.png" width="400"/> 
 </pre>
 
-* Training process of the model, that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
+*Training process of the model, that reaches its optimum state at epoch 40.* <br/> LEFT: *Training and validation accuracy.* <br/> *RIGHT: Training and validation loss.*
 
+The  model  performs  correctly  on  the  test  dataset,  segmenting  every object within the images.  
 
 Prediction on a training image: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/training_prediction.png "Training image prediction")
 
 Prediction on test images: ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test4.png "Test image 4 prediction")
 ![alt text](https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/test6.png "Test image 6 prediction")
 
-The  model  performed  correctly  on  the  test  dataset,  segmenting  everyobject and reaching a 99.2% accuracy.  The classification report showedhow efficiently each class performed (see Table 1).
+The classification report showedhow efficiently each class performed (see Table 1).
 
-The accuracy of the model on the test set is: 99.67%<br/>
+The accuracy of the model on the test set is: 99.2%<br/>
 The loss of the model on the test set is: 0.166<br/>
 Classification report:
 Class        | Precision| Recall| F1-score| Support
 ---          | ---      | ---   | ---     | ---
-Background   | 1.00     | 1.00  | 1.00    | 510811
-Glowing      | 0.98     | 0.93  | 0.96    | 12030
-Hot pixel    | 1.00     | 0.95  | 0.97    | 674
-Cluster      | 0.25     | 0.60  | 0.35    | 773
-**Accuracy**     |          |       | 1.00    | 524288
-**Macro avg.**   | 0.81     | 0.88  | 0.83    | 524288
-**Weighted avg.**| 1.00     | 1.00  | 1.00    | 524288
+Background   | 1.00     | 0.99  | 1.00    | 2535931
+Glowing      | 1.00     | 1.00  | 1.00    | 187442
+Hot pixel    | 0.99     | 0.98  | 0.95    | 10594
+Cluster      | 0.44     | 0.63  | 0.52    | 18545
 
-_Precision_: the percentage of correctly classified pixels among all pixels classified as the given class.<br/> 
-_Recall_: the percentage of correctly classified pixels among all pixels that truly are of the given class.<br/> 
-_F1-score_: the harmonic mean between precision & recall. Useful to analyze the performance on inbalanced sets.<br/>
+_Precision_: percentage of correctly classified pixels among all pixels classified as the given class.<br/> 
+_Recall_: percentage of correctly classified pixels among all pixels that truly are of the given class.<br/> 
+_F1-score_: harmonic mean between precision and recall.<br/>
 Best score is 1.00 and worst score is 0.00.<br/>
-_Support_: the number of pixels of the given class in the dataset.
+_Support_: number of pixels of the given class in the dataset.
 
 The model also gave a seemingly correct prediction of a DAMIC image(T=140K). Due to the small size of the objects, these could not be seenwhen the whole image was displayed.  If the 256×256 sections were indi-vidually observed instead, the segmented clusters could be analyzed (seeFigure 20).
 
