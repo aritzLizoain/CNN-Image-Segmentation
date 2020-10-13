@@ -240,8 +240,6 @@ Additionally, only 60% of  the  images  contain  glowing,  and  it  does  not  a
 
 *Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
 
-
-
 For this project 200 [training](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Train) and 42 [test](https://github.com/aritzLizoain/Image-segmentation/tree/master/Images/Test) images are created. The model is trained with the following hyperparameters: 
 * epochs = 100
 * batch_size = 1
@@ -285,9 +283,14 @@ _F1-score_: harmonic mean between precision and recall.<br/>
 Best score is 1.00 and worst score is 0.00.<br/>
 _Support_: number of pixels of the given class in the dataset.
 
-The model also gave a seemingly correct prediction of a DAMIC image(T=140K). Due to the small size of the objects, these could not be seenwhen the whole image was displayed.  If the 256×256 sections were indi-vidually observed instead, the segmented clusters could be analyzed (seeFigure 20).
+The model also gives a seemingly correct prediction of a DAMIC image. Due to the small size of the objects, these cannot be seen when the whole image was displayed. If the 256×256 sections are individually observed instead, the segmented clusters can be analyzed.
 
-FIGURE SECTION
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Real_output.png" width="400"/>
+</p>
+
+*Simulated 256×256 pixel image with a similar number of pixels belonging to each class.*
+
 
 ## 5. :thought_balloon: :soon: Future steps NEEDS TO BE UPDATED
 
