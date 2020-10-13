@@ -45,6 +45,7 @@ A U-Net model is trained with Python's open-source library Keras. The model perf
 9. :copyright: [Copyright](https://github.com/aritzLizoain/Image-segmentation#9-copyright-copyright)  </td>
  </tr>
 </table>
+|zerbait                                                                                                                            |zerbait                                                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 |1. :computer: [Getting Started](https://github.com/aritzLizoain/Image-segmentation#1-computer-getting-started)                     | 3. :rocket: [Implementation summary](https://github.com/aritzLizoain/Image-segmentation#3-rocket-implementation-summary)                                 |
 |  * 1.1 [Installation](https://github.com/aritzLizoain/Image-segmentation#11-installation)                                         | 4. :dart: [Results](https://github.com/aritzLizoain/Image-segmentation#4-dart-results)                                                                   |   
