@@ -1,20 +1,18 @@
 # CNN Image Segmentation
 
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpg" width="1300"/>
+</p>
+
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tensorflow)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aritzLizoain/CNN-Image-Segmentation)
-![GitHub Release Date](https://img.shields.io/github/release-date/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
 [![](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub User's stars](https://img.shields.io/github/stars/aritzLizoain?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/aritzLizoain/CNN-Image-Segmentation?style=social)
 
-<p align="center">
-<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Example_Images/DeepLearning.jpg" width="1300"/>
-</p>
-
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
-
 
 The Standard Model of particle physics, while being able to make accurate predictions, has been proved to fail to explain various phenomena, such as astronomical dark matter observations.
 In this work, a machine learning application has been implemented with the goal of studying dark matter candidates.
