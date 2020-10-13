@@ -1,7 +1,11 @@
 # CNN Image Segmentation
 [![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
+[![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
+
+
+
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
-[![PyPI pyversions]](https://pypi.python.org/pypi/ansicolortags/)
+
 [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 [![Github all releases](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 [![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/Naereen/StrapDown.js/stargazers/)
@@ -13,7 +17,6 @@
 [![Only 32 Kb](https://badge-size.herokuapp.com/Naereen/StrapDown.js/master/strapdown.min.js)](https://github.com/Naereen/StrapDown.js/blob/master/strapdown.min.js)
 [![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)](https://github.com/Naereen/StrapDown.js)
 [![Package Control total downloads](https://img.shields.io/packagecontrol/dt/SwitchDictionary.svg)](https://packagecontrol.io/packages/SwitchDictionary)
-[![Package Control total downloads](https://img.shields.io/github/stars/aritzLizoain/Image-segmentation)
 
 
 
