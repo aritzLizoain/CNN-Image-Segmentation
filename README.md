@@ -17,7 +17,7 @@
 The Standard Model of particle physics, while being able to make accurate predictions, has been proved to fail to explain various phenomena, such as astronomical dark matter observations.
 In this work, a machine learning application has been implemented with the goal of studying dark matter candidates.
 Images from Charge Coupled Devices (CCDs) in different experiments DAMIC/DAMIC-M  located underground are used to test different deep learning algorithms.
-A U-Net model is trained with Python's open-source library Keras. The model performs multi-class image segmentation in order to detect dark matter particle signals among background noise.
+A U-Net model is trained with Python. The model performs multi-class image segmentation in order to detect dark matter particle signals among background noise.
 
 :information_source: For more information regarding dark matter please read [Theoretical Concepts: Dark Matter (DM)](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Dark%20Matter%20(DM).md)
 
@@ -72,8 +72,8 @@ These instructions explain how to get a copy of the project to run it on your lo
 
 The project can be either cloned or downloaded to your own device. The source code of the application is implemented in Python, with the requirement of the following open-source libraries (version numbers are up to date: 21.06.2020):
 
-* Keras (2.3.1)
 * TensorFlow (2.1.0)
+* Keras (2.3.1)
 * Numpy (1.18.1)
 * scikit-learn (0.22.1)
 * scikit-image (0.9.3)
