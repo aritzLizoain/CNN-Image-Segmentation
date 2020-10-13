@@ -2,7 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/aritzLizoain/Image-segmentation)](https://github.com/aritzLizoain/Image-segmentation/issues)
 [![GitHub stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 
-![Lines of code](https://img.shields.io/github/lines/aritzLizoain/CNN-Image-Segmentation)
+[![Lines of code](https://img.shields.io/github/lines/aritzLizoain/CNN-Image-Segmentation)](https://github.com/aritzLizoain/CNN-Image-Segmentation/stargazers)
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
