@@ -4,16 +4,14 @@ Created on Wed Jun 10 18:00:30 2020
 
 @author: Aritz Lizoain
 
-This is the MAIN CODE to train the model.
-
 Working directory must be where all files are located
 
 PROCESS:
     *Loads the images
-    *Creates the labels (for representation) and masks (for training) from them
-    *Applies augmentation on both images and labels
+    *Creates the labels
+    *(Optional) Applies augmentation on both images and labels
     *Trains the model with the defined hyperparameters.
-    It takes images (n_img, h, w, 3(rgb)) and masks (n_img, h, w,n_classes)
+    It takes images (n_img, h, w, 3(rgb)) and labels (n_img, h, w, n_classes)
     *Plots and saves the accuracy and loss over the training
     *Predicts on train and test images. Predictions shape (n_img, h, w, n_classes)
     *Converts predicted masks to labels with shape (n_img, h, w, 3(rgb))
@@ -47,13 +45,13 @@ IMG_HEIGHT = 256
 IMG_CHANNELS=4 #number of classes
 
 """
-Load original dataset PNG IMAGES (old)
+Load original dataset PNG IMAGES (used in version 1.0)
 """
 # #load_images() from load_dataset.py
 # images_original, test_images_original = load_images(TRAIN_PATH, TEST_PATH, TEST_PREDICTIONS_PATH, IMG_WIDTH, IMG_HEIGHT)
 
 """
-Load original dataset ARRAYS (real pixel values)
+Load original dataset ARRAYS (real pixel values, version 2.0)
 """
 images_original = np.load('Images/Train/training_data.npy') 
 test_images_original = np.load('Images/Test/test_data.npy') 
@@ -88,7 +86,7 @@ test_labels = create_labels_noStat_noPrint(test_images_original)
 
 
 """
-Augmentation
+Augmentation (OPTIONAL)
 """
 #augmentation() from augmentation.py
 #Both image and label augmentation is done at the same time
@@ -97,7 +95,7 @@ Augmentation
 # images_augmented, labels_augmented = augmentation_Invert(images_original, labels)
 
 """
-Grayscale images (no need if I use array datasets)
+Grayscale images (unused)
 """
 # #rgb2gray() from mask.py
 # #shape (ix, height, width, 1(grayscale))
@@ -115,7 +113,7 @@ Grayscale images (no need if I use array datasets)
 # labels_all = np.concatenate((labels, labels), axis=0)
 
 """
-Random color
+Random color (unused)
 """
 # #rgb2random() from mask.py
 # #shape (ix, height, width, 3(random rgb))
@@ -134,7 +132,7 @@ Random color
 
 
 """
-Edit masks
+Edit masks (unused)
 """
 # # if augmentation will only invert the images, masks need to be doubled and not changed
 # masks = np.concatenate((masks,masks),axis=0)
@@ -143,9 +141,9 @@ Edit masks
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 MODEL TRAINING
 
-It takes images (n_img, h, w, 3(rgb)) and masks (n_img, h, w, n_classes) for training
+It takes images (n_img, h, w, 3(rgb)) and labels (n_img, h, w, n_classes) for training
 Output has shape (n_img, h, w, n_classes)
-Then it is converted and represented as a label (n_img, h, w, 3(rgb))
+Then it is converted and represented as a label (n_img, h, w, 3(rgb)) that can be visualized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

@@ -84,12 +84,12 @@ Testing and training images can be created. There is no need to create a validat
 </p>
 
 *Simulated 256X256 pixel CCD image containing glowing, hot pixels and pixel clusters. The pixel intensity values are given in ADCs.*
-* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values.
+* :warning: **Caution**: it is important to be aware of the importance of the predefined pixel intensity values.
 The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images.
 In order to do this, image pixel intensity values are taken as reference to label different classes (please read [mask.py](https://github.com/aritzLizoain/Image-segmentation#24-maskpy) for more information).
 Therefore elements with overlapping pixel intensity values will not be correctly labeled.
 
-* **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/Cluster.pkl).
+* :cop: **Requirements**: working directory path must contain [image_details.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/image_details.py) and [Cluster.pkl](https://github.com/aritzLizoain/Image-segmentation/blob/master/Code/Cluster.pkl).
 
 For more information regarding the image simulation please read [Theoretical Concepts: Image Simulation](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Simulation.md)
 
@@ -144,7 +144,7 @@ For more information regarding the image simulation please read [Theoretical Con
 
 *Image label example, where each pixel is classified as a class and its corresponding depth channel takes value 1. Adapted Digital Image. Jordan, J. "An overview of semantic image segmentation". (2018). [Link](https://www.jeremyjordan.me/semantic-segmentation).*
 
-* **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy). The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.<br/><br/>Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
+* :warning: **Caution**: it is important to be aware of the importance of the predefined pixel intensity values in [image_details.py](https://github.com/aritzLizoain/Image-segmentation#21-image_detailspy). The way this model is implemented, image lables do not need to be provided. Image labels are directly obtained from the images. In order to do this, image pixel intensity values are taken as reference to label different classes. Therefore elements with overlapping pixel intensity values will not be correctly labeled.<br/><br/>Labels can perfectly be created using a labeling software. However, for the purpose of this project, automatic pixel-wise labeling is a practical solution. Remember that, in case of using your own labels, image and label names must match.
 
 For more information regarding the labeling process please read [Theoretical Concepts: Image Labeling](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Image%20Labeling.md)
    
@@ -186,7 +186,7 @@ For more information regarding the implementation of the network (employed layer
    
 ### 2.7 train.py NEEDS TO BE UPDATED
 
-* **Function**: training the model. This is the MAIN CODE. Process:
+* **Function**: trains a model with the defined parameters. Process:
   * Loads the images.
   * Creates the labels for visualization.
   * Applies augmentation on both images and labels.
@@ -204,9 +204,9 @@ For more information regarding the implementation of the network (employed layer
   
   *Example of   the console display while training*
 
-* **Caution**: make sure all paths are correct. If they are not, it will not be able to load any data.<br/>Depending on the used device, training a model can be rather slow (>10'/epoch), particularly when large datasets and number of epochs are being used.
+* :warning: **Caution**: Depending on the used device, training a model can be rather slow, particularly when large datasets and number of epochs are being used. If the model name is not changed, the model will be overwritten.
 
-* **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
+* :cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py), [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py) and [augmentation.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/augmentation.py).
 
 For more information regarding the model training process please read [Theoretical Concepts: Model Training](https://github.com/aritzLizoain/Image-segmentation/blob/master/Theoretical%20Concepts/Model%20Training.md)
 
@@ -215,7 +215,7 @@ For more information regarding the model training process please read [Theoretic
 * **Function**: loads an already trained model. This loaded model is used to make predictions on test images, evaluate the model and give a classification report (same as the last section of [train.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/train.py#L147)).<br/>
 All figures are saved in the defined path.
 
-* **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
+* :cop: **Requirements**: working directory path must contain [load_dataset.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/load_dataset.py), [models.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/models.py) and [mask.py](https://github.com/aritzLizoain/Image-segmentation/blob/master/mask.py).
 
 ## 3. :rocket: Implementation summary
 
@@ -298,6 +298,6 @@ Soon
 
 I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I would also like to thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
-## :copyright: 9. Copyright
+## 9. :copyright: Copyright
 
 Copyright 2020, Aritz Lizoain, All rights reserved.
