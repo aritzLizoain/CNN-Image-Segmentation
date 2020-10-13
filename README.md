@@ -299,13 +299,17 @@ The model also gives a seemingly correct prediction of a real image. Due to the 
 <img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Real_output.png" width="700"/>
 </p>
 
-<br/> *LEFT: Real image 256X256 section to be passed through the trained model. The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with segmented clusters.*
+<br/> *LEFT: Real image (T=140K) 256X256 section to be passed through the trained model. The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with segmented clusters.*
  
 ## 5. :thought_balloon: :soon: Future steps
 
-The  application’s  shortcomings  are  revealed  when  a  morecomplex image is passed through the model, obtaining a prediction thatis  not  entirely  correct.
+The  application’s  shortcomings  are  revealed  when  a  more complex image is passed through the model, obtaining a prediction that is  not  entirely  correct.
 
-BAD FIGURE
+<p align="center">
+<img src="https://github.com/aritzLizoain/Image-segmentation/blob/master/Images/Outputs/Future.png" width="600"/>
+</p>
+
+<br/> *LEFT: DAMIC image (T=240K). The pixel intensity values are given in ADCs.*<br/> *RIGHT: Predicted label with unusual hot pixel and cluster segmentation on the bottom right side..*
 
 * In  order  to  deal  with  this  issue, defining **geometrical restrictions** is a possible solution.  For instance, imposing a hot pixel prediction to have its expected shape,  which is avertical or horizontal line. Likewise a maximum cluster size can be defined. 
 * Additionally, glowing predictions are likely to improve if different, **more realistic** shapes are generated in the simulated **dataset**.
