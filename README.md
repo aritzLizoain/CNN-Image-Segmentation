@@ -348,6 +348,6 @@ I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co
 
 ## 9. :copyright: License
 
-Copyright 2020, Aritz Lizoain. [**License**](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/LICENSE).
+Copyright 2020, Aritz Lizoain. [**License**](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/LICENSE.txt).
 
 <a href="#top">:top:</a>
