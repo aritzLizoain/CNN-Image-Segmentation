@@ -346,8 +346,8 @@ If you use this code in a publicly available project, please post an issue or cr
 
 I express my sincere gratitude to my director, Rocío Vilar Cortabitarte, and co-director, Alicia Calderón Tazón, for providing their expertise and guidance throughout the course of this project. I also thank the rest of my advisors, Agustín Lantero Barreda and Núria Castelló-Mor, who contributed so thoroughly through their assistance and dedicated involvement.
 
-## 9. :copyright: Copyright
+## 9. :copyright: License
 
-Copyright 2020, Aritz Lizoain, All rights reserved.
+Copyright 2020, Aritz Lizoain. [**License**](https://github.com/aritzLizoain/CNN-Image-Segmentation/blob/master/LICENSE).
 
 <a href="#top">:top:</a>
