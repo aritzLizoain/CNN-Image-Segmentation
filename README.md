@@ -58,7 +58,7 @@ A U-Net model is trained with Python. The model performs multi-class image segme
 
 8. :family: [Acknowledgements](https://github.com/aritzLizoain/CNN-Image-Segmentation#8-family-acknowledgements)
 
-9. :copyright: [Copyright](https://github.com/aritzLizoain/CNN-Image-Segmentation#9-copyright-copyright)  </td>
+9. :copyright: [License](https://github.com/aritzLizoain/CNN-Image-Segmentation#9-copyright-license)  </td>
  </tr>
 </table>
 <p></p>
