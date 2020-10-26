@@ -9,7 +9,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/aritzLizoain/CNN-Image-Segmentation)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/aritzLizoain/CNN-Image-Segmentation)
 [![](https://tokei.rs/b1/github/aritzLizoain/CNN-Image-Segmentation?category=lines)](https://github.com/aritzLizoain/CNN-Image-Segmentation) 
-![GitHub User's stars](https://img.shields.io/github/stars/aritzLizoain?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/aritzLizoain/CNN-Image-Segmentation?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/aritzLizoain/CNN-Image-Segmentation?style=social)
 
 ## Application of deep learning techniques to images collected with Charge Coupled Devices to search for Dark Matter
