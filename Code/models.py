@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jun 10 18:00:30 2020
-
-@author: Aritz Lizoain
+//////////////////////////////////////////////////////////////////////////////////////////
+// Original author: Aritz Lizoain
+// Github: https://github.com/aritzLizoain
+// My personal website: https://aritzlizoain.github.io/
+// Description: CNN Image Segmentation
+// Copyright 2020, Aritz Lizoain.
+// License: MIT License
+//////////////////////////////////////////////////////////////////////////////////////////
 
 ARCHITECTURE: U-Net
-
 Original: https://arxiv.org/pdf/1505.04597.pdf
-
 """
 import numpy as np 
 import os
