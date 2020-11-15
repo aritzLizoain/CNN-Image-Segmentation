@@ -1,31 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 11 17:44:17 2020
-
-@author: Aritz Lizoain
+//////////////////////////////////////////////////////////////////////////////////////////
+// Original author: Aritz Lizoain
+// Github: https://github.com/aritzLizoain
+// My personal website: https://aritzlizoain.github.io/
+// Description: CNN Image Segmentation
+// Copyright 2020, Aritz Lizoain.
+// License: MIT License
+//////////////////////////////////////////////////////////////////////////////////////////
 
 This code creates the masks and labels
-
 PROCESS:    
-    *(n_images, x size, y size, 3(rgb)) -------- Takes training image dataset
-    
-    *(n_images, x size, y size, 1(mean)) ------- Makes it monochrome inside get_mask
-    
+    *(n_images, x size, y size, 3(rgb)) -------- Takes training image dataset    
+    *(n_images, x size, y size, 1(mean)) ------- Makes it monochrome inside get_mask    
     *(n_images, x size, y size, n_classes) ----- Creates the mask with get_class in get_mask
     Checks for threshold pixel values 
     E.g.: [background, glowing, hot pixel, cluster] --> n_classes = 4
     get_mask checks every pixel and for each pixel get_class determines the class
-    For example for a hot pixel, get_class gets class=2, then n_classes=[0,0,1,0]
-    
+    For example for a hot pixel, get_class gets class=2, then n_classes=[0,0,1,0]    
     *(n_images, x size, y size, 1(max_mask)) --- Gets the maximum value position in mask
-    With the previous example: max_mask=2
-    
+    With the previous example: max_mask=2    
     *(n_images, x size, y size, 3(rgb)) -------- Creates the label with mask_to_label
-    Depending on which class it is, it will color it with the corresponding multiplier
-    
+    Depending on which class it is, it will color it with the corresponding multiplier    
 It plots a random example and shows statistics (n_classes and percentage of each class) 
 Different functions are created to convert data, for example: output_to_label()
-
 """
 
 import os
