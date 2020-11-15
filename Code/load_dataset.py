@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jun 12 16:29:09 2020
-
-@author: Aritz Lizoain
+//////////////////////////////////////////////////////////////////////////////////////////
+// Original author: Aritz Lizoain
+// Github: https://github.com/aritzLizoain
+// My personal website: https://aritzlizoain.github.io/
+// Description: CNN Image Segmentation
+// Copyright 2020, Aritz Lizoain.
+// License: MIT License
+//////////////////////////////////////////////////////////////////////////////////////////
 
 - load_images (unused)
 - get_weights: calculates the weights for the loss function
 - process_fits: loads FITS files and creates small sections
 - images_small2big: reconstructs small sections
 - check_one_object: looks for the chosen category section by section 
-
 """
 
 import os
