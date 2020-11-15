@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jun 10 20:33:00 2020
-
-@author: Aritz Lizoain
+//////////////////////////////////////////////////////////////////////////////////////////
+// Original author: Aritz Lizoain
+// Github: https://github.com/aritzLizoain
+// My personal website: https://aritzlizoain.github.io/
+// Description: CNN Image Segmentation
+// Copyright 2020, Aritz Lizoain.
+// License: MIT License
+//////////////////////////////////////////////////////////////////////////////////////////
 
 Working directory must be where all files are located
-
 This code can be run to check both training and augmented labels (uncomment last section)
-
 """
 
 import numpy as np
