@@ -273,7 +273,7 @@ For this project 180 [training](https://github.com/aritzLizoain/CNN-Image-Segmen
 * loss = weighted_categorical_crossentropy(weights)
 * optimizer = 'adadelta' 
 
-Please note that these parameters work well for this particular dataset, but do not assure reliable results for other of datasets.
+Please note that these parameters work well for this particular dataset, but do not assure reliable results for other datasets.
 
 The loss and accuracy of the training and evaluation set verify that the model does not suffer from overfitting.
 
