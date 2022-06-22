@@ -21,7 +21,7 @@ import matplotlib.patches as mpatches
 from mask import *
 
 ##############################################################################
-                    
+
 def augmentation_sequence_Color(images, labels):
     labels = labels.astype(np.uint8)
     seq = iaa.Sequential([iaa.Dropout2d(p=0.70)])  #, iaa.Flipud(0.8),\
